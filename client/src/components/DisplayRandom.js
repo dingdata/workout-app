@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const axios = require("axios");
 
-const DisplayRandom = async () => {
+const DisplayRandom = () => {
   //   const [tag, setTag] = useState("");
   //   const server = "http://localhost:3000/api";
   //   const url = server + "/exercises/random";
