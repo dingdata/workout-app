@@ -14,14 +14,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar bg="light" variant="light">
-          <Image
-            src={process.env.PUBLIC_URL + "/images/logo.png"}
-            width="70px"
-          />
+          <Nav.Link as={Link} to="/Home" data-testid="ti_nav_Home">
+            <Image
+              src={process.env.PUBLIC_URL + "/images/logo.png"}
+              width="70px"
+            />
+          </Nav.Link>
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/Home" data-testid="ti_nav_Home">
-              {" "}
-            </Nav.Link>
             <Nav.Link
               as={Link}
               to="/howItWorks"
