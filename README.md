@@ -75,19 +75,28 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm install bcryptjs`
 
-### Create the following Database
+## Setting up your local database
 
-development: {
-username: "postgres",
-password: null,
-database: "capstone_workout_randomiser_dev",
-host: "127.0.0.1",
-dialect: "postgres",
-},
-test: {
-username: "postgres",
-password: null,
-database: "capstone_workout_randomiser_dev_test",
-host: "127.0.0.1",
-dialect: "postgres",
-},
+### Create dev database
+
+`npx sequelize db:create`
+
+This reads off of `config/database.js` and will create `workout_app_dev`. This database will be used for your regular development environment.
+
+### Run migrations
+
+`npx sequelize db:migrate`
+
+### Seed your local database
+
+Exercises:
+
+`npx sequelize db:seed --seed db/seeders/20210907040804-Exercise.js`
+
+## Setting up your testing database
+
+### Create test database
+
+`NODE_ENV=test npx sequelize db:create`
+
+This reads off of `config/database.js` and will create `workout_app_test`. This database will be used for your testing environment.
