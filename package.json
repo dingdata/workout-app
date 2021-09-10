@@ -10,7 +10,9 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "client:build": "npm install --prefix ./client && npm run build --prefix ./client",
-    "heroku-postbuild": "npm run client:build"
+    // "heroku-postbuild": "npm run client:build",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "heroku-postbuild": "npm run db:migrate && npm run client:build && npm run db:seed "
   },
   "keywords": [],
   "author": "",
