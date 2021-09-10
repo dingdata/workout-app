@@ -7,17 +7,35 @@ import { Link } from "react-router-dom";
 import Login from "./components/login";
 import Signup from "./components/signup";
 
+import HowItWorks from "./components/howItWorks";
+import Home from "./components/home";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <header />
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="light" variant="light">
           <Nav className="me-auto">
+            <Nav.Link as={Link} to="/Home" data-testid="ti_nav_Home">
+              Get.Fit{" "}
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/howItWorks"
+              data-testid="ti_nav_howitworks"
+            >
+              How it works
+            </Nav.Link>
+          </Nav>
+          <Nav>
             <Nav.Link as={Link} to="/login" data-testid="ti_nav_signup">
               Login
             </Nav.Link>
-            <Nav.Link as={Link} to="/signup" data-testid="ti_nav_signup">
+            <Nav.Link
+              as={Link}
+              to="/signup"
+              data-testid="ti_nav_signup"
+              align="right"
+            >
               Sign Up
             </Nav.Link>
           </Nav>
@@ -27,6 +45,8 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
 
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/howItWorks" component={HowItWorks} />
           <Route exact path="/" component={Login} />
         </Switch>
       </BrowserRouter>
