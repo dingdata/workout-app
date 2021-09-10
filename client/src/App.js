@@ -1,5 +1,5 @@
 import "./App.css";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -14,9 +14,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar bg="light" variant="light">
+          <Image
+            src={process.env.PUBLIC_URL + "/images/logo.png"}
+            width="70px"
+          />
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/Home" data-testid="ti_nav_Home">
-              Get.Fit{" "}
+              {" "}
             </Nav.Link>
             <Nav.Link
               as={Link}
