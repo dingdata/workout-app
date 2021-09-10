@@ -51,13 +51,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 2. Test by doing npm run start
 3. should see "SELECT 1+1 AS result"
 
-## Installing test DB for local:
-
-1. Make sure your config/database.js file has the correct values
-2. Run `npx sequelize-cli db:create --env test` to create db in test env
-3. Run `npx sequelize-cli db:migrate --env test` to create the respective models in test env
-4. Run `npx sequelize-cli db:seed:all --env test` to seed the data in test env
-
 ---
 
 ## Update app.js to connect sequelize to DB
@@ -107,3 +100,10 @@ Exercises:
 `NODE_ENV=test npx sequelize db:create`
 
 This reads off of `config/database.js` and will create `workout_app_test`. This database will be used for your testing environment.
+
+## Installing test DB for local:
+
+1. Make sure your config/database.js file has the correct values
+2. Run `npx sequelize-cli db:create --env test` to create db in test env
+3. Run `npx sequelize-cli db:migrate --env test` to create the respective models in test env
+4. Run `npx sequelize-cli db:seed:all --env test` to seed the data in test env
