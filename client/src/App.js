@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Login from "./components/login";
 import Signup from "./components/signup";
+import DisplayRandom from "./components/DisplayRandom";
 
 import HowItWorks from "./components/howItWorks";
 import Home from "./components/home";
@@ -28,6 +29,9 @@ function App() {
             >
               How it works
             </Nav.Link>
+            <Nav.Link as={Link} to="/random" data-testid="ti_nav_random">
+              Random Exercise
+            </Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link as={Link} to="/login" data-testid="ti_nav_signup">
@@ -47,6 +51,7 @@ function App() {
         <Switch>
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/random" component={DisplayRandom} />
 
           <Route exact path="/Home" component={Home} />
           <Route exact path="/howItWorks" component={HowItWorks} />
