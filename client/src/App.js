@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar bg="light" variant="light">
-          <Nav.Link as={Link} to="/Home" data-testid="ti_nav_Home">
+          <Nav.Link as={Link} to="/Home">
             <Image
               src={process.env.PUBLIC_URL + "/images/logo.png"}
               width="70px"
@@ -29,30 +29,24 @@ function App() {
             >
               How it works
             </Nav.Link>
-            <Nav.Link as={Link} to="/random" data-testid="ti_nav_random">
+            <Nav.Link as={Link} to="/random">
               Random Exercise
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link as={Link} to="/login" data-testid="ti_nav_signup">
+            <Nav.Link as={Link} to="/login">
               Login
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/signup"
-              data-testid="ti_nav_signup"
-              align="right"
-            >
+            <Nav.Link as={Link} to="/signup">
               Sign Up
             </Nav.Link>
           </Nav>
         </Navbar>
-        <br />
+
         <Switch>
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/random" component={DisplayRandom} />
-
           <Route exact path="/Home" component={Home} />
           <Route exact path="/howItWorks" component={HowItWorks} />
           <Route exact path="/" component={Login} />
