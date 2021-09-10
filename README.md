@@ -47,7 +47,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm install sequelize-cli -D`
 
-## Run `npx sequelize db:create` to create local DB
+1. Run `npx sequelize db:create` to create local DB
+2. Test by doing npm run start
+3. should see "SELECT 1+1 AS result"
+
+---
 
 ## Update app.js to connect sequelize to DB
 
