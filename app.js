@@ -13,8 +13,8 @@ app.use("/api", apiRouter); // for deployment to client
 apiRouter.get("/", function (req, res) {
   res.send("Hello World!");
 });
-const trainersRouter = require("./src/routes/exercises.route");
-apiRouter.use("/exercises", trainersRouter);
+const exercisesRouter = require("./src/routes/exercises.route");
+apiRouter.use("/exercises", exercisesRouter);
 
 app.use(express.static(path.resolve("client", "build")));
 app.get("*", (req, res) =>
