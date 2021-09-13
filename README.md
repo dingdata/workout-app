@@ -107,3 +107,9 @@ This reads off of `config/database.js` and will create `workout_app_test`. This 
 2. Run `npx sequelize-cli db:create --env test` to create db in test env
 3. Run `npx sequelize-cli db:migrate --env test` to create the respective models in test env
 4. Run `npx sequelize-cli db:seed:all --env test` to seed the data in test env
+
+## Client .env file
+
+There are some env values in client to take note, which heroku will also need to be configured
+SKIP_PREFLIGHT_CHECK=true
+REACT_APP_API_URL=http://localhost:4000
