@@ -1,16 +1,24 @@
 .carousel-caption {
-  bottom: 5px;
-  font-family: Georgia, italic;
-  font-size: 40px;
+  bottom: 3px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 30px;
   color: #e6b219;
 }
 
 .carousel .carousel-item {
-  height: 600px;
+  height: 650px;
 }
 
 .carousel-item img {
-  position: absolute;
   object-fit: cover;
-  max-height: 500px;
+  max-height: 88%;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: auto;
+  width: 100%;
+}
+
+.button {
+  border-radius: 50px;
 }
