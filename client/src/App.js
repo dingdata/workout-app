@@ -12,9 +12,25 @@ import HowItWorks from "./components/howItWorks";
 import Home from "./components/home";
 import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/DisplayRandom";
+import { useHistory } from "react-router-dom";
+
 function App() {
+  const history = useHistory();
+
+  const routeChange = () => {
+    let path = `random`;
+    console.log(history);
+
+    history.push(path);
+  };
+
   return (
     <div className="App">
+      <button className="button__secondary button__link" onClick={routeChange}>
+        Start Now!
+        {/* <button type="button" class="btn btn-outline-warning btn-lg">
+          Start Now */}
+      </button>
       <BrowserRouter>
         <Navbar bg="light" variant="light" defaultActiveKey="/random">
           <Nav.Link as={Link} to="/Home">
@@ -37,22 +53,22 @@ function App() {
               All Workouts
             </Nav.Link>
             <div className="nav-link-right-aligned">
-              <Nav.Link
+              <Link
                 as={Link}
                 to="/login"
-                className="nav-link-text  "
                 eventKey="link-3"
+                style={{ textDecoration: "none" }}
               >
-                Login
-              </Nav.Link>
-              <Nav.Link
+                <div className="button__secondary button__link"> Login </div>
+              </Link>
+              <Link
                 as={Link}
                 to="/signup"
                 eventKey="link-4"
-                className="nav-link-text  "
+                style={{ textDecoration: "none" }}
               >
-                Sign Up
-              </Nav.Link>
+                <div className="button__secondary button__link"> Sign Up</div>
+              </Link>
             </div>
           </Nav>
         </Navbar>
