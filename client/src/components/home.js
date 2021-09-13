@@ -41,7 +41,7 @@ const Home = () => {
         <Carousel.Item>
           <img src="./images/carousel_buddy_pet.jpg" alt="c_pets" />
           <Carousel.Caption>
-            <div>Even your pets can also join in the fun!</div>
+            <div>Even your pets can join in the fun!</div>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
