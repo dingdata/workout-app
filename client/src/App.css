@@ -17,7 +17,12 @@
 }
 
 .nav-link-right-aligned {
-  left: 600px !important;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: 20px;
+  left: auto;
+  /* left: 600px !important; */
 }
 
 /** Added the following for underline effect **/

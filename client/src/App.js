@@ -21,7 +21,7 @@ function App() {
               width="50px"
             />
           </Nav.Link>
-          <Nav className="me-auto ">
+          <Nav>
             <Nav.Link
               as={Link}
               to="/howItWorks"
@@ -34,23 +34,24 @@ function App() {
             <Nav.Link as={Link} to="/random" eventKey="link-2">
               Random Exercise
             </Nav.Link>
-
-            <Nav.Link
-              as={Link}
-              to="/login"
-              className="nav-link-text nav-link-right-aligned"
-              eventKey="link-3"
-            >
-              Login
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/signup"
-              eventKey="link-4"
-              className="nav-link-text nav-link-right-aligned"
-            >
-              Sign Up
-            </Nav.Link>
+            <div className="nav-link-right-aligned">
+              <Nav.Link
+                as={Link}
+                to="/login"
+                className="nav-link-text  "
+                eventKey="link-3"
+              >
+                Login
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/signup"
+                eventKey="link-4"
+                className="nav-link-text  "
+              >
+                Sign Up
+              </Nav.Link>
+            </div>
           </Nav>
         </Navbar>
 
