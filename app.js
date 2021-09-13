@@ -22,7 +22,11 @@ apiRouter.get("/", function (req, res) {
   res.send("Hello World!");
 });
 const exercisesRouter = require("./src/routes/exercises.route");
+const usersRouter = require("./src/routes/users.route");
+
 apiRouter.use("/exercises", exercisesRouter);
+
+apiRouter.use("/users", usersRouter);
 
 app.use(express.static(path.resolve("client", "build")));
 app.get("*", (req, res) =>
