@@ -4,6 +4,7 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router-dom";
 
+
 const Home = () => {
   const history = useHistory();
 
