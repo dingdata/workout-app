@@ -2,8 +2,15 @@ import React from "react";
 import "./home.css";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
+  const history = useHistory();
+
+  const routeChange = () => {
+    let path = `random`;
+    history.push(path);
+  };
   return (
     <div>
       <Carousel fade>
@@ -48,6 +55,14 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div>
+        <button
+          className="button__secondary button__link"
+          onClick={routeChange}
+        >
+          Start Now!
+        </button>
+      </div>
     </div>
   );
 };
