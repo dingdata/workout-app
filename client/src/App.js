@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Login from "./components/login";
 import Signup from "./components/signup";
-import DisplayRandom from "./components/DisplayRandom";
+import DisplayAll from "./components/Exercises/DisplayAll";
 
 import HowItWorks from "./components/howItWorks";
 import Home from "./components/home";
@@ -32,8 +32,8 @@ function App() {
             >
               How it works
             </Nav.Link>
-            <Nav.Link as={Link} to="/random" eventKey="link-2">
-              Random Exercise
+            <Nav.Link as={Link} to="/allWorkouts" eventKey="link-2">
+              All Workouts
             </Nav.Link>
             <div className="nav-link-right-aligned">
               <Nav.Link
@@ -59,7 +59,7 @@ function App() {
         <Switch>
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/random" component={DisplayRandom} />
+          <Route exact path="/allWorkouts" component={DisplayAll} />
           <Route exact path="/Home" component={Home} />
           <Route exact path="/LoggedInMain" component={LoggedInUser} />
 

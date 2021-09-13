@@ -9,7 +9,6 @@ const DisplayRandom = () => {
   const getExercise = async () => {
     const url = api.exercises + "/random";
     let resp = await axios(url);
-    console.log(url);
     setTag(resp.data.tag);
   };
   useEffect(() => {
