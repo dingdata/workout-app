@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import api from "../constants/api";
-import { Link } from "react-router-dom";
 
 const axios = require("axios");
 
@@ -8,8 +7,9 @@ const DisplayRandom = () => {
   const [tag, setTag] = useState("");
 
   const getExercise = async () => {
-    const url = api.server + "/exercises/random";
+    const url = api.exercises + "/random";
     let resp = await axios(url);
+    console.log(url);
     setTag(resp.data.tag);
   };
   useEffect(() => {
@@ -31,11 +31,6 @@ const DisplayRandom = () => {
             allowfullscreen
           ></iframe>
         )}
-      </div>
-      <div>
-        <Link className="button__primary button__link" to="/random">
-          Start Now!
-        </Link>
       </div>
     </div>
   );
