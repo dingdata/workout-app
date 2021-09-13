@@ -1,3 +1,3 @@
-const api = { server: "http://localhost:4000/api" };
+const api = { server: process.env.REACT_APP_API_URL };
 
 export default api;
