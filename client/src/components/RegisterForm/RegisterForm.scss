@@ -16,8 +16,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-radius: 0.5rem;
-  margin-top: 200px;
+  margin-top: 150px;
   box-shadow: $box-shadow;
+
+  .signup-header {
+    font-weight: bold;
+    font-size: large;
+    text-align: left;
+  }
 
   .name-group {
     display: flex;

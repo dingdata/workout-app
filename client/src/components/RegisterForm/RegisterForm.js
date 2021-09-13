@@ -15,7 +15,7 @@ export default function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="register-form">
-      <p>Sign up for free account</p>
+      <p className="signup-header">Sign up for a free account</p>
       <div classname="name-group">
         <div className="form-group">
           <input
@@ -41,6 +41,13 @@ export default function RegisterForm() {
         <input
           name="createPassword"
           placeholder="Create Password"
+          //   ref={register({ required: true })}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          name="createPassword"
+          placeholder="Confirm Password"
           //   ref={register({ required: true })}
         />
       </div>
