@@ -4,7 +4,6 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router-dom";
 
-
 const Home = () => {
   const history = useHistory();
 
@@ -48,7 +47,7 @@ const Home = () => {
       </Carousel>
       <div>
         <button
-          className="button__secondary button__link btn-lg"
+          className="button__secondary button__link"
           onClick={routeChange}
         >
           Start Now!
