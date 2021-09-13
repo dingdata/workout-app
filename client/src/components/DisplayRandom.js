@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
+import api from "../constants/api";
 const axios = require("axios");
 
 const DisplayRandom = () => {
   const [tag, setTag] = useState("");
 
   const getExercise = async () => {
-    const server = "http://localhost:3000/api";
-    const url = server + "/exercises/random";
+    const url = api.server + "/exercises/random";
     let resp = await axios(url);
-    console.log(resp);
-    console.log(`Response Body in display Random ${resp.data.tag}`);
     setTag(resp.data.tag);
   };
   useEffect(() => {
@@ -18,7 +16,6 @@ const DisplayRandom = () => {
 
   return (
     <div>
-      <div>Hello from DisplayRandom</div>
       <div>
         {!tag && <div>Video not available</div>}
         {tag && (
