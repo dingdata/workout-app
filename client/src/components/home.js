@@ -40,11 +40,11 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="./images/carousel_guy.jpg"
-            alt="c_guy"
+            src="./images/carousel_senior.jpg"
+            alt="c_senior"
           />
           <Carousel.Caption>
-            <div>Exercise is the best for self care</div>
+            <div>Exercise is the best form of self care</div>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
