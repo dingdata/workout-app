@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar bg="light" variant="light">
+        <Navbar bg="light" variant="light" defaultActiveKey="/random">
           <Nav.Link as={Link} to="/Home">
             <Image
               src={process.env.PUBLIC_URL + "/images/logo.png"}
@@ -27,18 +27,28 @@ function App() {
               to="/howItWorks"
               data-testid="ti_nav_howitworks"
               className="nav-link-text"
+              eventKey="link-1"
             >
               How it works
             </Nav.Link>
-            <Nav.Link as={Link} to="/random">
+            <Nav.Link as={Link} to="/random" eventKey="link-2">
               Random Exercise
             </Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link as={Link} to="/login" className="nav-link-text">
+
+            <Nav.Link
+              as={Link}
+              to="/login"
+              className="nav-link-text nav-link-right-aligned"
+              eventKey="link-3"
+            >
               Login
             </Nav.Link>
-            <Nav.Link as={Link} to="/signup">
+            <Nav.Link
+              as={Link}
+              to="/signup"
+              eventKey="link-4"
+              className="nav-link-text nav-link-right-aligned"
+            >
               Sign Up
             </Nav.Link>
           </Nav>
