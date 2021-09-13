@@ -238,7 +238,7 @@ const exercises = [
     intensity: "Low",
     exerciseType: "Upper Body",
     source: "youtube",
-    tag: "jXm0y-csiuE&t=1s",
+    tag: "jXm0y-csiuE",
     title: "Stretch for Shoulders, Neck & Collarbone Area",
   },
   {
@@ -246,7 +246,7 @@ const exercises = [
     intensity: "Low",
     exerciseType: "Upper Body",
     source: "youtube",
-    tag: "uNILu4KSHQM&t=2s",
+    tag: "uNILu4KSHQM",
     title: "Sitting Arm and Shoulder Workout",
   },
   {
