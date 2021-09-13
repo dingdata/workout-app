@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const db = require("./db/models/index");
 const path = require("path"); // for deployment to client

@@ -10,6 +10,7 @@ import DisplayRandom from "./components/DisplayRandom";
 
 import HowItWorks from "./components/howItWorks";
 import Home from "./components/home";
+import LoggedInUser from "./components/loggedInUser";
 function App() {
   return (
     <div className="App">
@@ -60,6 +61,8 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/random" component={DisplayRandom} />
           <Route exact path="/Home" component={Home} />
+          <Route exact path="/LoggedInMain" component={LoggedInUser} />
+
           <Route exact path="/howItWorks" component={HowItWorks} />
           <Route exact path="/" component={Login} />
         </Switch>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import api from "../../constants/api";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./RegisterForm.scss";
@@ -7,7 +7,11 @@ import * as Yup from "yup";
 import axios from "axios";
 //import "normalize.css";
 
+import { useHistory } from "react-router-dom";
+
 export default function RegisterForm() {
+  let history = useHistory();
+
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),
@@ -27,12 +31,24 @@ export default function RegisterForm() {
   } = useForm(formOptions);
   const onSubmit = async (data) => {
     //console.log(data);
-    const res = await axios.post("http://localhost:4000/api/users", {
+    const res = await axios.post(`${api.server}/users`, {
       firstName: data.firstName,
       lastName: data.lastName,
       emailAddress: data.email,
       password: data.password,
     });
+
+    //check if creation successful
+    if (res.status === 201) {
+      //create jwt token
+
+      history.push("/LoggedInMain");
+
+      //redirect to logged in screen
+    } else {
+      //error message
+    }
+
     console.log(res);
   };
 
