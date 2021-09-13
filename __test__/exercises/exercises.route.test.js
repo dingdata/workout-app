@@ -13,4 +13,9 @@ describe("GET /Random exercise", () => {
     console.log(exercise.body.tag);
     expect(exercise.body.tag).toBeDefined();
   });
+  it("should return a all exercise", async () => {
+    const exercise = await request(app).get("/exercises").expect(200);
+    console.log(exercise.body);
+    expect(exercise.body.length).toBeGreaterThan(30);
+  });
 });

@@ -5,7 +5,7 @@ const db = require("../../db/models/index");
 router.get("/", async (req, res, next) => {
   try {
     console.log("Exercise Route Get all");
-    const exercises = await db.Exercise.findOne();
+    const exercises = await db.Exercise.findAll();
     res.json(exercises);
   } catch (err) {
     console.error(err);
