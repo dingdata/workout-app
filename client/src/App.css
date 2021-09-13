@@ -90,3 +90,34 @@
   border-color: #eeaa5d;
   padding-bottom: 1px; */
 }
+.button__primary {
+  border: solid 2px #f3cf04;
+  border-radius: 30px;
+  padding: 5px 20px;
+}
+.button__secondary {
+  background: #f3cf04;
+  border-radius: 30px;
+  padding: 5px 20px;
+}
+
+a.button__link:link {
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+}
+
+a.button__link:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a.button__link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a.button__link:active {
+  text-decoration: none;
+  color: white;
+}

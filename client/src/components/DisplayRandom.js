@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "../constants/api";
+import { Link } from "react-router-dom";
+
 const axios = require("axios");
 
 const DisplayRandom = () => {
@@ -29,6 +31,11 @@ const DisplayRandom = () => {
             allowfullscreen
           ></iframe>
         )}
+      </div>
+      <div>
+        <Link className="button__primary button__link" to="/random">
+          Start Now!
+        </Link>
       </div>
     </div>
   );
