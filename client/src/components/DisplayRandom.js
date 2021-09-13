@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import api from "../constants/api";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const axios = require("axios");
 
 const DisplayRandom = () => {
   const [tag, setTag] = useState("");
+
+  const history = useHistory();
+
+  const routeChange = () => {
+    let path = `random`;
+    history.push(path);
+  };
 
   const getExercise = async () => {
     const url = api.server + "/exercises/random";
@@ -33,9 +40,12 @@ const DisplayRandom = () => {
         )}
       </div>
       <div>
-        <Link className="button__primary button__link" to="/random">
+        <button
+          className="button__secondary button__link"
+          onClick={routeChange}
+        >
           Start Now!
-        </Link>
+        </button>
       </div>
     </div>
   );
