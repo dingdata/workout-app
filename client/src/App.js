@@ -9,7 +9,7 @@ import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
 import HowItWorks from "./components/howItWorks";
-import Home from "./components/home";
+import Home from "./components/Home/Home";
 import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/DisplayRandom";
 import { useHistory } from "react-router-dom";
