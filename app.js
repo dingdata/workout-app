@@ -8,6 +8,14 @@ const app = express();
 app.use(express.json());
 db.sequelize.sync();
 
+const cors = require("cors");
+app.use(
+  cors({
+    origin: process.env.ORIGIN_URL || "http://localhost:3000",
+    credentials: true,
+  })
+);
+
 app.use("/api", apiRouter); // for deployment to client
 
 apiRouter.get("/", function (req, res) {
