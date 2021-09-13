@@ -1,9 +1,18 @@
 .App {
   text-align: center;
 }
+.navbar {
+  padding-top: 0 !important;
+  align-items: flex-end !important;
+  padding-bottom: 0 !important;
+}
 
-.nav-link:hover {
-  text-decoration: underline;
+.nav-link {
+  padding-bottom: 0 !important;
+}
+
+.nav-link-text {
+  padding-bottom: 2em !important;
 }
 
 .App-logo {

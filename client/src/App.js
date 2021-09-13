@@ -21,11 +21,12 @@ function App() {
               width="70px"
             />
           </Nav.Link>
-          <Nav className="me-auto">
+          <Nav className="me-auto ">
             <Nav.Link
               as={Link}
               to="/howItWorks"
               data-testid="ti_nav_howitworks"
+              className="nav-link-text"
             >
               How it works
             </Nav.Link>
@@ -34,7 +35,7 @@ function App() {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link as={Link} to="/login">
+            <Nav.Link as={Link} to="/login" className="nav-link-text">
               Login
             </Nav.Link>
             <Nav.Link as={Link} to="/signup">
