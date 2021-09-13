@@ -85,7 +85,7 @@
   height: 3px; */
 
   text-decoration-color: #eeaa5d !important;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 2px !important;
   text-decoration: underline;
   text-underline-offset: 20px;
 
