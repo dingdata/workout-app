@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const router = express.Router();
 const exercisesRouter = require("../../src/routes/exercises.route");
 
 app.use("/exercises", exercisesRouter); // mounting the router

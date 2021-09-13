@@ -1,0 +1,46 @@
+$box-shadow: 0 2px 5px 0 rgba(60, 66, 87, 0.12), 0,
+  1px 1px 0 rgba(0, 0, 0, 0.12);
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+body {
+  background: gray;
+}
+.register-form {
+  background: white;
+  padding: 1rem;
+  min-width: 300px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem;
+  margin-top: 150px;
+  box-shadow: $box-shadow;
+
+  .signup-header {
+    font-weight: bold;
+    font-size: large;
+    text-align: left;
+  }
+
+  .name-group {
+    display: flex;
+    width: 100%;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+    position: relative;
+  }
+
+  button.form-submit-button {
+    display: block;
+    width: 50%;
+    background: #ffd700;
+  }
+}
