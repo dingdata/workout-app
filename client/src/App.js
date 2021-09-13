@@ -18,7 +18,7 @@ function App() {
           <Nav.Link as={Link} to="/Home">
             <Image
               src={process.env.PUBLIC_URL + "/images/logo.png"}
-              width="70px"
+              width="50px"
             />
           </Nav.Link>
           <Nav className="me-auto ">
