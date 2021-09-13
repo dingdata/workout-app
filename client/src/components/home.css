@@ -1,16 +1,16 @@
 .carousel-caption {
-  top: 500px;
-  font-family: Georgia, serif, italic;
+  bottom: 5px;
+  font-family: Georgia, italic;
   font-size: 40px;
-  color: white;
+  color: #e6b219;
 }
 
 .carousel .carousel-item {
-  height: 750px;
+  height: 600px;
 }
 
 .carousel-item img {
   position: absolute;
   object-fit: cover;
-  max-height: 600px;
+  max-height: 500px;
 }
