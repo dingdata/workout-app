@@ -110,6 +110,15 @@ This reads off of `config/database.js` and will create `workout_app_test`. This 
 
 ## Client .env file
 
-There are some env values in client to take note, which heroku will also need to be configured
+There are some env values in client to take note, which heroku will also need to be configured:
+
+```
 SKIP_PREFLIGHT_CHECK=true
 REACT_APP_API_URL=http://localhost:4000
+```
+
+## Server .env file
+
+```
+JWT_SECRET_KEY=xxx
+```
