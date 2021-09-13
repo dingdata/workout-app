@@ -7,8 +7,9 @@ const DisplayRandom = () => {
   const [tag, setTag] = useState("");
 
   const getExercise = async () => {
-    const url = api.server + "/exercises/random";
+    const url = api.exercises + "/random";
     let resp = await axios(url);
+    console.log(url);
     setTag(resp.data.tag);
   };
   useEffect(() => {
