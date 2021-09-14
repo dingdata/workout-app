@@ -4,7 +4,7 @@ import "./login.css";
 const Login = () => {
   return (
     <div>
-      <div className="bg"></div>
+      <div className="background-image"></div>
     </div>
   );
 };

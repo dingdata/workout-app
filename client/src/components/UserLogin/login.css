@@ -1,8 +1,8 @@
 .background-image {
-  background-image: url(login.gif);
+  background-image: url(userlogin_bg.gif);
   background-size: cover;
   background-position: top;
-  min-height: 80%;
+  max-width: 100%;
   height: 100vh;
   position: relative;
 }
