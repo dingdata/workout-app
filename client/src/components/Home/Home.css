@@ -1,22 +1,28 @@
 .carousel-caption {
-  bottom: 3px;
+  bottom: 1px;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color: #e6b219;
 }
 
 .carousel .carousel-item {
-  height: 650px;
+  height: 600px;
 }
 
 .carousel-item img {
-  object-fit: cover;
+  object-position: cover;
   max-height: 88%;
   display: block;
   height: auto;
-  max-width: 100%;
+  max-width: 60%;
   margin: auto;
   width: 100%;
+}
+
+.text {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 25px;
+  color: #e6b219;
 }
 
 .button {

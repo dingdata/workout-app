@@ -15,44 +15,47 @@ const Home = () => {
     <div>
       <Carousel fade>
         <Carousel.Item>
-          <img src="./images/carousel_gal.jpg" alt="c_gal" />
+          <img src="./images/carousel_gal.png" alt="c_gal" />
           <Carousel.Caption>
-            <div>Supporting you through each workout</div>
+            Our only goal is to help you reach your goal.
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="./images/carousel_parentkid.jpg" alt="c_parentkid" />
+          <img src="./images/carousel_parentkid.png" alt="c_parentkid" />
           <Carousel.Caption>
             <div>Exercise is the best family bonding activity</div>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="./images/carousel_couple.jpg" alt="c_couple" />
+          <img src="./images/carousel_buddies.png" alt="c_buddies" />
           <Carousel.Caption>
-            <div>Get fit together with your partner or buddy</div>
+            <div>Get fit together with your friends</div>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="./images/carousel_senior.jpg" alt="c_senior" />
+          <img src="./images/carousel_senior.png" alt="c_senior" />
           <Carousel.Caption>
             <div>Exercise is the best form of self care</div>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="./images/carousel_buddy_pet.jpg" alt="c_pets" />
+          <img src="./images/carousel_buddy_pet.png" alt="c_pets" />
           <Carousel.Caption>
             <div>Even your pets can join in the fun!</div>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div className="text">
+        We offer well curated and effective workout videos where you can do
+        anywhere and anytime!
+      </div>
       <div>
+        <p></p>
         <button
           className="button__secondary button__link"
           onClick={routeChange}
         >
           Start Now!
-          {/* <button type="button" class="btn btn-outline-warning btn-lg">
-          Start Now */}
         </button>
       </div>
     </div>
