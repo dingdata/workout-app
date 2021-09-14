@@ -85,4 +85,20 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
+router.post("/validEmail", async (req, res, next) => {
+  try {
+    const { emailAddress } = req.body;
+    const existingUser = await db.User.findOne({
+      where: { emailAddress },
+    });
+    if (existingUser) {
+      res.json({ result: false });
+    } else {
+      res.json({ result: true });
+    }
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
 module.exports = router;
