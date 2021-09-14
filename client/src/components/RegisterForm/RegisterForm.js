@@ -15,7 +15,17 @@ export default function RegisterForm() {
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),
-    email: Yup.string().required("Email is required").email("Email is invalid"),
+    email: Yup.string()
+      .required("Email is required")
+      .email("Email is invalid")
+      .test("Unique Email", "Email already in use", async (emailAddress) => {
+        const { data } = await axios.post(
+          "http://localhost:4000/api/users/validEmail",
+          { emailAddress: emailAddress }
+        );
+        //  console.log(data.result);
+        return data.result;
+      }),
     password: Yup.string()
       .min(8, "Password must be at least 8 characters")
       .required("Password is required"),
