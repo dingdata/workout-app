@@ -12,7 +12,7 @@ const Home = () => {
     history.push(path);
   };
   return (
-    <div>
+    <div className="workout-container">
       <Carousel fade>
         <Carousel.Item>
           <img src="./images/carousel_gal.png" alt="c_gal" />

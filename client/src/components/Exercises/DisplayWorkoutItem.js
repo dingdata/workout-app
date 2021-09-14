@@ -26,12 +26,12 @@ const DisplayWorkoutItem = (props) => {
           >
             Back
           </button>
-          <button
+          {/* <button
             className="button__secondary button__link"
             onClick={completedClickHandler}
           >
             Completed
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
