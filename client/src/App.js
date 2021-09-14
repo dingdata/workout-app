@@ -45,7 +45,7 @@ function App() {
                 eventKey="link-3"
                 style={{ textDecoration: "none" }}
               >
-                <div className="button__secondary button__link">Login</div>
+                <div className="button__primary button__link">Login</div>
               </Link>
               <Link
                 as={Link}
