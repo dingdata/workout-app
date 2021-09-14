@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "test": "jest --setupFiles dotenv/config",
+    "test": "jest --runInBand --setupFiles dotenv/config",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --runInBand --setupFiles dotenv/config --watch",
     "client:build": "npm install --prefix ./client && npm run build --prefix ./client",
     "db:migrate": "PGSSLMODE=no-verify npx sequelize-cli db:migrate --url $DATABASE_URL --env production",
     "heroku-postbuild": "npm run client:build && npm run db:migrate"
