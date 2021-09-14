@@ -1,6 +1,8 @@
 .container {
   position: relative;
   text-align: right;
+  padding: 0;
+  min-width: 100%;
 }
 
 .centered {
@@ -13,7 +15,7 @@
 .background-image {
   background-image: url(userlogin_bg.gif);
   background-size: cover;
-  background-position: top;
+  background-position: bottom;
   height: 100vh;
   width: auto;
 }
@@ -21,18 +23,13 @@
 .login {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-items: center;
   font-size: 22px;
-  max-width: 500px;
   min-height: 672px;
-  margin: 0 auto;
-  border-radius: 25px;
   color: grey;
+  margin-top: 100px;
 }
 
 .login > input {
-  margin-top: 200px;
 }
 
 input {
