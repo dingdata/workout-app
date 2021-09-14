@@ -63,73 +63,75 @@ export default function RegisterForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="register-form">
-      <p className="signup-header">Sign up for a free account</p>
-      <div classname="name-group">
+    <div className="container-register">
+      <form onSubmit={handleSubmit(onSubmit)} className="register-form">
+        <p className="signup-header">Sign up for a free account</p>
+        <div classname="name-group">
+          <div className="form-group">
+            <input
+              name="firstName"
+              type="text"
+              {...register("firstName")}
+              placeholder="First Name"
+            />
+            {errors.firstName && (
+              <span className="error-display">{errors.firstName.message}</span>
+            )}
+          </div>
+          <div className="form-group">
+            <input
+              name="lastName"
+              type="text"
+              {...register("lastName")}
+              placeholder="Last Name"
+            />
+            {errors.lastName && (
+              <span className="error-display">{errors.lastName.message}</span>
+            )}
+          </div>
+        </div>
         <div className="form-group">
           <input
-            name="firstName"
+            name="email"
             type="text"
-            {...register("firstName")}
-            placeholder="First Name"
+            {...register("email")}
+            placeholder="Email Address"
           />
-          {errors.firstName && (
-            <span className="error-display">{errors.firstName.message}</span>
+          {errors.email && (
+            <span className="error-display">{errors.email.message}</span>
           )}
         </div>
         <div className="form-group">
           <input
-            name="lastName"
-            type="text"
-            {...register("lastName")}
-            placeholder="Last Name"
+            placeholder="Create Password"
+            name="password"
+            type="password"
+            {...register("password")}
           />
-          {errors.lastName && (
-            <span className="error-display">{errors.lastName.message}</span>
+          {errors.password && (
+            <span className="error-display">{errors.password.message}</span>
           )}
         </div>
-      </div>
-      <div className="form-group">
-        <input
-          name="email"
-          type="text"
-          {...register("email")}
-          placeholder="Email Address"
-        />
-        {errors.email && (
-          <span className="error-display">{errors.email.message}</span>
-        )}
-      </div>
-      <div className="form-group">
-        <input
-          placeholder="Create Password"
-          name="password"
-          type="password"
-          {...register("password")}
-        />
-        {errors.password && (
-          <span className="error-display">{errors.password.message}</span>
-        )}
-      </div>
-      <div className="form-group">
-        <input
-          placeholder="Confirm Password"
-          name="confirmPassword"
-          type="password"
-          {...register("confirmPassword")}
-        />
-        {errors.confirmPassword && (
-          <span className="error-display">
-            {errors.confirmPassword.message}
-          </span>
-        )}
-      </div>
-      <button
-        type="submit"
-        className="button__secondary button__link form-submit-button"
-      >
-        Register
-      </button>
-    </form>
+        <div className="form-group">
+          <input
+            placeholder="Confirm Password"
+            name="confirmPassword"
+            type="password"
+            {...register("confirmPassword")}
+          />
+          {errors.confirmPassword && (
+            <span className="error-display">
+              {errors.confirmPassword.message}
+            </span>
+          )}
+        </div>
+        <button
+          type="submit"
+          className="button__secondary button__link form-submit-button"
+        >
+          Register
+        </button>
+      </form>
+    </div>
   );
 }

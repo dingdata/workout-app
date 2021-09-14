@@ -9,6 +9,15 @@ html {
 body {
   background: gray;
 }
+
+.container-register {
+  background-image: url(exercise_lady.jpg);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
 .register-form {
   background: white;
   padding: 1rem;
@@ -16,7 +25,7 @@ body {
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   margin-top: 150px;
   box-shadow: $box-shadow;
 
