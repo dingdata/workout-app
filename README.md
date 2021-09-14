@@ -119,6 +119,10 @@ REACT_APP_API_URL=http://localhost:4000
 
 ## Server .env file
 
+run `node -e "console.log(require('crypto').randomBytes(256 / 8).toString('hex'));` to generate secret
+
 ```
+
 JWT_SECRET_KEY=xxx
+
 ```
