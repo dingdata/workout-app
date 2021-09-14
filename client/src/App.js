@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Login from "./components/login";
+import Login from "./components/UserLogin/login";
 import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
