@@ -1,13 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./ExerciseItem.scss";
 
 const ExerciseItem = ({ exercise }) => {
+  //Thumbnail, title, type, duration
   return (
-    <div>
-      {exercise.exerciseTitle}
-      <img src={`http://img.youtube.com/vi/${exercise.tag}/0.jpg`}></img>
-      <img src={`http://img.youtube.com/vi/${exercise.tag}/1.jpg`}></img>
-      <img src={`http://img.youtube.com/vi/${exercise.tag}/2.jpg`}></img>
-      <img src={`http://img.youtube.com/vi/${exercise.tag}/3.jpg`}></img>
+    <div className="workouts__item">
+      <div className="workout__image">
+        <Link>
+          {" "}
+          <img
+            src={`https://i4.ytimg.com/vi/${exercise.tag}/mqdefault.jpg`}
+          ></img>
+        </Link>
+      </div>
+      <div className="workout__title">
+        <div>
+          <p>{exercise.title}</p>
+        </div>
+        <div className="break"></div>
+        <div className="workout__details">
+          <span className="label title">{exercise.exerciseType}</span>
+
+          <span className="label duration">{exercise.duration} mins</span>
+        </div>
+      </div>
     </div>
   );
 };

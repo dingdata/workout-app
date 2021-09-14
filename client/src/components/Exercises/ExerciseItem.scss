@@ -1,0 +1,80 @@
+.workout-container {
+  padding: 50px;
+  background-color: white;
+}
+
+.workouts {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 200px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      transform: scale(1.02) rotate(3deg);
+    }
+    &:nth-child(odd):hover {
+      transform: scale(1.02) rotate(-3deg);
+    }
+  }
+}
+
+.workout {
+  &__image {
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    padding: 10px;
+    font-family: "Verdana", sans-serif;
+    font: "Verdana", sans-serif;
+
+    p {
+      margin: 0;
+      font-weight: 800;
+    }
+  }
+  &__details {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.label {
+  color: white;
+  border-radius: 5px;
+  padding: 1px 10px;
+  margin: 5px;
+  font-weight: bolder;
+}
+
+.title {
+  background-color: #f3cf04;
+  border: solid 1px #f3cf04;
+}
+
+.duration {
+  background-color: #00ff00;
+  border: solid 1px #00ff00;
+}

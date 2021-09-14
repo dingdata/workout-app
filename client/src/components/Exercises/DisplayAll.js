@@ -23,14 +23,14 @@ const DisplayAll = () => {
   };
 
   return (
-    <div>
-      {!isLoaded && <div>Loading...</div>}
-      {isLoaded &&
-        exerciseList.map((exercise) => (
-          <div>
+    <div className="workout-container">
+      <div className="workouts">
+        {!isLoaded && <div>Loading...</div>}
+        {isLoaded &&
+          exerciseList.map((exercise) => (
             <ExerciseItem exercise={exercise}></ExerciseItem>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 };
