@@ -10,10 +10,10 @@ const DisplayWorkoutItem = (props) => {
     history.push(path);
   };
 
-  const completedClickHandler = () => {
-    let path = `howItWorks`;
-    history.push(path);
-  };
+  // const completedClickHandler = () => {
+  //   let path = `howItWorks`;
+  //   history.push(path);
+  // };
 
   return (
     <div className="workout-container">
