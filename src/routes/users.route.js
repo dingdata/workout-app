@@ -15,11 +15,9 @@ router.get("/", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   try {
     const newUser = await db.User.create(req.body);
-    console.log("user created ", newUser);
 
     //create JWT
     const token = createJWTToken(newUser.firstName);
-    console.log("token created ", token);
 
     // calculation to determine expiry date - this is up to your team to decide
     const oneDay = 24 * 60 * 60 * 1000;
@@ -33,11 +31,8 @@ router.post("/", async (req, res, next) => {
       secure: true, // use HTTPS
     });
 
-    console.log("res cookie created", res);
-
     res.status(201).json(newUser);
   } catch (err) {
-    console.log(err.message);
     next(err);
   }
 });
