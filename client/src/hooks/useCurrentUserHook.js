@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const tempUser = { username: "sabrina" };
+const tempUser = { username: "Sabrina" };
 
 export const useCurrentUserHook = () => {
   const [currentUser, setCurrentUser] = useState();
