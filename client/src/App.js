@@ -12,6 +12,7 @@ import HowItWorks from "./components/howItWorks";
 import Home from "./components/Home/Home";
 import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/DisplayRandom";
+import DisplayWorkoutItem from "./components/Exercises/DisplayWorkoutItem";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/allWorkouts" component={DisplayAll} />
           <Route exact path="/random" component={DisplayRandom} />
+          <Route exact path="/workoutItem" component={DisplayWorkoutItem} />
           <Route exact path="/Home" component={Home} />
           <Route exact path="/LoggedInMain" component={LoggedInUser} />
 

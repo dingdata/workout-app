@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../constants/api";
+import YoutubeIframe from "./Exercises/YoutubeIframe";
 
 const axios = require("axios");
 
@@ -19,17 +20,7 @@ const DisplayRandom = () => {
     <div>
       <div>
         {!tag && <div>Video not available</div>}
-        {tag && (
-          <iframe
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${tag}`}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        )}
+        {tag && <YoutubeIframe tag={tag} />}
       </div>
     </div>
   );

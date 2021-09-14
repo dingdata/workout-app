@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./ExerciseItem.scss";
 
 const ExerciseItem = ({ exercise }) => {
-  //Thumbnail, title, type, duration
+  const history = useHistory();
+
+  const exerciseLink = {
+    pathname: "/workoutItem",
+    tag: exercise.tag,
+  };
   return (
     <div className="workouts__item">
       <div className="workout__image">
-        <Link>
-          {" "}
+        <Link to={exerciseLink}>
           <img
             src={`https://i4.ytimg.com/vi/${exercise.tag}/mqdefault.jpg`}
           ></img>
