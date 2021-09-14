@@ -69,7 +69,7 @@ function App() {
           <Route exact path="/LoggedInMain" component={LoggedInUser} />
 
           <Route exact path="/howItWorks" component={HowItWorks} />
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={Home} />
         </Switch>
       </BrowserRouter>
     </div>
