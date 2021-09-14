@@ -31,7 +31,7 @@ export default function RegisterForm() {
   } = useForm(formOptions);
   const onSubmit = async (data) => {
     //console.log(data);
-    const res = await axios.post(`${api.server}/users`, {
+    const res = await axios.post(api.users, {
       firstName: data.firstName,
       lastName: data.lastName,
       emailAddress: data.email,
