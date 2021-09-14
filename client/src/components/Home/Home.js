@@ -17,7 +17,7 @@ const Home = () => {
         <Carousel.Item>
           <img src="./images/carousel_gal.png" alt="c_gal" />
           <Carousel.Caption>
-            Our only goal is to help you reach your goal.
+            Our only goal is to help you reach your goal
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -45,9 +45,9 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <div className="text">
-        We offer well curated and effective workout videos where you can do
-        anywhere and anytime!
+      <div className="home__slogan">
+        We offer well curated and effective workout videos you can do anywhere
+        and anytime!
       </div>
       <div>
         <p></p>

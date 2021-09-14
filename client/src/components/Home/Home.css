@@ -2,29 +2,16 @@
   bottom: 1px;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   font-size: 25px;
-  color: #e6b219;
-}
-
-.carousel .carousel-item {
-  height: 600px;
+  color: #fff;
 }
 
 .carousel-item img {
-  object-position: cover;
-  max-height: 88%;
-  display: block;
-  height: auto;
-  max-width: 60%;
-  margin: auto;
-  width: 100%;
+  max-height: 500px;
 }
 
-.text {
+.home__slogan {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  font-size: 25px;
+  font-size: 22px;
   color: #e6b219;
-}
-
-.button {
-  border-radius: 50px;
+  margin-top: 20px;
 }
