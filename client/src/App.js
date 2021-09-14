@@ -44,7 +44,7 @@ function App() {
                 eventKey="link-3"
                 style={{ textDecoration: "none" }}
               >
-                <div className="button__secondary button__link"> Login </div>
+                <div className="button__secondary button__link">Login</div>
               </Link>
               <Link
                 as={Link}
@@ -52,7 +52,7 @@ function App() {
                 eventKey="link-4"
                 style={{ textDecoration: "none" }}
               >
-                <div className="button__secondary button__link"> Sign Up</div>
+                <div className="button__secondary button__link">Sign Up</div>
               </Link>
             </div>
           </Nav>
