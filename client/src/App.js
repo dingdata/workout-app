@@ -12,25 +12,10 @@ import HowItWorks from "./components/howItWorks";
 import Home from "./components/Home/Home";
 import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/DisplayRandom";
-import { useHistory } from "react-router-dom";
 
 function App() {
-  const history = useHistory();
-
-  const routeChange = () => {
-    let path = `random`;
-    console.log(history);
-
-    history.push(path);
-  };
-
   return (
     <div className="App">
-      <button className="button__secondary button__link" onClick={routeChange}>
-        Start Now!
-        {/* <button type="button" class="btn btn-outline-warning btn-lg">
-          Start Now */}
-      </button>
       <BrowserRouter>
         <Navbar bg="light" variant="light" defaultActiveKey="/random">
           <Nav.Link as={Link} to="/Home">
