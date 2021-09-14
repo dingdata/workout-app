@@ -11,7 +11,7 @@ import DisplayAll from "./components/Exercises/DisplayAll";
 import HowItWorks from "./components/howItWorks";
 import Home from "./components/Home/Home";
 import LoggedInUser from "./components/LoggedInUser";
-import DisplayRandom from "./components/DisplayRandom";
+import DisplayRandom from "./components/Exercises/DisplayRandom";
 import DisplayWorkoutItem from "./components/Exercises/DisplayWorkoutItem";
 
 function App() {

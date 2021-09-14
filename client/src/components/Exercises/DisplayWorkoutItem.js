@@ -3,7 +3,7 @@ import YoutubeIframe from "./YoutubeIframe";
 
 const DisplayWorkoutItem = (props) => {
   return (
-    <div>
+    <div className="workout-container">
       <YoutubeIframe tag={props.location.tag} />
     </div>
   );

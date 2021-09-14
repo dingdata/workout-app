@@ -4,12 +4,12 @@ const YoutubeIframe = ({ tag }) => {
   return (
     <div>
       <iframe
-        width="560"
-        height="315"
+        width="1074"
+        height="528"
         src={`https://www.youtube.com/embed/${tag}`}
         title="YouTube video player"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
         allowfullscreen
       ></iframe>
     </div>
