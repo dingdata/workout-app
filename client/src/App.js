@@ -9,9 +9,10 @@ import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
 import HowItWorks from "./components/howItWorks";
-import Home from "./components/home";
+import Home from "./components/Home/Home";
 import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/DisplayRandom";
+
 function App() {
   return (
     <div className="App">
@@ -37,22 +38,22 @@ function App() {
               All Workouts
             </Nav.Link>
             <div className="nav-link-right-aligned">
-              <Nav.Link
+              <Link
                 as={Link}
                 to="/login"
-                className="nav-link-text  "
                 eventKey="link-3"
+                style={{ textDecoration: "none" }}
               >
-                Login
-              </Nav.Link>
-              <Nav.Link
+                <div className="button__secondary button__link"> Login </div>
+              </Link>
+              <Link
                 as={Link}
                 to="/signup"
                 eventKey="link-4"
-                className="nav-link-text  "
+                style={{ textDecoration: "none" }}
               >
-                Sign Up
-              </Nav.Link>
+                <div className="button__secondary button__link"> Sign Up</div>
+              </Link>
             </div>
           </Nav>
         </Navbar>
