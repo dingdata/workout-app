@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "test": "jest",
+    "test": "jest --setupFiles dotenv/config",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "client:build": "npm install --prefix ./client && npm run build --prefix ./client",

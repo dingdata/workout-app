@@ -20,13 +20,12 @@ describe("POST /users", () => {
       firstName: "ah kow",
       lastName: "tan",
       emailAddress: "ah_kow@test.com",
-      password: "12345678",
     };
 
     const { body: actualUser } = await request(app)
       .post("/users")
       .send(newUser)
       .expect(201);
-    expect(actualUser).toMatchOBject(expectedUser);
+    expect(actualUser).toMatchObject(expectedUser);
   });
 });

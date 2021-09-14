@@ -114,7 +114,10 @@ export default function RegisterForm() {
           </span>
         )}
       </div>
-      <button type="submit" className="form-submit-button">
+      <button
+        type="submit"
+        className="button__secondary button__link form-submit-button"
+      >
         Register
       </button>
     </form>
