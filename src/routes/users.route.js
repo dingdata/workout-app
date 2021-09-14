@@ -5,6 +5,14 @@ const db = require("../../db/models/index");
 const createJWTToken = require("../../config/jwt");
 const bcrypt = require("bcryptjs");
 
+const getJWTtokenExpiry = () => {
+  // calculation to determine expiry date - this is up to your team to decide
+  const oneDay = 24 * 60 * 60 * 1000;
+  const duration = oneDay * tokenConfig.validityPeriod;
+  const expiryDate = new Date(Date.now() + duration);
+  return expiryDate;
+};
+
 router.get("/", async (req, res, next) => {
   try {
     const users = await db.User.findAll();
@@ -21,14 +29,9 @@ router.post("/", async (req, res, next) => {
     //create JWT
     const token = createJWTToken(newUser.firstName);
 
-    // calculation to determine expiry date - this is up to your team to decide
-    const oneDay = 24 * 60 * 60 * 1000;
-    const duration = oneDay * tokenConfig.validityPeriod;
-    const expiryDate = new Date(Date.now() + duration);
-
     // you are setting the cookie here, and the name of your cookie is `token`
     res.cookie("token", token, {
-      expires: expiryDate,
+      expires: getJWTtokenExpiry(),
       httpOnly: true, // client-side js cannot access cookie info
       secure: true, // use HTTPS
     });
@@ -66,14 +69,9 @@ router.post("/login", async (req, res, next) => {
     const token = createJWTToken(user.firstName);
     console.log("jwt created  ", token);
 
-    // calculation to determine expiry date - this is up to your team to decide
-    const oneDay = 24 * 60 * 60 * 1000;
-    const duration = oneDay * tokenConfig.validityPeriod;
-    const expiryDate = new Date(Date.now() + duration);
-
     // you are setting the cookie here, and the name of your cookie is `token`
     res.cookie("token", token, {
-      expires: expiryDate,
+      expires: getJWTtokenExpiry(),
       httpOnly: true, // client-side js cannot access cookie info
       secure: true, // use HTTPS
     });
