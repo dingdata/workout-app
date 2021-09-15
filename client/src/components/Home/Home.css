@@ -1,3 +1,10 @@
+.homebg-image {
+  background-image: url(home_bg.gif);
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+}
+
 .carousel-caption {
   bottom: 1px;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -6,7 +13,7 @@
 }
 
 .carousel-item img {
-  max-height: 600px;
+  max-height: 550px;
 }
 
 .home__slogan {

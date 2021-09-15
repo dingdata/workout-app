@@ -18,11 +18,11 @@ const Home = ({ currentUser }) => {
   };
 
   return (
-    <div className="workout-container">
+    <div className="homebg-image workout-container ">
       <Carousel fade>
         <Carousel.Item>
           {/* <img   className="d-block w-100" src="./images/carousel_gal.png" alt="c_gal" /> -- image will be compressed */}
-          <img src="./images/carousel_gal.gif" alt="c_gal" />
+          <img src="./images/carousel_gal.png" alt="c_gal" />
           <Carousel.Caption>
             Our only goal is to help you reach your goal
           </Carousel.Caption>

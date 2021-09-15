@@ -48,24 +48,27 @@ const Login = () => {
 
           //ref={register({ required: "This is required." })}
         />
-        <div className="pass-wrapper">
-          <input
-            placeholder="Password"
-            name="password"
-            type="password"
-            {...register("password")}
+        <div className="centered login">
+          <input name="username" type="text" placeholder="Username" />
+          <div className="pass-wrapper">
+            <input
+              placeholder="Password"
+              name="password"
+              type="password"
+              {...register("password")}
 
-            //ref={register({ required: "This is required." })}
-          />
-          <i>{eye}</i>
+              //ref={register({ required: "This is required." })}
+            />
+            <i>{eye}</i>
+          </div>
+          <button
+            type="submit"
+            className="button__secondary button__link"
+            onClick={handleSubmit(onSubmit)}
+          >
+            Login
+          </button>
         </div>
-        <button
-          type="submit"
-          className="button__secondary button__link"
-          onClick={handleSubmit(onSubmit)}
-        >
-          Login
-        </button>
       </div>
     </div>
   );
