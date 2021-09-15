@@ -22,15 +22,9 @@ const Home = ({ currentUser }) => {
       <Carousel fade>
         <Carousel.Item>
           {/* <img   className="d-block w-100" src="./images/carousel_gal.png" alt="c_gal" /> -- image will be compressed */}
-          <img src="./images/carousel_gal.png" alt="c_gal" />
+          <img src="./images/carousel_gal.gif" alt="c_gal" />
           <Carousel.Caption>
             Our only goal is to help you reach your goal
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src="./images/carousel_parentkid.png" alt="c_parentkid" />
-          <Carousel.Caption>
-            <div>Exercise is the best family bonding activity</div>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -40,13 +34,19 @@ const Home = ({ currentUser }) => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
+          <img src="./images/carousel_parentkid.gif" alt="c_parentkid" />
+          <Carousel.Caption>
+            <div>Exercise is the best family bonding activity</div>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
           <img src="./images/carousel_senior.png" alt="c_senior" />
           <Carousel.Caption>
             <div>Exercise is the best form of self care</div>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="./images/carousel_buddy_pet.png" alt="c_pets" />
+          <img src="./images/carousel_pet.gif" alt="c_pets" />
           <Carousel.Caption>
             <div>Even your pets can join in the fun!</div>
           </Carousel.Caption>
