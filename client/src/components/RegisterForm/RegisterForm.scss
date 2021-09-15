@@ -7,26 +7,24 @@ html {
   font-size: 16px;
 }
 body {
-  background: gray;
+  background: darkgrey;
 }
 
 .container-register {
   background-image: url(exercise_lady.jpg);
   background-size: cover;
-  background-position: center;
-  position: fixed;
-  min-width: 100%;
-  min-height: 100%;
+  height: 100vh;
+  width: auto;
+  padding: 10%;
 }
 .register-form {
   background: white;
+  opacity: 0.7;
   padding: 1rem;
   min-width: 300px;
   max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   border-radius: 1rem;
-  margin-top: 150px;
   box-shadow: $box-shadow;
 
   .signup-header {
@@ -39,11 +37,10 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: relative;
   }
 
   button.form-submit-button {
-    margin-left: -210px;
+    margin-left: -180px;
   }
 
   span.error-display {
