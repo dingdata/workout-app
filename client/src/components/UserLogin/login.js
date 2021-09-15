@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <div className="container">
       <div className="background-image"></div>
-      <div className="login centered">
+      <div className="form__wrapper login centered">
         <input
           name="username"
           type="text"

@@ -70,7 +70,6 @@ function App() {
               )}
               {!currentUser && (
                 <div className="nav-link-right-aligned">
-                  {" "}
                   <Link
                     as={Link}
                     to="/login"
@@ -102,7 +101,6 @@ function App() {
             <Route exact path="/howItWorks" component={HowItWorks} />
             {currentUser && (
               <div>
-                {" "}
                 <Route exact path="/allWorkouts" component={DisplayAll} />
                 <Route
                   exact
@@ -115,7 +113,7 @@ function App() {
             {!currentUser && (
               <div>
                 <Route exact path="/signup" component={Signup} />
-                <Route exact path="/login" component={Login} />{" "}
+                <Route exact path="/login" component={Login} />
                 <Route exact path="/random" component={DisplayRandom} />
               </div>
             )}

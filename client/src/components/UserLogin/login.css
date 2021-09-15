@@ -20,8 +20,6 @@
 }
 
 .login {
-  display: flex;
-  flex-direction: column;
   font-size: 22px;
   min-height: 672px;
   color: grey;

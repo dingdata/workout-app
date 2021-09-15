@@ -62,32 +62,30 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="container-register">
+    <div className="form__wrapper container-register">
       <form onSubmit={handleSubmit(onSubmit)} className="register-form">
         <p className="signup-header">Sign up for a free account</p>
-        <div className="name-group">
-          <div className="form-group">
-            <input
-              name="firstName"
-              type="text"
-              {...register("firstName")}
-              placeholder="First Name"
-            />
-            {errors.firstName && (
-              <span className="error-display">{errors.firstName.message}</span>
-            )}
-          </div>
-          <div className="form-group">
-            <input
-              name="lastName"
-              type="text"
-              {...register("lastName")}
-              placeholder="Last Name"
-            />
-            {errors.lastName && (
-              <span className="error-display">{errors.lastName.message}</span>
-            )}
-          </div>
+        <div className="form-group">
+          <input
+            name="firstName"
+            type="text"
+            {...register("firstName")}
+            placeholder="First Name"
+          />
+          {errors.firstName && (
+            <span className="error-display">{errors.firstName.message}</span>
+          )}
+        </div>
+        <div className="form-group">
+          <input
+            name="lastName"
+            type="text"
+            {...register("lastName")}
+            placeholder="Last Name"
+          />
+          {errors.lastName && (
+            <span className="error-display">{errors.lastName.message}</span>
+          )}
         </div>
         <div className="form-group">
           <input
@@ -124,10 +122,7 @@ export default function RegisterForm() {
             </span>
           )}
         </div>
-        <button
-          type="submit"
-          className="button__secondary button__link form-submit-button"
-        >
+        <button type="submit" className="button__secondary button__link">
           Register
         </button>
       </form>
