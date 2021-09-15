@@ -29,31 +29,15 @@
 }
 
 .pass-wrapper {
-  position: relative;
-  display: flex;
   margin-bottom: 14px;
 }
 
 i {
-  position: absolute;
-  top: 38%;
-  right: 23%;
+  position: relative;
+  right: 40px;
 }
 
 i:hover {
   color: hsl(204, 100%, 49%);
   cursor: pointer;
-}
-
-input {
-  margin: 0 auto;
-  opacity: 0.5;
-  color: black;
-  margin-top: 10px;
-  width: 300px;
-  height: 59px;
-  font-size: 16px;
-  margin-bottom: 14px;
-  max-width: 527px;
-  padding: 0 10%;
 }

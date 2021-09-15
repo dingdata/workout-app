@@ -56,7 +56,6 @@ const Login = () => {
             placeholder="Password"
             name="password"
             type={passwordShown ? "text" : "password"}
-            //type="password"
             {...register("password")}
           />
           <i onClick={togglePasswordVisiblity}>{eye}</i>
