@@ -65,7 +65,7 @@ export default function RegisterForm() {
     <div className="container-register">
       <form onSubmit={handleSubmit(onSubmit)} className="register-form">
         <p className="signup-header">Sign up for a free account</p>
-        <div classname="name-group">
+        <div className="name-group">
           <div className="form-group">
             <input
               name="firstName"
