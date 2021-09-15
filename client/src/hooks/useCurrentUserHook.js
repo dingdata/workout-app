@@ -13,9 +13,12 @@ export const useCurrentUserHook = () => {
   }, []);
 
   const retrieveLoggedUserInfo = async () => {
-    console.log("HELLO");
     const { data } = await axios.get(api.usersMe, {});
-    setCurrentUser({ firstName: data.firstName });
+    if (data) {
+      setCurrentUser({ firstName: data.firstName });
+    } else {
+      setCurrentUser(null);
+    }
   };
 
   return {
