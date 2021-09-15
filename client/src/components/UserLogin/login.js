@@ -9,13 +9,20 @@ import axios from "axios";
 import api from "../../constants/api";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../context/user";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const Login = () => {
   let history = useHistory();
 
   const { setCurrentUser } = useContext(UserContext);
+
+  //mask password
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+  //mask password end
 
   const { register, handleSubmit } = useForm();
 
@@ -49,19 +56,16 @@ const Login = () => {
           type="text"
           placeholder="Username"
           {...register("emailAddress")}
-
-          //ref={register({ required: "This is required." })}
         />
         <div className="pass-wrapper">
           <input
             placeholder="Password"
             name="password"
-            type="password"
+            type={passwordShown ? "text" : "password"}
+            //type="password"
             {...register("password")}
-
-            //ref={register({ required: "This is required." })}
           />
-          <i>{eye}</i>
+          <i onClick={togglePasswordVisiblity}>{eye}</i>
         </div>
         <button
           type="submit"

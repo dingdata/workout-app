@@ -28,19 +28,6 @@
   margin-top: 100px;
 }
 
-input {
-  margin: 0 auto;
-  opacity: 0.5;
-  color: black;
-  margin-top: 10px;
-  width: 300px;
-  height: 59px;
-  font-size: 16px;
-  margin-bottom: 14px;
-  max-width: 527px;
-  padding: 0 10%;
-}
-
 .pass-wrapper {
   position: relative;
   display: flex;
@@ -54,6 +41,19 @@ i {
 }
 
 i:hover {
-  color: #00fcb6;
+  color: hsl(204, 100%, 49%);
   cursor: pointer;
+}
+
+input {
+  margin: 0 auto;
+  opacity: 0.5;
+  color: black;
+  margin-top: 10px;
+  width: 300px;
+  height: 59px;
+  font-size: 16px;
+  margin-bottom: 14px;
+  max-width: 527px;
+  padding: 0 10%;
 }
