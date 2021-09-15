@@ -27,7 +27,7 @@ router.post("/", async (req, res, next) => {
     const newUser = await db.User.create(req.body);
 
     //create JWT
-    const token = createJWTToken(newUser.firstName);
+    const token = createJWTToken(newUser.id);
 
     // you are setting the cookie here, and the name of your cookie is `token`
     res.cookie("token", token, {
@@ -66,7 +66,7 @@ router.post("/login", async (req, res, next) => {
       throw new Error("Login failed");
     }
 
-    const token = createJWTToken(user.firstName);
+    const token = createJWTToken(user.id);
     console.log("jwt created  ", token);
 
     // you are setting the cookie here, and the name of your cookie is `token`
