@@ -47,16 +47,15 @@ router.post("/", async (req, res, next) => {
 router.post("/login", async (req, res, next) => {
   try {
     const { emailAddress, password } = req.body;
+
     const user = await db.User.findOne({
       where: { emailAddress },
       attributes: { include: ["password"] },
     });
-
-    if (!user)
-      return res.status(422).json({ message: "Invalid username or password." });
+    if (!user) throw new Error();
 
     const result = await bcrypt.compare(password, user.password);
-    if (!result) throw new Error("Login failed");
+    if (!result) throw new Error();
 
     const token = createJWTToken(user.id);
 
@@ -68,9 +67,8 @@ router.post("/login", async (req, res, next) => {
 
     res.status(200).json(user);
   } catch (err) {
-    if (err.message === "Login failed") {
-      err.statusCode = 400;
-    }
+    err.statusCode = 422;
+    err.message = "Invalid username or password.";
     next(err);
   }
 });

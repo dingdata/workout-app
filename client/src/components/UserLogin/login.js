@@ -27,28 +27,22 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    const res = await axios.post(api.users + "/login", {
-      emailAddress: data.emailAddress,
-      password: data.password,
-    });
+    try {
+      const res = await axios.post(api.users + "/login", {
+        emailAddress: data.emailAddress,
+        password: data.password,
+      });
 
-    //check if login successful
-    if (res.status === 200) {
-      //create jwt token
       history.push("/allWorkouts");
-      console.log(res);
       setCurrentUser({ firstName: res.data.firstName });
-      //redirect to logged in screen
-    } else {
-      //error message
-      //how to bring back and display error on screen?
+    } catch (err) {
+      console.error(err.response.data);
+      // TODO: you can make use of this error message to display on the UI
     }
-
-    console.log(res);
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <div className="background-image"></div>
       <div className="login centered">
         <input
