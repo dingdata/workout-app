@@ -36,7 +36,7 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="./images/carousel_parentkid.gif" alt="c_parentkid" />
+          <img src="./images/carousel_parentkid.png" alt="c_parentkid" />
           <Carousel.Caption>
             <div>Exercise is the best family bonding activity</div>
           </Carousel.Caption>
@@ -48,7 +48,7 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="./images/carousel_pet.gif" alt="c_pets" />
+          <img src="./images/carousel_pet.png" alt="c_pets" />
           <Carousel.Caption>
             <div>Even your pets can join in the fun!</div>
           </Carousel.Caption>
