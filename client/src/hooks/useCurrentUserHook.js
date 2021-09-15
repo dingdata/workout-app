@@ -16,9 +16,9 @@ export const useCurrentUserHook = () => {
   }, []);
 
   const retrieveLoggedUserInfo = async () => {
-    const res = await axios.get(api.users + "/me", {});
-    console.log("response ", res);
-    console.log("res user", res.user);
+    const { data } = await axios.get(api.users + "/me", {});
+    console.log("response ", data.firstName);
+    setCurrentUser({ firstName: data.firstName });
   };
   return {
     currentUser,
