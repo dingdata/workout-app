@@ -75,6 +75,15 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
+router.post("/logout", async (req, res, next) => {
+  try {
+    res.clearCookie("token");
+    res.status(200).json("Logout liao");
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.get("/me", auth, async (req, res, next) => {
   let id = req.user.userId;
   const user = await db.User.findOne({
