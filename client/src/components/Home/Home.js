@@ -4,13 +4,19 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ currentUser }) => {
   const history = useHistory();
 
   const routeChange = () => {
-    let path = `random`;
+    let path = "";
+    if (!currentUser) {
+      path = `random`;
+    } else {
+      path = `allWorkouts`;
+    }
     history.push(path);
   };
+
   return (
     <div className="workout-container">
       <Carousel fade>
