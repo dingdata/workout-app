@@ -15,7 +15,6 @@
 .background-image {
   background-image: url(userlogin_bg.gif);
   background-size: cover;
-  background-position: bottom;
   height: 100vh;
   width: auto;
 }
@@ -29,12 +28,9 @@
   margin-top: 100px;
 }
 
-.login > input {
-}
-
 input {
   margin: 0 auto;
-  opacity: 50%;
+  opacity: 0.5;
   color: black;
   margin-top: 10px;
   width: 300px;
@@ -56,6 +52,7 @@ i {
   top: 38%;
   right: 23%;
 }
+
 i:hover {
   color: #00fcb6;
   cursor: pointer;

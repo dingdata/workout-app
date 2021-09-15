@@ -82,9 +82,20 @@ function App() {
           </Navbar>
 
           <Switch>
-            <Route exact path="/Home" component={Home} />
+            {/* <Route exact path="/Home" component={Home} /> */}
+
+            <Route
+              exact
+              path="/Home"
+              component={() => <Home currentUser={currentUser} />}
+            />
+
             <Route exact path="/howItWorks" component={HowItWorks} />
-            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/Home"
+              component={() => <Home currentUser={currentUser} />}
+            />
             {currentUser && (
               <div>
                 {" "}

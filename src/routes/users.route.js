@@ -84,7 +84,7 @@ router.post("/login", async (req, res, next) => {
     next(err);
   }
 });
-
+//validations
 router.post("/validEmail", async (req, res, next) => {
   try {
     const { emailAddress } = req.body;
