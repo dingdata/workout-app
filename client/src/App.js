@@ -22,7 +22,7 @@ function App() {
   const { currentUser, setCurrentUser } = useCurrentUserHook();
   return (
     <div className="App">
-      <UserContext.Provider value={currentUser}>
+      <UserContext.Provider value={{ currentUser, setCurrentUser }}>
         <BrowserRouter>
           <Navbar bg="light" variant="light" defaultActiveKey="/random">
             <Nav.Link as={Link} to="/Home">
@@ -84,18 +84,9 @@ function App() {
           <Switch>
             {/* <Route exact path="/Home" component={Home} /> */}
 
-            <Route
-              exact
-              path="/Home"
-              component={() => <Home currentUser={currentUser} />}
-            />
+            <Route exact path="/Home" component={() => <Home />} />
 
             <Route exact path="/howItWorks" component={HowItWorks} />
-            <Route
-              exact
-              path="/Home"
-              component={() => <Home currentUser={currentUser} />}
-            />
             {currentUser && (
               <div>
                 {" "}
