@@ -7,7 +7,7 @@ export const useCurrentUserHook = () => {
 
   useEffect(() => {
     // TODO: axios call here to get currently logged in user
-    // setCurrentUser(tempUser);
+    setCurrentUser(tempUser);
   }, []);
 
   return {

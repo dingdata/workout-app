@@ -23,4 +23,21 @@ router.get("/random", async (req, res, next) => {
   }
 });
 
+router.get("/filterByExerciseType", async (req, res, next) => {
+  try {
+    console.log(`Request Body ${req.body.exerciseType}`);
+    const exercises = await db.Exercise.findAll({
+      where: {
+        exerciseType: {
+          [db.Sequelize.Op.iLike]: req.body.exerciseType,
+        },
+      },
+      raw: true,
+    });
+    res.json(exercises);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

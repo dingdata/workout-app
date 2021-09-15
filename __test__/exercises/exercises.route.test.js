@@ -22,7 +22,7 @@ describe("Exercises", () => {
     const exercise2 = {
       duration: 10,
       intensity: "Moderate",
-      exerciseType: "Abs",
+      exerciseType: "Yoga",
       source: "youtube",
       tag: "iV8JGYFnOqk",
       title: "Side Abs and Muffin Top",
@@ -54,6 +54,23 @@ describe("Exercises", () => {
         .expect(200);
 
       expect(exercises.length).toBe(2);
+    });
+  });
+
+  describe("GET /filterByExerciseType", () => {
+    it("should return 1 exerciseType Yoga", async () => {
+      const exerciseBody = {
+        exerciseType: "yoga",
+      };
+      const { body: exercise } = await request(app)
+        .get("/exercises/filterByExerciseType")
+        .send(exerciseBody)
+        .expect(200);
+
+      console.log(exercise);
+
+      expect(exercise).not.toBeNull();
+      expect(exercise[0].exerciseType).toEqual("Yoga");
     });
   });
 });
