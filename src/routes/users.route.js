@@ -5,6 +5,7 @@ const db = require("../../db/models/index");
 const createJWTToken = require("../../config/jwt");
 const bcrypt = require("bcryptjs");
 const { auth } = require("../middlewares/auth");
+const { pick } = require("lodash");
 
 const getJWTtokenExpiry = () => {
   // calculation to determine expiry date - this is up to your team to decide
@@ -75,16 +76,17 @@ router.post("/login", async (req, res, next) => {
 });
 
 router.get("/me", auth, async (req, res, next) => {
-  console.log(req.user);
   let id = req.user.userId;
   const user = await db.User.findOne({
     where: { id },
   });
   console.log(user);
 
-  res.status(200).json(user);
+  res.status(200).json(pick(user, ["firstName"]));
 });
-//validations
+
+// Validations
+
 router.post("/isUniqueEmail", async (req, res, next) => {
   try {
     const { emailAddress } = req.body;
@@ -101,4 +103,5 @@ router.post("/isUniqueEmail", async (req, res, next) => {
     next(err);
   }
 });
+
 module.exports = router;
