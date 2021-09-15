@@ -66,13 +66,13 @@ describe("Exercises", () => {
     });
   });
 
-  describe("GET /filterByExerciseType", () => {
+  describe("POST /filterByExerciseType", () => {
     it("should return 1 exerciseType Yoga", async () => {
       const exerciseBody = {
         exerciseType: ["Yoga", "Cardio"],
       };
       const { body: exercise } = await request(app)
-        .get("/exercises/filterByExerciseType")
+        .post("/exercises/filterByExerciseType")
         .send(exerciseBody)
         .expect(200);
 

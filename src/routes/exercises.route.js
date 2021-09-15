@@ -23,9 +23,9 @@ router.get("/random", async (req, res, next) => {
   }
 });
 
-router.get("/filterByExerciseType", async (req, res, next) => {
+router.post("/filterByExerciseType", async (req, res, next) => {
   try {
-    console.log(`Request Body ${req.body.exerciseType}`);
+    console.log(`Request Body ${req}`);
     const exercises = await db.Exercise.findAll({
       where: {
         exerciseType: {

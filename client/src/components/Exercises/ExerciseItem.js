@@ -1,10 +1,8 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ExerciseItem.scss";
 
 const ExerciseItem = ({ exercise }) => {
-  const history = useHistory();
-
   const exerciseLink = {
     pathname: "/workoutItem",
     tag: exercise.tag,
