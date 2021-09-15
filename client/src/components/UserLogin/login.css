@@ -27,15 +27,24 @@
 }
 
 .pass-wrapper {
-  margin-bottom: 14px;
+  position: relative;
+  display: flex;
 }
 
 i {
   position: relative;
   right: 40px;
+  top: 25px;
 }
 
 i:hover {
   color: hsl(204, 100%, 49%);
   cursor: pointer;
+}
+.error_login {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+  text-align: center;
 }

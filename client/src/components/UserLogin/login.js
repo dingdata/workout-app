@@ -10,6 +10,7 @@ import api from "../../constants/api";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../context/user";
 import { useContext, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const Login = () => {
@@ -24,6 +25,7 @@ const Login = () => {
   };
   //mask password end
 
+  const [errorMessage, setErrorMessage] = useState("");
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
@@ -36,7 +38,7 @@ const Login = () => {
       history.push("/allWorkouts");
       setCurrentUser({ firstName: res.data.firstName });
     } catch (err) {
-      console.error(err.response.data);
+      setErrorMessage(err.response.data);
       // TODO: you can make use of this error message to display on the UI
     }
   };
@@ -48,7 +50,7 @@ const Login = () => {
         <input
           name="username"
           type="text"
-          placeholder="Username"
+          placeholder="Email Address"
           {...register("emailAddress")}
         />
         <div className="pass-wrapper">
@@ -60,6 +62,7 @@ const Login = () => {
           />
           <i onClick={togglePasswordVisiblity}>{eye}</i>
         </div>
+        {errorMessage && <span class="error_login">{errorMessage}</span>}
         <button
           type="submit"
           className="button__secondary button__link"
