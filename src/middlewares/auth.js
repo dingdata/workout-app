@@ -2,6 +2,11 @@ const jwt = require("jsonwebtoken");
 
 const auth = (req, res, next) => {
   try {
+    console.log("in auth");
+
+    console.log("in auth", req);
+
+    console.log("in auth cookie", req.cookies.token);
     if (!req.cookies.token) {
       const err = new Error("You are not authorized");
       next(err);

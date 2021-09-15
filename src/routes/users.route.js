@@ -4,6 +4,7 @@ const router = express.Router();
 const db = require("../../db/models/index");
 const createJWTToken = require("../../config/jwt");
 const bcrypt = require("bcryptjs");
+const { auth } = require("../middlewares/auth");
 
 const getJWTtokenExpiry = () => {
   // calculation to determine expiry date - this is up to your team to decide
@@ -72,8 +73,8 @@ router.post("/login", async (req, res, next) => {
     // you are setting the cookie here, and the name of your cookie is `token`
     res.cookie("token", token, {
       expires: getJWTtokenExpiry(),
-      httpOnly: true, // client-side js cannot access cookie info
-      secure: true, // use HTTPS
+      // httpOnly: true, // client-side js cannot access cookie info
+      // secure: true, // use HTTPS
     });
 
     res.status(200).json();
@@ -83,6 +84,18 @@ router.post("/login", async (req, res, next) => {
     }
     next(err);
   }
+});
+
+router.get("/me", auth, async (req, res, next) => {
+  console.log(req.user);
+  let id = req.user.userId;
+  const user = await db.User.findOne({
+    where: { id },
+    // attributes: { include: ["password"] },
+  });
+  console.log(user);
+
+  res.status(200).json(user);
 });
 //validations
 router.post("/isUniqueEmail", async (req, res, next) => {
