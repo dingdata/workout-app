@@ -61,8 +61,8 @@ router.post("/login", async (req, res, next) => {
 
     res.cookie("token", token, {
       expires: getJWTtokenExpiry(),
-      // httpOnly: true, // client-side js cannot access cookie info
-      // secure: true, // use HTTPS
+      httpOnly: true, // client-side js cannot access cookie info
+      secure: true, // use HTTPS
     });
 
     res.status(200).json(user);
