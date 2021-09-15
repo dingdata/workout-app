@@ -56,7 +56,7 @@ describe("Users", () => {
       };
       const newEmailAddress = { emailAddress: newUser.emailAddress };
       const { body } = await request(app)
-        .post("/users/validEmail")
+        .post("/users/isUniqueEmail")
         .send(newEmailAddress)
         .expect(200);
       expect(body.result).toBe(true);
@@ -65,7 +65,7 @@ describe("Users", () => {
       const result = await db.User.create(newUser);
       console.log(result);
       const res = await request(app)
-        .post("/users/validEmail")
+        .post("/users/isUniqueEmail")
         .send(newEmailAddress)
         .expect(200);
       expect(res.body.result).toBe(false);

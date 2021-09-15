@@ -19,7 +19,7 @@ export default function RegisterForm() {
       .required("Email is required")
       .email("Email is invalid")
       .test("Unique Email", "Email already in use", async (emailAddress) => {
-        const { data } = await axios.post(api.users + "/validEmail", {
+        const { data } = await axios.post(api.users + "/isUniqueEmail", {
           emailAddress: emailAddress,
         });
         //  console.log(data.result);

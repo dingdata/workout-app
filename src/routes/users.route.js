@@ -85,7 +85,7 @@ router.post("/login", async (req, res, next) => {
   }
 });
 //validations
-router.post("/validEmail", async (req, res, next) => {
+router.post("/isUniqueEmail", async (req, res, next) => {
   try {
     const { emailAddress } = req.body;
     const existingUser = await db.User.findOne({
