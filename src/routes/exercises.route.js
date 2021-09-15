@@ -29,7 +29,7 @@ router.get("/filterByExerciseType", async (req, res, next) => {
     const exercises = await db.Exercise.findAll({
       where: {
         exerciseType: {
-          [db.Sequelize.Op.iLike]: req.body.exerciseType,
+          [db.Sequelize.Op.in]: req.body.exerciseType,
         },
       },
       raw: true,

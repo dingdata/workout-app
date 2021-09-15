@@ -27,8 +27,17 @@ describe("Exercises", () => {
       tag: "iV8JGYFnOqk",
       title: "Side Abs and Muffin Top",
     };
+    const exercise3 = {
+      duration: 10,
+      intensity: "High",
+      exerciseType: "Cardio",
+      source: "youtube",
+      tag: "iV8JGYFnOqk",
+      title: "Side Abs and Muffin Top",
+    };
     await db.Exercise.create(exercise1);
     await db.Exercise.create(exercise2);
+    await db.Exercise.create(exercise3);
   });
 
   afterAll(async () => {
@@ -53,14 +62,14 @@ describe("Exercises", () => {
         .get("/exercises")
         .expect(200);
 
-      expect(exercises.length).toBe(2);
+      expect(exercises.length).toBe(3);
     });
   });
 
   describe("GET /filterByExerciseType", () => {
     it("should return 1 exerciseType Yoga", async () => {
       const exerciseBody = {
-        exerciseType: "yoga",
+        exerciseType: ["Yoga", "Cardio"],
       };
       const { body: exercise } = await request(app)
         .get("/exercises/filterByExerciseType")
@@ -71,6 +80,7 @@ describe("Exercises", () => {
 
       expect(exercise).not.toBeNull();
       expect(exercise[0].exerciseType).toEqual("Yoga");
+      expect(exercise[1].exerciseType).toEqual("Cardio");
     });
   });
 });
