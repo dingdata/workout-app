@@ -49,7 +49,7 @@ function App() {
 
               {currentUser && (
                 <div className="nav-link-right-aligned">
-                  <Navbar.Text>Welcome, {currentUser.username}!</Navbar.Text>
+                  <Navbar.Text>Welcome, {currentUser.firstName} !</Navbar.Text>
                   <Link style={{ textDecoration: "none" }}>
                     <div className="label title">logout</div>
                   </Link>

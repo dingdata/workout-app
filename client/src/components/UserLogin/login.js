@@ -8,16 +8,18 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import api from "../../constants/api";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../../context/user";
+import { useContext } from "react";
 
 const eye = <FontAwesomeIcon icon={faEye} />;
-
 const Login = () => {
   let history = useHistory();
+
+  const { setCurrentUser } = useContext(UserContext);
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
     const res = await axios.post(api.users + "/login", {
       emailAddress: data.emailAddress,
       password: data.password,
@@ -27,6 +29,8 @@ const Login = () => {
     if (res.status === 200) {
       //create jwt token
       history.push("/allWorkouts");
+      console.log(res);
+      setCurrentUser({ firstName: res.data.firstName });
       //redirect to logged in screen
     } else {
       //error message
