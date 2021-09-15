@@ -36,6 +36,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "User",
+      defaultScope: {
+        attributes: { exclude: ["password"] },
+      },
       hooks: {
         beforeCreate: async (user) => {
           const salt = await bcrypt.genSaltSync(10);

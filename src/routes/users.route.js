@@ -48,24 +48,17 @@ router.post("/login", async (req, res, next) => {
     const { emailAddress, password } = req.body;
     const user = await db.User.findOne({
       where: { emailAddress },
-      // attributes: { include: ["password"] },
+      attributes: { include: ["password"] },
     });
-    // return if Trainer does not exist
-    // message returned is intentionally vague for security reasons
-    if (!user) {
+
+    if (!user)
       return res.status(422).json({ message: "Invalid username or password." });
-    }
 
-    // check if user input password matches hashed password in the db
     const result = await bcrypt.compare(password, user.password);
-
-    if (!result) {
-      throw new Error("Login failed");
-    }
+    if (!result) throw new Error("Login failed");
 
     const token = createJWTToken(user.id);
 
-    // you are setting the cookie here, and the name of your cookie is `token`
     res.cookie("token", token, {
       expires: getJWTtokenExpiry(),
       // httpOnly: true, // client-side js cannot access cookie info
@@ -86,7 +79,6 @@ router.get("/me", auth, async (req, res, next) => {
   let id = req.user.userId;
   const user = await db.User.findOne({
     where: { id },
-    // attributes: { include: ["password"] },
   });
   console.log(user);
 
