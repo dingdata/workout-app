@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{ currentUser, setCurrentUser }}>
         <BrowserRouter>
-          <Navbar bg="light" variant="light" defaultActiveKey="/random">
+          <Navbar bg="light" variant="light">
             <Nav.Link as={Link} to="/Home">
               <Image
                 src={process.env.PUBLIC_URL + "/images/logo.png"}
