@@ -50,9 +50,6 @@ router.post("/login", async (req, res, next) => {
       where: { emailAddress },
       // attributes: { include: ["password"] },
     });
-
-    console.log("user retrieved ", user);
-
     // return if Trainer does not exist
     // message returned is intentionally vague for security reasons
     if (!user) {
@@ -61,14 +58,12 @@ router.post("/login", async (req, res, next) => {
 
     // check if user input password matches hashed password in the db
     const result = await bcrypt.compare(password, user.password);
-    console.log("compare password  ", result);
 
     if (!result) {
       throw new Error("Login failed");
     }
 
     const token = createJWTToken(user.id);
-    console.log("jwt created  ", token);
 
     // you are setting the cookie here, and the name of your cookie is `token`
     res.cookie("token", token, {
@@ -77,7 +72,7 @@ router.post("/login", async (req, res, next) => {
       // secure: true, // use HTTPS
     });
 
-    res.status(200).json();
+    res.status(200).json(user);
   } catch (err) {
     if (err.message === "Login failed") {
       err.statusCode = 400;
