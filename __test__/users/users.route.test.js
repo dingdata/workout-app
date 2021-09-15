@@ -45,5 +45,30 @@ describe("Users", () => {
       expect(jwt.sign).toHaveBeenCalled();
       expect(header["set-cookie"]).not.toBeUndefined();
     });
+
+    it("should return true if user do not exist", async () => {
+      await db.User.truncate({ cascade: true });
+      const newUser = {
+        firstName: "ah kow",
+        lastName: "tan",
+        emailAddress: "ah_kow@test.com",
+        password: "12345678",
+      };
+      const newEmailAddress = { emailAddress: newUser.emailAddress };
+      const { body } = await request(app)
+        .post("/users/validEmail")
+        .send(newEmailAddress)
+        .expect(200);
+      expect(body.result).toBe(true);
+
+      //test if exist
+      const result = await db.User.create(newUser);
+      console.log(result);
+      const res = await request(app)
+        .post("/users/validEmail")
+        .send(newEmailAddress)
+        .expect(200);
+      expect(res.body.result).toBe(false);
+    });
   });
 });
