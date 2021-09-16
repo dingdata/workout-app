@@ -12,21 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   UserExercise.init(
-    {
-      completedAt: DataTypes.DATE,
-      exerciseId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    },
+    {},
     {
       sequelize,
       modelName: "UserExercise",
-      tableName: "User_Exercise",
     }
   );
   return UserExercise;

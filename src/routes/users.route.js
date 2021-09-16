@@ -122,8 +122,8 @@ router.post("/Exercise/:exerciseId", async (req, res, next) => {
     let userId = 1;
     console.log("in post exercise");
     console.log(exerciseId, userId);
-    const userExercise = { userId, exerciseId };
-
+    const userExercise = { UserId: userId, ExerciseId: exerciseId };
+    console.log(userExercise);
     const createdRecord = await db.UserExercise.create(userExercise);
 
     console.log("created Record", createdRecord);

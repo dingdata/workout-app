@@ -1,24 +1,22 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("User_Exercises", {
+    await queryInterface.createTable("UserExercises", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      userId: {
+      UserId: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      exerciseId: {
+      ExerciseId: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      completedAt: {
-        type: Sequelize.DATE,
-      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -30,6 +28,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("User_Exercises");
+    await queryInterface.dropTable("UserExercises");
   },
 };
