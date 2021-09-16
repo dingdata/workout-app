@@ -92,11 +92,12 @@
 
 .button__primary {
   background-color: white;
-  color: #f3cf04;
+  color: #595959;
+  border: solid 1px #595959;
 }
 .button__secondary {
   background-color: #f3cf04;
-  color: white;
+  color: #595959;
 }
 
 .button__link {
