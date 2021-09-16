@@ -97,6 +97,7 @@ function App() {
             {/* <Route exact path="/Home" component={Home} /> */}
 
             <Route exact path="/Home" component={() => <Home />} />
+            <Route exact path="/" component={() => <Home />} />
 
             <Route exact path="/howItWorks" component={HowItWorks} />
             {currentUser && (
