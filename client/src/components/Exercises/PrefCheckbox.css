@@ -1,6 +1,6 @@
 .pref__container {
   border: solid 2px #f3cf04;
-  background-color: white;
+  background-color: #595959;
   color: #f3cf04;
   padding: 2px 10px;
   min-width: 100px;
@@ -11,5 +11,5 @@
 
 .pref__container.checked {
   background-color: #f3cf04;
-  color: white;
+  color: #595959;
 }
