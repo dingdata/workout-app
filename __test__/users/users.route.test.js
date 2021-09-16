@@ -70,5 +70,40 @@ describe("Users", () => {
         .expect(200);
       expect(res.body.result).toBe(false);
     });
+
+    it("should return user login if user enter correct credentials", async () => {
+      const user = {
+        emailAddress: "ah_kow@test.com",
+        password: "12345678",
+      };
+
+      const expectedUser = {
+        firstName: "ah kow",
+        lastName: "tan",
+        emailAddress: "ah_kow@test.com",
+      };
+      const { body: actualUser, header } = await request(app)
+        .post("/users/login")
+        .send(user)
+        .expect(200);
+      expect(actualUser).toMatchObject(expectedUser);
+      expect(jwt.sign).toHaveBeenCalled();
+      expect(header["set-cookie"]).not.toBeUndefined();
+
+      const invalidUser = {
+        emailAddress: "ah_kow@test.com",
+        password: "22222222",
+      };
+      const { body: actualInvalidUser } = await request(app)
+        .post("/users/login")
+        .send(invalidUser)
+        .expect(422);
+    });
+    it("should logout users", async () => {
+      const { body: header } = await request(app)
+        .post("/users/logout")
+        .expect(200);
+      expect(header["set-cookie"]).toBeUndefined();
+    });
   });
 });

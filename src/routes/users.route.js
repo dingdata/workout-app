@@ -68,7 +68,7 @@ router.post("/login", async (req, res, next) => {
     res.status(200).json(user);
   } catch (err) {
     err.statusCode = 422;
-    err.message = "Invalid username or password.";
+    err.message = "Invalid email address or password.";
     next(err);
   }
 });
@@ -76,7 +76,7 @@ router.post("/login", async (req, res, next) => {
 router.post("/logout", async (req, res, next) => {
   try {
     res.clearCookie("token");
-    res.status(200).json("Logout liao");
+    res.status(200).json();
   } catch (err) {
     next(err);
   }
