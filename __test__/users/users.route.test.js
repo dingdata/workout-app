@@ -108,22 +108,6 @@ describe("Users", () => {
       expect(header["set-cookie"]).toBeUndefined();
     });
   });
-<<<<<<< Updated upstream
-  describe("GET /users", () => {
-    it("should return login user", async () => {
-      const newUser = await db.User.create({
-        firstName: "ah kow",
-        lastName: "tan",
-        emailAddress: "ah_kow1234@test.com",
-        password: "12345678",
-      });
-      const token = createJWTToken(newUser.id);
-      console.log("token" + token);
-      const response = await request(app)
-        .get("/users/me")
-        .set("Cookie", `token=${token}`);
-      expect(response.status).toBe(200);
-=======
 
   describe.only("Get /users", () => {
     it("should get logged in user", async () => {
@@ -146,7 +130,6 @@ describe("Users", () => {
         .expect(201);
 
       expect(actualUser).toMatchObject(expectedUser);
->>>>>>> Stashed changes
     });
   });
 });
