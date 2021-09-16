@@ -2,8 +2,10 @@ const request = require("supertest");
 const express = require("express");
 const app = express();
 const db = require("../../db/models/index");
+const cookieParser = require("cookie-parser");
 app.use(express.json());
-
+app.use(cookieParser());
+const createJWTToken = require("../../config/jwt");
 const usersRouter = require("../../src/routes/users.route");
 
 app.use("/users", usersRouter);
@@ -104,6 +106,22 @@ describe("Users", () => {
         .post("/users/logout")
         .expect(200);
       expect(header["set-cookie"]).toBeUndefined();
+    });
+  });
+  describe("GET /users", () => {
+    it("should return login user", async () => {
+      const newUser = await db.User.create({
+        firstName: "ah kow",
+        lastName: "tan",
+        emailAddress: "ah_kow1234@test.com",
+        password: "12345678",
+      });
+      const token = createJWTToken(newUser.id);
+      console.log("token" + token);
+      const response = await request(app)
+        .get("/users/me")
+        .set("Cookie", `token=${token}`);
+      expect(response.status).toBe(200);
     });
   });
 });
