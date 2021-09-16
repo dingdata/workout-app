@@ -82,7 +82,7 @@ router.post("/logout", async (req, res, next) => {
   }
 });
 
-router.get("/me", async (req, res, next) => {
+router.get("/me", auth, async (req, res, next) => {
   if (req.user) {
     let id = req.user.userId;
     const user = await db.User.findOne({
