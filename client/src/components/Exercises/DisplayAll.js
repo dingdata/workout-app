@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import api from "../../constants/api";
 import "./DisplayAll.css";
 import ExerciseItem from "./ExerciseItem";
 import PrefCheckbox from "./PrefCheckbox";
-//import { UserContext } from "../../context/user";
-
 const axios = require("axios");
 
 const DisplayAll = () => {
-  //const { currentUser, setCurrentUser } = useContext(UserContext);
-
   const [exerciseList, setExerciseList] = useState([]);
   const exerciseType = [
     { type: "Yoga", check: true },
@@ -29,9 +25,6 @@ const DisplayAll = () => {
     { type: "Tabata", check: true },
     { type: "KpopX Fitness", check: true },
   ];
-  // if (!currentUser.filterBody) {
-  //   setCurrentUser({ ...currentUser, filterBody: { exerciseType } });
-  // }
   const [filterBody, setFilterBody] = useState({ exerciseType });
 
   const getFilterExercise = useCallback(async () => {
@@ -62,14 +55,27 @@ const DisplayAll = () => {
     );
     let copyOriginalState = [...filterBody.exerciseType];
     copyOriginalState[targetExerciseTypeIndex].check = check;
-    setFilterBody({ exerciseType: [...copyOriginalState] });
+    setFilterBody({ ...filterBody, exerciseType: [...copyOriginalState] });
   };
-  // console.log(currentUser);
-  // console.log(filterBody);
 
+  const checkAll = (state) => {
+    let copyState = filterBody.exerciseType.map((type) => {
+      return { ...type, check: state };
+    });
+    setFilterBody({ ...filterBody, exerciseType: [...copyState] });
+  };
   return (
     <div className="workout-container">
       <div className="filter-title">Exercise Type:</div>
+      <div>
+        <button className="" onClick={() => checkAll(true)}>
+          Select All
+        </button>
+        <button className="" onClick={() => checkAll(false)}>
+          Unselect All
+        </button>
+      </div>
+
       <div className="pref-filter-container">
         {filterBody.exerciseType.map((type) => (
           <PrefCheckbox
