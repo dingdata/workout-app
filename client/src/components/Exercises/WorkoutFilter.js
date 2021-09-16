@@ -5,7 +5,13 @@ const WorkoutFilter = ({ filterBody, clickHandler, checkAll }) => {
   return (
     <div className="display-all-container">
       <div className="filter-title label-exerciseType">
-        <div>Image</div>
+        <div>
+          <img
+            className="exercise-img"
+            src="./images/running.png"
+            alt="exercisetype"
+          />
+        </div>
         <div>Exercise Type:</div>
       </div>
       <div className="filter-content">
