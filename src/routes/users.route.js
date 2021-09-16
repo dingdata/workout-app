@@ -96,11 +96,11 @@ router.get("/me", auth, async (req, res, next) => {
   }
 });
 
-router.post("/exercises/:exerciseId", async (req, res, next) => {
+router.post("/exercises/:exerciseId", auth, async (req, res, next) => {
   try {
     // const newUser = await db.User.create(req.body);
     let exerciseId = req.params.exerciseId;
-    let userId = 1;
+    let userId = req.user.userId;
     console.log("in post exercise");
     console.log(exerciseId, userId);
     const userExercise = { UserId: userId, ExerciseId: exerciseId };

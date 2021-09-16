@@ -1,6 +1,8 @@
 import React from "react";
 import YoutubeIframe from "./YoutubeIframe";
 import { useHistory } from "react-router-dom";
+import api from "../../constants/api";
+import axios from "axios";
 
 const DisplayWorkoutItem = (props) => {
   const history = useHistory();
@@ -10,8 +12,14 @@ const DisplayWorkoutItem = (props) => {
     history.push(path);
   };
 
-  const completedClickHandler = () => {
+  const completedClickHandler = async () => {
     let path = `howItWorks`;
+
+    console.log(props.location.exerciseId);
+    let exerciseId = props.location.exerciseId;
+    const res = await axios.post(api.usersExercise + `/${exerciseId}`, {});
+    console.log("ho seh liao ", res);
+
     history.push(path);
   };
 

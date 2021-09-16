@@ -6,6 +6,7 @@ const ExerciseItem = ({ exercise }) => {
   const exerciseLink = {
     pathname: "/workoutItem",
     tag: exercise.tag,
+    exerciseId: exercise.id,
   };
   return (
     <div className="workouts__item">
