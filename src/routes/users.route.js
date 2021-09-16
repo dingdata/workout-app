@@ -96,26 +96,7 @@ router.get("/me", auth, async (req, res, next) => {
   }
 });
 
-// Validations
-
-router.post("/isUniqueEmail", async (req, res, next) => {
-  try {
-    const { emailAddress } = req.body;
-    const existingUser = await db.User.findOne({
-      where: { emailAddress },
-    });
-    if (existingUser) {
-      res.json({ result: false });
-    } else {
-      res.json({ result: true });
-    }
-  } catch (err) {
-    console.log(err);
-    next(err);
-  }
-});
-
-router.post("/Exercise/:exerciseId", async (req, res, next) => {
+router.post("/exercises/:exerciseId", async (req, res, next) => {
   try {
     // const newUser = await db.User.create(req.body);
     let exerciseId = req.params.exerciseId;
@@ -129,6 +110,25 @@ router.post("/Exercise/:exerciseId", async (req, res, next) => {
     console.log("created Record", createdRecord);
 
     res.json({ result: true });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
+// Validations
+
+router.post("/isUniqueEmail", async (req, res, next) => {
+  try {
+    const { emailAddress } = req.body;
+    const existingUser = await db.User.findOne({
+      where: { emailAddress },
+    });
+    if (existingUser) {
+      res.json({ result: false });
+    } else {
+      res.json({ result: true });
+    }
   } catch (err) {
     console.log(err);
     next(err);
