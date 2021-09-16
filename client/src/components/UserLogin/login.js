@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <div className="container">
-      <div className="background-image"></div>
+      {/* <div className="background-image"></div> */}
       <div className="form__wrapper login centered">
         <input
           name="username"
