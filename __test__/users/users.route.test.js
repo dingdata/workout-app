@@ -108,6 +108,7 @@ describe("Users", () => {
       expect(header["set-cookie"]).toBeUndefined();
     });
   });
+<<<<<<< Updated upstream
   describe("GET /users", () => {
     it("should return login user", async () => {
       const newUser = await db.User.create({
@@ -122,6 +123,30 @@ describe("Users", () => {
         .get("/users/me")
         .set("Cookie", `token=${token}`);
       expect(response.status).toBe(200);
+=======
+
+  describe.only("Get /users", () => {
+    it("should get logged in user", async () => {
+      const newUser = {
+        firstName: "ah kow",
+        lastName: "tan",
+        emailAddress: "ah_kow@test.com",
+        password: "12345678",
+      };
+
+      const expectedUser = {
+        firstName: "ah kow",
+        lastName: "tan",
+        emailAddress: "ah_kow@test.com",
+      };
+
+      const { body: actualUser, header } = await request(app)
+        .get("/users/m2")
+        .send(newUser)
+        .expect(201);
+
+      expect(actualUser).toMatchObject(expectedUser);
+>>>>>>> Stashed changes
     });
   });
 });

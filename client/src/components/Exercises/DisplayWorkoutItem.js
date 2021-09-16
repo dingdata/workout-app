@@ -10,10 +10,10 @@ const DisplayWorkoutItem = (props) => {
     history.push(path);
   };
 
-  // const completedClickHandler = () => {
-  //   let path = `howItWorks`;
-  //   history.push(path);
-  // };
+  const completedClickHandler = () => {
+    let path = `howItWorks`;
+    history.push(path);
+  };
 
   return (
     <div className="workout-container">
@@ -26,12 +26,12 @@ const DisplayWorkoutItem = (props) => {
           >
             Back
           </button>
-          {/* <button
+          <button
             className="button__secondary button__link"
             onClick={completedClickHandler}
           >
             Completed
-          </button> */}
+          </button>
         </div>
       </div>
     </div>

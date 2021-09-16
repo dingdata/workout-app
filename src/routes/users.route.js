@@ -115,4 +115,24 @@ router.post("/isUniqueEmail", async (req, res, next) => {
   }
 });
 
+router.post("/Exercise/:exerciseId", async (req, res, next) => {
+  try {
+    // const newUser = await db.User.create(req.body);
+    let exerciseId = req.params.exerciseId;
+    let userId = 1;
+    console.log("in post exercise");
+    console.log(exerciseId, userId);
+    const userExercise = { userId, exerciseId };
+
+    const createdRecord = await db.UserExercise.create(userExercise);
+
+    console.log("created Record", createdRecord);
+
+    res.json({ result: true });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
 module.exports = router;
