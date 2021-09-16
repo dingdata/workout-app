@@ -108,28 +108,20 @@ describe("Users", () => {
       expect(header["set-cookie"]).toBeUndefined();
     });
   });
-
-  describe.only("Get /users", () => {
-    it("should get logged in user", async () => {
-      const newUser = {
+  describe("GET /users", () => {
+    it("should return login user", async () => {
+      const newUser = await db.User.create({
         firstName: "ah kow",
         lastName: "tan",
-        emailAddress: "ah_kow@test.com",
+        emailAddress: "ah_kow1234@test.com",
         password: "12345678",
-      };
-
-      const expectedUser = {
-        firstName: "ah kow",
-        lastName: "tan",
-        emailAddress: "ah_kow@test.com",
-      };
-
-      const { body: actualUser, header } = await request(app)
-        .get("/users/m2")
-        .send(newUser)
-        .expect(201);
-
-      expect(actualUser).toMatchObject(expectedUser);
+      });
+      const token = createJWTToken(newUser.id);
+      console.log("token" + token);
+      const response = await request(app)
+        .get("/users/me")
+        .set("Cookie", `token=${token}`);
+      expect(response.status).toBe(200);
     });
   });
 });
