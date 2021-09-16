@@ -4,7 +4,7 @@ import "./PrefCheckbox.css";
 const PrefCheckbox = ({ type, checked, handleClick }) => {
   return (
     <div
-      className={`pref__container ${checked ? "checked" : ""}`}
+      className={`pref__container ${checked ? "checked" : "unchecked"}`}
       onClick={() => handleClick(type, !checked)}
       data-testid="pref-checkbox"
     >

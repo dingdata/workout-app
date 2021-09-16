@@ -10,12 +10,16 @@
   justify-content: center;
 }
 .filter-title {
-  align-self: flex-start;
+  background-color: #f3cf04;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font: Verdana, Geneva, Tahoma, sans-serif;
 }
 .filter-content {
   align-self: flex-end;
+}
+
+.filter-buttons {
+  display: flex;
 }
 
 .filter-all-button {
@@ -25,4 +29,21 @@
 /* Solid border */
 hr.solid {
   border-top: 2px solid black;
+}
+.select-button {
+  padding: 2px 10px;
+  min-width: 100px;
+  cursor: pointer;
+  border-radius: 30px;
+  margin: 2px 5px;
+}
+.select-all {
+  background-color: #f3cf04;
+  color: #595959;
+  box-shadow: 0;
+}
+.unselect-all {
+  background-color: #595959;
+  color: #f3cf04;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -67,7 +67,10 @@ const DisplayAll = () => {
   return (
     <div className="workout-container">
       <div className="display-all-container">
-        <div className="filter-title">Exercise Type:</div>
+        <div className="filter-title label-exerciseType">
+          <div>Image</div>
+          <div>Exercise Type:</div>
+        </div>
         <div className="filter-content">
           <div className="pref-filter-container">
             {filterBody.exerciseType.map((type) => (
@@ -79,18 +82,18 @@ const DisplayAll = () => {
             ))}
             <div className="break"></div>
             <div className="filter-buttons">
-              <button
-                className="button__primary button__link"
+              <div
+                className="filter-all-button select-button select-all"
                 onClick={() => checkAll(true)}
               >
                 Select All
-              </button>
-              <button
-                className="button__secondary button__link"
+              </div>
+              <div
+                className="filter-all-button select-button unselect-all"
                 onClick={() => checkAll(false)}
               >
                 Unselect All
-              </button>
+              </div>
             </div>
           </div>
         </div>
