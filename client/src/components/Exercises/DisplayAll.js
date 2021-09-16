@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import api from "../../constants/api";
 import "./DisplayAll.css";
 import ExerciseItem from "./ExerciseItem";
-import PrefCheckbox from "./PrefCheckbox";
+import WorkoutFilter from "./WorkoutFilter";
 const axios = require("axios");
 
 const DisplayAll = () => {
@@ -41,6 +41,7 @@ const DisplayAll = () => {
 
   useEffect(() => {
     getFilterExercise();
+    console.log(filterBody);
   }, [getFilterExercise]);
 
   const isLoaded = () => {
@@ -66,38 +67,11 @@ const DisplayAll = () => {
   };
   return (
     <div className="workout-container">
-      <div className="display-all-container">
-        <div className="filter-title label-exerciseType">
-          <div>Image</div>
-          <div>Exercise Type:</div>
-        </div>
-        <div className="filter-content">
-          <div className="pref-filter-container">
-            {filterBody.exerciseType.map((type) => (
-              <PrefCheckbox
-                type={type.type}
-                checked={type.check}
-                handleClick={filterTypeClickHandler}
-              />
-            ))}
-            <div className="break"></div>
-            <div className="filter-buttons">
-              <div
-                className="filter-all-button select-button select-all"
-                onClick={() => checkAll(true)}
-              >
-                Select All
-              </div>
-              <div
-                className="filter-all-button select-button unselect-all"
-                onClick={() => checkAll(false)}
-              >
-                Unselect All
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <WorkoutFilter
+        filterBody={filterBody}
+        clickHandler={filterTypeClickHandler}
+        checkAll={checkAll}
+      />
 
       <hr class="solid" />
       <div className="workouts">
