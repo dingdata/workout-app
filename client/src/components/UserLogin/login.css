@@ -16,7 +16,7 @@
   background-image: url(userlogin_bg.gif);
   background-size: cover;
   height: 100vh;
-  width: auto;
+  background-repeat: no-repeat;
 }
 
 .login {
@@ -34,7 +34,7 @@
 i {
   position: relative;
   right: 40px;
-  top: 25px;
+  top: 18px;
 }
 
 i:hover {
@@ -47,4 +47,8 @@ i:hover {
   font-size: 0.875em;
   color: #dc3545;
   text-align: center;
+}
+
+.loginbtn {
+  width: 100px;
 }

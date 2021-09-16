@@ -65,7 +65,7 @@ const Login = () => {
         {errorMessage && <span class="error_login">{errorMessage}</span>}
         <button
           type="submit"
-          className="button__secondary button__link"
+          className="button__secondary button__link loginbtn"
           onClick={handleSubmit(onSubmit)}
         >
           Login
