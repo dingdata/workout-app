@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div className="homebg-image workout-container ">
-      <Carousel fade>
+      <Carousel fade nextIcon="" nextLabel="" prevIcon="" prevLabel="">
         <Carousel.Item>
           {/* <img   className="d-block w-100" src="./images/carousel_gal.png" alt="c_gal" /> -- image will be compressed */}
           <img src="./images/carousel_gal.png" alt="c_gal" />
