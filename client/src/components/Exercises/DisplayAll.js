@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import api from "../../constants/api";
+import "./DisplayAll.css";
 import ExerciseItem from "./ExerciseItem";
+import PrefCheckbox from "./PrefCheckbox";
+//import { UserContext } from "../../context/user";
 
 const axios = require("axios");
 
 const DisplayAll = () => {
+  //const { currentUser, setCurrentUser } = useContext(UserContext);
+
   const [exerciseList, setExerciseList] = useState([]);
   const exerciseType = [
     { type: "Yoga", check: true },
@@ -24,6 +29,9 @@ const DisplayAll = () => {
     { type: "Tabata", check: true },
     { type: "KpopX Fitness", check: true },
   ];
+  // if (!currentUser.filterBody) {
+  //   setCurrentUser({ ...currentUser, filterBody: { exerciseType } });
+  // }
   const [filterBody, setFilterBody] = useState({ exerciseType });
 
   const getFilterExercise = useCallback(async () => {
@@ -48,7 +56,7 @@ const DisplayAll = () => {
     else return true;
   };
 
-  const filterExerciseType = (type, check) => {
+  const filterTypeClickHandler = (type, check) => {
     let targetExerciseTypeIndex = filterBody.exerciseType.findIndex(
       (exerciseType) => exerciseType.type === type
     );
@@ -56,11 +64,22 @@ const DisplayAll = () => {
     copyOriginalState[targetExerciseTypeIndex].check = check;
     setFilterBody({ exerciseType: [...copyOriginalState] });
   };
+  // console.log(currentUser);
+  // console.log(filterBody);
 
   return (
     <div className="workout-container">
-      <div onClick={() => filterExerciseType("Yoga", false)}> Yoga</div>
-      <div onClick={() => filterExerciseType("Kids", false)}> Kids</div>
+      <div className="filter-title">Exercise Type:</div>
+      <div className="pref-filter-container">
+        {filterBody.exerciseType.map((type) => (
+          <PrefCheckbox
+            type={type.type}
+            checked={type.check}
+            handleClick={filterTypeClickHandler}
+          />
+        ))}
+      </div>
+      <hr class="solid" />
       <div className="workouts">
         {!isLoaded && <div>Loading...</div>}
         {isLoaded &&

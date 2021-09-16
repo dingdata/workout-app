@@ -1,0 +1,14 @@
+.pref-filter-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.filter-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 2px solid black;
+}

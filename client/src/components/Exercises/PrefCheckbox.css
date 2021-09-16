@@ -1,0 +1,15 @@
+.pref__container {
+  border: solid 2px #f3cf04;
+  background-color: white;
+  color: #f3cf04;
+  padding: 2px 10px;
+  min-width: 100px;
+  cursor: pointer;
+  border-radius: 30px;
+  margin: 2px 5px;
+}
+
+.pref__container.checked {
+  background-color: #f3cf04;
+  color: white;
+}

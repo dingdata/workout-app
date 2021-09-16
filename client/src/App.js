@@ -102,13 +102,17 @@ function App() {
             <Route exact path="/howItWorks" component={HowItWorks} />
             {currentUser && (
               <div>
-                <Route exact path="/allWorkouts" component={DisplayAll} />
+                <Route exact path="/LoggedInMain" component={LoggedInUser} />
+                <Route
+                  exact
+                  path="/allWorkouts"
+                  component={() => <DisplayAll />}
+                />
                 <Route
                   exact
                   path="/workoutItem"
                   component={DisplayWorkoutItem}
                 />
-                <Route exact path="/LoggedInMain" component={LoggedInUser} />
               </div>
             )}
             {!currentUser && (
