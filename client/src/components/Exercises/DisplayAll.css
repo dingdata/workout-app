@@ -1,11 +1,25 @@
+.display-all-container {
+  display: flex;
+  padding: 50px;
+  background-color: white;
+}
+
 .pref-filter-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
 .filter-title {
+  align-self: flex-start;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font: Verdana, Geneva, Tahoma, sans-serif;
+}
+.filter-content {
+  align-self: flex-end;
+}
+
+.filter-all-button {
+  flex-grow: 1;
 }
 
 /* Solid border */

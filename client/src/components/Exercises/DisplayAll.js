@@ -66,25 +66,36 @@ const DisplayAll = () => {
   };
   return (
     <div className="workout-container">
-      <div className="filter-title">Exercise Type:</div>
-      <div>
-        <button className="" onClick={() => checkAll(true)}>
-          Select All
-        </button>
-        <button className="" onClick={() => checkAll(false)}>
-          Unselect All
-        </button>
+      <div className="display-all-container">
+        <div className="filter-title">Exercise Type:</div>
+        <div className="filter-content">
+          <div className="pref-filter-container">
+            {filterBody.exerciseType.map((type) => (
+              <PrefCheckbox
+                type={type.type}
+                checked={type.check}
+                handleClick={filterTypeClickHandler}
+              />
+            ))}
+            <div className="break"></div>
+            <div className="filter-buttons">
+              <button
+                className="button__primary button__link"
+                onClick={() => checkAll(true)}
+              >
+                Select All
+              </button>
+              <button
+                className="button__secondary button__link"
+                onClick={() => checkAll(false)}
+              >
+                Unselect All
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="pref-filter-container">
-        {filterBody.exerciseType.map((type) => (
-          <PrefCheckbox
-            type={type.type}
-            checked={type.check}
-            handleClick={filterTypeClickHandler}
-          />
-        ))}
-      </div>
       <hr class="solid" />
       <div className="workouts">
         {!isLoaded && <div>Loading...</div>}
