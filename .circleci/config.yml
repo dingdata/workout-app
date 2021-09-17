@@ -4,7 +4,8 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/postgres:10-alpine
+      - image: circleci/node:12
+      - image: postgres
     environment:
       POSTGRES_USER: postgres
     steps:
