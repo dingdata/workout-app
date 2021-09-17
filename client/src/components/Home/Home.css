@@ -1,6 +1,7 @@
 .homebg-image {
   background-image: url(home_bg.gif);
   background-size: cover;
+  height: 100vh;
 }
 
 .carousel-caption {
