@@ -5,13 +5,11 @@ jobs:
   build:
     docker:
       - image: circleci/postgres:9.6-alpine-ram
-        environment:
-          TEST_DATABASE_URL: postgresql://root@localhost/workout_app_test
     environment:
       NODE_ENV: test
     steps:
       - checkout
-      - run: whoami
+      - run: psql
       - run:
           name: Install OpenSSL
           command: apk add --no-cache openssl
