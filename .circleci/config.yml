@@ -5,11 +5,14 @@ jobs:
   build:
     docker:
       - image: circleci/node:12
+        environment:
+          TEST_DATABASE_URL: postgresql://root@localhost/workout_app_test
       - image: postgres
         environment:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: root
           POSTGRES_PASSWORD: password
           POSTGRES_DB: workout_app_test
+          TEST_DATABASE_URL: postgresql://root@localhost/workout_app_test
     steps:
       - checkout
 workflows:
