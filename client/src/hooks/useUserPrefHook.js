@@ -8,7 +8,6 @@ export const useUserPrefHook = () => {
   }, []);
 
   const retrieveUserPref = async () => {
-    console.log("inside Hook");
     const exerciseType = [
       { type: "Yoga", check: true },
       { type: "HIIT", check: true },
