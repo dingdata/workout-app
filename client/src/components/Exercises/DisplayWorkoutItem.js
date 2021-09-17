@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import api from "../../constants/api";
 import axios from "axios";
 import "./DisplayWorkoutItem.css";
+import { Link } from "react-router-dom";
 
 const DisplayWorkoutItem = (props) => {
   const history = useHistory();
@@ -13,10 +14,13 @@ const DisplayWorkoutItem = (props) => {
     history.push(path);
   };
 
+  const goWorkoutHistory = {
+    pathname: "/home",
+  };
   const completedClickHandler = async () => {
-    let path = `howItWorks`;
     let exerciseId = props.location.exerciseId;
     const res = await axios.post(api.usersExercise + `/${exerciseId}`, {});
+
     setCompleted((completed) => !completed);
     // history.push(path);
   };
@@ -33,13 +37,34 @@ const DisplayWorkoutItem = (props) => {
           >
             Back
           </button>
-          <button
-            className="button__secondary button__link"
-            onClick={completedClickHandler}
-          >
-            Completed
-          </button>
+
+          {!completed && (
+            <button
+              className="button__secondary button__link "
+              onClick={completedClickHandler}
+            >
+              Completed
+            </button>
+          )}
+
+          {completed && (
+            <div>
+              {" "}
+              <button className="button__secondary button__link disabled">
+                Completed
+              </button>
+            </div>
+          )}
         </div>
+        {completed && (
+          <div>
+            {" "}
+            <br />
+            <Link to={goWorkoutHistory} className="home__slogan">
+              Go to progress workout page{" "}
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

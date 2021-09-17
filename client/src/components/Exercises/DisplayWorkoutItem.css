@@ -3,3 +3,9 @@
   background-size: cover;
   height: 100vh;
 }
+
+.disabled {
+  cursor: not-allowed !important;
+  background-color: #cebf6b;
+  border: 1px solid #cebf6b;
+}
