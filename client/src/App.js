@@ -8,7 +8,7 @@ import Login from "./components/UserLogin/login";
 import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
-import HowItWorks from "./components/howItWorks";
+import History from "./components/History";
 import Home from "./components/Home/Home";
 import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/Exercises/DisplayRandom";
@@ -103,7 +103,7 @@ function App() {
             <Route exact path="/Home" component={() => <Home />} />
             <Route exact path="/" component={() => <Home />} />
 
-            <Route exact path="/howItWorks" component={HowItWorks} />
+            <Route exact path="/History" component={() => <History />} />
             {currentUser && (
               <div>
                 <Route exact path="/LoggedInMain" component={LoggedInUser} />
