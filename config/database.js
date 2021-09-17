@@ -8,11 +8,17 @@ module.exports = {
     host: "127.0.0.1",
     dialect: "postgres",
   },
+  // test: {
+  //   username: "postgres",
+  //   password: null,
+  //   database: process.env.TEST_DATABASE || "workout_app_test",
+  //   host: process.env.PGHOST || "localhost",
+  //   dialect: "postgres",
+  // },
   test: {
-    username: "postgres",
-    password: null,
-    database: process.env.TEST_DATABASE || "workout_app_test",
-    host: "127.0.0.1",
+    username: "circle_ci",
+    database: "circle_test",
+    host: "localhost",
     dialect: "postgres",
   },
   production: {
