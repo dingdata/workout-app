@@ -15,7 +15,7 @@ const DisplayWorkoutItem = (props) => {
   };
 
   const goWorkoutHistory = {
-    pathname: "/home",
+    pathname: "/History",
   };
   const completedClickHandler = async () => {
     let exerciseId = props.location.state.exerciseId;
