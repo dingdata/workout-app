@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import "./ExerciseItem.scss";
 
 const ExerciseItem = ({ exercise }) => {
+  const exerciseTag = exercise.tag;
+  const exerciseId = exercise.id;
   const exerciseLink = {
     pathname: "/workoutItem",
-    tag: exercise.tag,
-    exerciseId: exercise.id,
+    state: { tag: exerciseTag, exerciseId },
+    // tag: exercise.tag,
+    //  exerciseId: exercise.id,
   };
   return (
     <div className="workouts__item">
@@ -18,15 +21,14 @@ const ExerciseItem = ({ exercise }) => {
         </Link>
       </div>
       <div className="workout__title">
-        <div className="workout__titlepadding">
+        <div>
           <p>{exercise.title}</p>
         </div>
         <div className="break"></div>
         <div className="workout__details">
-          <div className="label title">
-            <div>{exercise.exerciseType}</div>
-          </div>
-          <div className="label duration">{exercise.duration} mins</div>
+          <span className="label title">{exercise.exerciseType}</span>
+
+          <span className="label duration">{exercise.duration} mins</span>
         </div>
       </div>
     </div>

@@ -18,16 +18,15 @@ const DisplayWorkoutItem = (props) => {
     pathname: "/home",
   };
   const completedClickHandler = async () => {
-    let exerciseId = props.location.exerciseId;
+    let exerciseId = props.location.state.exerciseId;
     const res = await axios.post(api.usersExercise + `/${exerciseId}`, {});
-
     setCompleted((completed) => !completed);
     // history.push(path);
   };
 
   return (
     <div className="workout_bg workout-container ">
-      <YoutubeIframe tag={props.location.tag} />
+      <YoutubeIframe tag={props.location.state.tag} />
 
       <div>
         <div className="button-container">
