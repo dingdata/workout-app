@@ -16,6 +16,34 @@ describe("Users", () => {
   beforeAll(async () => {
     await db.sequelize.sync({ force: true });
     jest.spyOn(jwt, "sign");
+
+    const exercise1 = {
+      duration: 10,
+      intensity: "Moderate",
+      exerciseType: "Abs",
+      source: "youtube",
+      tag: "ZtnWJNkOy5w",
+      title: "Core and Legs Band Workout",
+    };
+    const exercise2 = {
+      duration: 10,
+      intensity: "Moderate",
+      exerciseType: "Yoga",
+      source: "youtube",
+      tag: "iV8JGYFnOqk",
+      title: "Side Abs and Muffin Top",
+    };
+    const exercise3 = {
+      duration: 10,
+      intensity: "High",
+      exerciseType: "Cardio",
+      source: "youtube",
+      tag: "iV8JGYFnOqk",
+      title: "Side Abs and Muffin Top",
+    };
+    await db.Exercise.create(exercise1);
+    await db.Exercise.create(exercise2);
+    await db.Exercise.create(exercise3);
   });
 
   afterAll(async () => {
@@ -120,6 +148,46 @@ describe("Users", () => {
       console.log("token" + token);
       const response = await request(app)
         .get("/users/me")
+        .set("Cookie", `token=${token}`);
+      expect(response.status).toBe(200);
+    });
+  });
+
+  describe("Post /users/exercise", () => {
+    it("should create completed exercise", async () => {
+      const newUser = await db.User.create({
+        firstName: "ah kow",
+        lastName: "tan",
+        emailAddress: "ah_kow1234@test.com",
+        password: "12345678",
+      });
+      const token = createJWTToken(newUser.id);
+      console.log("token" + token);
+
+      const { body: result, header } = await request(app)
+        .post("/users/exercises/1")
+        .set("Cookie", `token=${token}`)
+        .send()
+        .expect(200);
+
+      // expect(actualUser).toMatchObject(expectedUser);
+      expect(jwt.sign).toHaveBeenCalled();
+      expect(header["set-cookie"]).not.toBeUndefined();
+    });
+  });
+
+  describe.only("get /users/Exercise", () => {
+    it("should return list of exercises completed", async () => {
+      const newUser = await db.User.create({
+        firstName: "ah kow",
+        lastName: "tan",
+        emailAddress: "ah_kow1234@test.com",
+        password: "12345678",
+      });
+      const token = createJWTToken(newUser.id);
+      console.log("token" + token);
+      const response = await request(app)
+        .get("/users/exercises")
         .set("Cookie", `token=${token}`);
       expect(response.status).toBe(200);
     });

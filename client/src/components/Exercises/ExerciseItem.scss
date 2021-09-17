@@ -45,9 +45,15 @@
       font-weight: 800;
     }
   }
+  &__titlepadding {
+    height: 40px;
+    padding: 5px;
+    text-align: center;
+  }
   &__details {
     display: flex;
     align-items: center;
+    height: 60px;
   }
 }
 
@@ -57,10 +63,13 @@
 }
 
 .label {
+  display: flex;
   color: #595959;
   border-radius: 5px;
-  padding: 1px 10px;
+  padding: 0px 10px;
   margin: 5px;
+  height: 40px;
+  align-items: center;
   font-weight: bolder;
 }
 

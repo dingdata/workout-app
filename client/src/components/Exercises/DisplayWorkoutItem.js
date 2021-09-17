@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import YoutubeIframe from "./YoutubeIframe";
 import { useHistory } from "react-router-dom";
 import api from "../../constants/api";
@@ -7,7 +7,7 @@ import "./DisplayWorkoutItem.css";
 
 const DisplayWorkoutItem = (props) => {
   const history = useHistory();
-
+  const [completed, setCompleted] = useState(false);
   const backClickHandler = () => {
     let path = `allWorkouts`;
     history.push(path);
@@ -15,18 +15,16 @@ const DisplayWorkoutItem = (props) => {
 
   const completedClickHandler = async () => {
     let path = `howItWorks`;
-
-    console.log(props.location.exerciseId);
     let exerciseId = props.location.exerciseId;
     const res = await axios.post(api.usersExercise + `/${exerciseId}`, {});
-    console.log("ho seh liao ", res);
-
-    history.push(path);
+    setCompleted((completed) => !completed);
+    // history.push(path);
   };
 
   return (
     <div className="workout_bg workout-container ">
       <YoutubeIframe tag={props.location.tag} />
+
       <div>
         <div className="button-container">
           <button
