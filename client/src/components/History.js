@@ -22,6 +22,9 @@ const History = () => {
     getCompletedList();
   }, []);
 
+  const formatDate = (date) => {
+    return `${date.toDateString()}, ${date.toLocaleTimeString()}`;
+  };
   return (
     <div>
       <h4>Your Completed Workouts</h4>
@@ -31,8 +34,14 @@ const History = () => {
             <div>
               <ListGroup>
                 <ListGroup.Item>
+                  <p>
+                    <img
+                      src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
+                    ></img>
+                  </p>
                   {exercise.Exercise.title}
-                  <p>{exercise.Exercise.createdAt}</p>
+
+                  <p>{formatDate(new Date(exercise.Exercise.createdAt))}</p>
                 </ListGroup.Item>
               </ListGroup>
             </div>
