@@ -12,7 +12,6 @@ jobs:
           POSTGRES_DB: "workout_app_test"
     steps:
       - checkout
-      - run: psql -c "\l"
 workflows:
   build-and-test:
     jobs:
