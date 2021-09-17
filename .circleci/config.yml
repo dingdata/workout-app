@@ -5,12 +5,12 @@ jobs:
   build:
     docker:
       - image: circleci/node:12
-      - image: postgres:9.6-alphine
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: "workout_app_test"
-      POSTGRES_HOST_AUTH_METHOD: "trust"
+      - image: postgres
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: "workout_app_test"
+          POSTGRES_HOST_AUTH_METHOD: "trust"
     steps:
       - checkout
       - run: apt-get update && apt-get install -y wget
