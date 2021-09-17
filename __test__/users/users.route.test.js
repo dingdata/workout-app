@@ -158,7 +158,7 @@ describe("Users", () => {
       const newUser = await db.User.create({
         firstName: "ah kow",
         lastName: "tan",
-        emailAddress: "ah_kow1234@test.com",
+        emailAddress: "alibaba@test.com",
         password: "12345678",
       });
       const token = createJWTToken(newUser.id);
@@ -172,7 +172,6 @@ describe("Users", () => {
 
       // expect(actualUser).toMatchObject(expectedUser);
       expect(jwt.sign).toHaveBeenCalled();
-      expect(header["set-cookie"]).not.toBeUndefined();
     });
   });
 
@@ -181,7 +180,7 @@ describe("Users", () => {
       const newUser = await db.User.create({
         firstName: "ah kow",
         lastName: "tan",
-        emailAddress: "ah_kow1234@test.com",
+        emailAddress: "baba@test.com2",
         password: "12345678",
       });
       const token = createJWTToken(newUser.id);
