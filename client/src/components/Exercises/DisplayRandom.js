@@ -38,7 +38,7 @@ const DisplayRandom = () => {
           className="button__secondary button__link"
           onClick={routeChange}
         >
-          Start Now!
+          Register with us now!
         </button>
       </div>
     </div>

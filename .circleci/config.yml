@@ -25,4 +25,6 @@ workflows:
   build-and-test:
     jobs:
       - build
-      - node/test
+      - node/test:
+          requires:
+            - build
