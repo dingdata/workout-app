@@ -1,7 +1,7 @@
 import React from "react";
 import PrefCheckbox from "./PrefCheckbox";
 
-const WorkoutFilter = ({ filterBody, clickHandler, checkAll }) => {
+const WorkoutFilter = ({ userPref, clickHandler, checkAll }) => {
   return (
     <div className="display-all-container">
       <div className="filter-title label-exerciseType">
@@ -16,7 +16,7 @@ const WorkoutFilter = ({ filterBody, clickHandler, checkAll }) => {
       </div>
       <div className="filter-content">
         <div className="pref-filter-container">
-          {filterBody.exerciseType.map((type) => (
+          {userPref.exerciseType.map((type) => (
             <PrefCheckbox
               type={type.type}
               checked={type.check}

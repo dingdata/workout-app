@@ -16,12 +16,14 @@ import DisplayWorkoutItem from "./components/Exercises/DisplayWorkoutItem";
 
 import { UserContext } from "./context/user";
 import { useCurrentUserHook } from "./hooks/useCurrentUserHook";
+import { useUserPrefHook } from "./hooks/useUserPrefHook";
 import axios from "axios";
 import api from "../src/constants/api";
 
 function App() {
   //currentUserHook for updating/retrieving login user
   const { currentUser, setCurrentUser } = useCurrentUserHook();
+  const { userPref, setUserPref } = useUserPrefHook();
 
   const logOut = async () => {
     const res = await axios.post(api.usersLogout, {});
@@ -31,7 +33,9 @@ function App() {
   };
   return (
     <div className="App">
-      <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+      <UserContext.Provider
+        value={{ currentUser, setCurrentUser, userPref, setUserPref }}
+      >
         <BrowserRouter>
           <Navbar bg="light" variant="light">
             <Nav.Link as={Link} to="/Home">

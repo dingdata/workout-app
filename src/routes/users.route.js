@@ -101,8 +101,6 @@ router.post("/exercises/:exerciseId", auth, async (req, res, next) => {
     // const newUser = await db.User.create(req.body);
     let exerciseId = req.params.exerciseId;
     let userId = req.user.userId;
-    console.log("in post exercise");
-    console.log(exerciseId, userId);
     const userExercise = { UserId: userId, ExerciseId: exerciseId };
     console.log(userExercise);
     const createdRecord = await db.UserExercise.create(userExercise);
@@ -110,6 +108,25 @@ router.post("/exercises/:exerciseId", auth, async (req, res, next) => {
     console.log("created Record", createdRecord);
 
     res.json({ result: true });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
+router.get("/exercises", auth, async (req, res, next) => {
+  try {
+    let userId = req.user.userId;
+    const completedExercises = await db.UserExercise.findAll({
+      where: {
+        UserId: userId,
+      },
+      include: [
+        { model: db.User },
+        { model: db.Exercise, attributes: ["title", "createdAt"] },
+      ],
+    });
+    res.json(completedExercises);
   } catch (err) {
     console.log(err);
     next(err);
