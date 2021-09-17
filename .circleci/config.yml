@@ -9,7 +9,7 @@ jobs:
         environment:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
-          POSTGRES_DB: "workout_app_test"
+          POSTGRES_DB: workout_app_test
     steps:
       - checkout
 workflows:
