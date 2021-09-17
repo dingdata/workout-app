@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:12
-      - image: postgres
+      - image: postgres:9.6-alphine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
