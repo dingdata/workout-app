@@ -3,6 +3,7 @@ import YoutubeIframe from "./YoutubeIframe";
 import { useHistory } from "react-router-dom";
 import api from "../../constants/api";
 import axios from "axios";
+import "./DisplayWorkoutItem.css";
 
 const DisplayWorkoutItem = (props) => {
   const history = useHistory();
@@ -24,7 +25,7 @@ const DisplayWorkoutItem = (props) => {
   };
 
   return (
-    <div className="workout-container">
+    <div className="workout_bg workout-container ">
       <YoutubeIframe tag={props.location.tag} />
       <div>
         <div className="button-container">

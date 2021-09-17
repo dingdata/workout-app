@@ -45,7 +45,6 @@ const Login = () => {
 
   return (
     <div className="container">
-      {/* <div className="background-image"></div> */}
       <div className="form__wrapper login centered">
         <input
           name="username"
@@ -58,6 +57,7 @@ const Login = () => {
             placeholder="Password"
             name="password"
             type={passwordShown ? "text" : "password"}
+            //type="password"
             {...register("password")}
           />
           <i onClick={togglePasswordVisiblity}>{eye}</i>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import api from "../../constants/api";
 import YoutubeIframe from "./YoutubeIframe";
 import { useHistory } from "react-router-dom";
+import "./DisplayWorkoutItem.css";
 
 const axios = require("axios");
 
@@ -25,7 +26,7 @@ const DisplayRandom = () => {
   }, []);
 
   return (
-    <div className="workout-container">
+    <div className="workout_bg workout-container">
       <div>
         {!tag && <div>Video not available</div>}
         {tag && <YoutubeIframe tag={tag} />}
