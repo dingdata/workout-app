@@ -11,6 +11,7 @@ jobs:
       NODE_ENV: test
     steps:
       - checkout
+      - run: whoami
       - run:
           name: Install OpenSSL
           command: apk add --no-cache openssl
