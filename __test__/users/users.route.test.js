@@ -176,7 +176,7 @@ describe("Users", () => {
     });
   });
 
-  describe.only("get /users/Exercise", () => {
+  describe("get /users/Exercise", () => {
     it("should return list of exercises completed", async () => {
       const newUser = await db.User.create({
         firstName: "ah kow",

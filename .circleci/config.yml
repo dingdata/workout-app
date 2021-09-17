@@ -7,23 +7,9 @@ jobs:
       - image: circleci/postgres:9.6-alpine-ram
     environment:
       NODE_ENV: test
+      POSTGRES_USER: postgres
     steps:
       - checkout
-      - run: psql
-      - run:
-          name: Install OpenSSL
-          command: apk add --no-cache openssl
-      - run:
-          name: Install Dockerize
-          command: |
-            wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-            && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-            && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-          environment:
-            DOCKERIZE_VERSION: v0.6.1
-      - run:
-          name: Wait for database
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
 workflows:
   build-and-test:
     jobs:

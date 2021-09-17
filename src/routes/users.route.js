@@ -100,7 +100,11 @@ router.post("/exercises/:exerciseId", auth, async (req, res, next) => {
   try {
     // const newUser = await db.User.create(req.body);
     let exerciseId = req.params.exerciseId;
+    console.log("exercises", exerciseId);
+
     let userId = req.user.userId;
+    console.log("userId", userId);
+
     const userExercise = { UserId: userId, ExerciseId: exerciseId };
     console.log(userExercise);
     const createdRecord = await db.UserExercise.create(userExercise);
