@@ -24,12 +24,17 @@ const History = () => {
 
   return (
     <div>
-      <h4>Your Completed Workouts !!!</h4>
+      <h4>Your Completed Workouts</h4>
       <div className="workout-container listexercise">
         {completedList &&
           completedList.map((exercise) => (
             <div>
-              {exercise.Exercise.title}, {exercise.Exercise.createdAt}
+              <ListGroup>
+                <ListGroup.Item>
+                  {exercise.Exercise.title}
+                  <p>{exercise.Exercise.createdAt}</p>
+                </ListGroup.Item>
+              </ListGroup>
             </div>
           ))}
       </div>
