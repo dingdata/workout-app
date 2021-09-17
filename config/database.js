@@ -12,7 +12,7 @@ module.exports = {
     username: "postgres",
     password: null,
     database: process.env.TEST_DATABASE || "workout_app_test",
-    host: process.env.PSQL_HOST || "localhost",
+    host: process.env.PSQL_HOST,
     dialect: "postgres",
   },
   production: {
