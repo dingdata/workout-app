@@ -13,7 +13,7 @@ jobs:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: password
           POSTGRES_DB: workout_app_test
-          TEST_DATABASE_URL: postgresql://root@localhost/workout_app_test
+          TEST_DATABASE_URL: postgresql://root@postgres/workout_app_test
     steps:
       - checkout
 workflows:
