@@ -5,12 +5,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import "./RegisterForm.scss";
 import * as Yup from "yup";
 import axios from "axios";
+import { UserContext } from "../../context/user";
+import { useContext } from "react";
 //import "normalize.css";
 
 import { useHistory } from "react-router-dom";
 
 export default function RegisterForm() {
   let history = useHistory();
+  const { setCurrentUser } = useContext(UserContext);
 
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("First Name is required"),
@@ -46,7 +49,7 @@ export default function RegisterForm() {
       emailAddress: data.email,
       password: data.password,
     });
-
+    setCurrentUser({ firstName: res.data.firstName });
     //check if creation successful
     if (res.status === 201) {
       //create jwt token
