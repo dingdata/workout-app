@@ -7,13 +7,14 @@ jobs:
       - image: circleci/node:12
         environment:
           TEST_DATABASE_URL: postgresql://root@localhost/workout_app_test
-      - image: postgres
+      - image: circleci/postgres:9.6
         environment:
-          PSQL_HOST: postgres
-          POSTGRES_USER: root
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: workout_app_test
-          TEST_DATABASE_URL: postgresql://root@postgres/workout_app_test
+          PGHOST: localhost
+          PGUSER: circleci
+          POSTGRES_USER: circleci
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_DB: circle_test
+
     steps:
       - checkout
 workflows:
