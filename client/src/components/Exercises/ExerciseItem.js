@@ -21,14 +21,15 @@ const ExerciseItem = ({ exercise }) => {
         </Link>
       </div>
       <div className="workout__title">
-        <div>
+        <div className="workout__titlepadding">
           <p>{exercise.title}</p>
         </div>
         <div className="break"></div>
         <div className="workout__details">
-          <span className="label title">{exercise.exerciseType}</span>
-
-          <span className="label duration">{exercise.duration} mins</span>
+          <div className="label title">
+            <div>{exercise.exerciseType}</div>
+          </div>
+          <div className="label duration">{exercise.duration} mins</div>
         </div>
       </div>
     </div>
