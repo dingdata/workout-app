@@ -8,8 +8,6 @@ const axios = require("axios");
 
 const DisplayAll = () => {
   const { userPref, setUserPref } = useContext(UserContext);
-  console.log("inside DisplayAll");
-  console.log(userPref);
   const [exerciseList, setExerciseList] = useState([]);
 
   const getFilterExercise = useCallback(async () => {
@@ -29,7 +27,6 @@ const DisplayAll = () => {
   }, [getFilterExercise]);
 
   const isLoaded = () => {
-    console.log("Is Loaded" + exerciseList.length);
     if (exerciseList.length === 0) return false;
     else return true;
   };
