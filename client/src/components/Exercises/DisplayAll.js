@@ -11,7 +11,7 @@ const DisplayAll = () => {
   const [exerciseList, setExerciseList] = useState([]);
 
   const getFilterExercise = useCallback(async () => {
-    const url = api.exercises + "/filterByExerciseType";
+    const url = api.exercises + "/filterByPreferences";
 
     let selectedFilter = userPref.exerciseType
       .filter((type) => type.check === true)
