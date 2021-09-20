@@ -26,8 +26,8 @@ const History = () => {
     return `${date.toDateString()}, ${date.toLocaleTimeString()}`;
   };
   return (
-    <div className="home__slogan">
-      My Completed Workouts
+    <div className="home__slogan history_bg">
+      My Completed Workouts !
       <div className=" workout-container list-exercise">
         {completedExercises &&
           completedExercises.map((exercise) => (

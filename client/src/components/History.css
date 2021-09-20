@@ -1,3 +1,13 @@
+.history_bg {
+  background-image: rgb(249, 212, 212);
+  background-image: linear-gradient(
+    90deg,
+    rgba(249, 212, 212, 1) 0%,
+    rgba(246, 178, 109, 1) 29%,
+    rgba(247, 247, 117, 1) 100%
+  );
+}
+
 .list-exercise {
   display: flex;
   flex-wrap: wrap-reverse;
