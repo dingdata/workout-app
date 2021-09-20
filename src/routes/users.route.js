@@ -129,6 +129,7 @@ router.get("/exercises", auth, async (req, res, next) => {
         { model: db.User },
         { model: db.Exercise, attributes: ["title", "tag", "createdAt"] },
       ],
+      order: [["createdAt", "DESC"]],
     });
     res.json(completedExercises);
   } catch (err) {
