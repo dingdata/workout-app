@@ -1,22 +1,28 @@
 import React from "react";
 import PrefCheckbox from "./PrefCheckbox";
 
-const WorkoutFilter = ({ userPref, clickHandler, checkAll }) => {
+const WorkoutFilter = ({
+  filterType,
+  clickHandler,
+  checkAll,
+  filterName,
+  filterImageSource,
+}) => {
   return (
     <div className="display-all-container">
       <div className="filter-title label-exerciseType">
         <div>
           <img
             className="exercise-img"
-            src="./images/running.png"
+            src={`./images/${filterImageSource}`}
             alt="exercisetype"
           />
         </div>
-        <div>Exercise Type:</div>
+        <div>{filterName}:</div>
       </div>
       <div className="filter-content">
         <div className="pref-filter-container">
-          {userPref.exerciseType.map((type) => (
+          {filterType.map((type) => (
             <PrefCheckbox
               type={type.type}
               checked={type.check}
@@ -24,20 +30,23 @@ const WorkoutFilter = ({ userPref, clickHandler, checkAll }) => {
             />
           ))}
           <div className="break"></div>
-          <div className="filter-buttons">
-            <div
-              className="filter-all-button select-button select-all"
-              onClick={() => checkAll(true)}
-            >
-              Select All
+          {checkAll && (
+            <div className="filter-buttons">
+              <div
+                className="filter-all-button select-button select-all"
+                onClick={() => checkAll(true)}
+              >
+                Select All
+              </div>
+              <div
+                className="filter-all-button select-button unselect-all"
+                onClick={() => checkAll(false)}
+              >
+                Unselect All
+              </div>
             </div>
-            <div
-              className="filter-all-button select-button unselect-all"
-              onClick={() => checkAll(false)}
-            >
-              Unselect All
-            </div>
-          </div>
+          )}
+          {!checkAll && <div>Hello there</div>}
         </div>
       </div>
     </div>

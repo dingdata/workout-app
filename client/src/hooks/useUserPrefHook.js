@@ -26,8 +26,26 @@ export const useUserPrefHook = () => {
       { type: "Tabata", check: true },
       { type: "KpopX Fitness", check: true },
     ];
+    const duration = [
+      {
+        type: 10,
+        check: false,
+      },
+      {
+        type: 20,
+        check: false,
+      },
+      {
+        type: 30,
+        check: false,
+      },
+      {
+        type: 999,
+        check: true,
+      },
+    ];
 
-    setUserPref({ exerciseType });
+    setUserPref({ exerciseType, duration });
   };
 
   return {

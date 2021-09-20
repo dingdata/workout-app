@@ -17,7 +17,14 @@ const DisplayAll = () => {
       .filter((type) => type.check === true)
       .map((type) => type.type);
 
-    let resp = await axios.post(url, { exerciseType: selectedFilter });
+    let selectedDuration = userPref.duration
+      .filter((type) => type.check === true)
+      .map((type) => type.type);
+
+    let resp = await axios.post(url, {
+      exerciseType: selectedFilter,
+      duration: selectedDuration,
+    });
 
     setExerciseList(resp.data);
   }, [userPref]);
@@ -31,13 +38,23 @@ const DisplayAll = () => {
     else return true;
   };
 
-  const filterTypeClickHandler = (type, check) => {
+  const exerciseTypeClickHandler = (type, check) => {
     let targetExerciseTypeIndex = userPref.exerciseType.findIndex(
       (exerciseType) => exerciseType.type === type
     );
     let copyOriginalState = [...userPref.exerciseType];
     copyOriginalState[targetExerciseTypeIndex].check = check;
     setUserPref({ ...userPref, exerciseType: [...copyOriginalState] });
+  };
+
+  const durationClickHandler = (type, check) => {
+    let targetDurationIndex = userPref.duration.findIndex(
+      (duration) => duration.type === type
+    );
+    let copyOriginalState = [...userPref.duration];
+    copyOriginalState.map((duration) => (duration.check = false));
+    copyOriginalState[targetDurationIndex].check = true;
+    setUserPref({ ...userPref, duration: [...copyOriginalState] });
   };
 
   const checkAll = (state) => {
@@ -49,9 +66,17 @@ const DisplayAll = () => {
   return (
     <div className="workout-container">
       <WorkoutFilter
-        userPref={userPref}
-        clickHandler={filterTypeClickHandler}
+        filterType={userPref.exerciseType}
+        clickHandler={exerciseTypeClickHandler}
         checkAll={checkAll}
+        filterImageSource="running.png"
+        filterName="Exercise Type"
+      />
+      <WorkoutFilter
+        filterType={userPref.duration}
+        clickHandler={durationClickHandler}
+        filterImageSource="running.png"
+        filterName="Duration"
       />
 
       <hr class="solid" />
