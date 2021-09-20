@@ -38,7 +38,7 @@ const History = () => {
               <div className="list-header">{exercise.Exercise.title}</div>
 
               <div className="list-text">
-                {formatDate(new Date(exercise.Exercise.createdAt))}
+                {formatDate(new Date(exercise.createdAt))}
               </div>
             </div>
           ))}
