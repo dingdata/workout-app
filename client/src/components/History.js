@@ -5,13 +5,13 @@ import axios from "axios";
 import api from "../constants/api";
 
 const History = () => {
-  const [completedList, setCompletedList] = useState([]);
+  const [completedExercises, setCompletedExercises] = useState([]);
 
   const getCompletedList = async () => {
     try {
       const res = await axios.get(api.usersExercise);
       console.log(res);
-      setCompletedList(res.data);
+      setCompletedExercises(res.data);
     } catch (err) {
       // setErrorMessage(err.res.data);
       // TODO: you can make use of this error message to display on the UI
@@ -29,11 +29,12 @@ const History = () => {
     <div className="home__slogan">
       My Completed Workouts
       <div className=" workout-container list-exercise">
-        {completedList &&
-          completedList.map((exercise) => (
+        {completedExercises &&
+          completedExercises.map((exercise) => (
             <div className="list-img">
               <img
                 src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
+                alt="exercise preview thumbnail"
               ></img>
               <div className="list-header">{exercise.Exercise.title}</div>
 
