@@ -77,7 +77,7 @@ const DisplayAll = () => {
       <WorkoutFilter
         filterType={userPref.duration}
         clickHandler={durationClickHandler}
-        filterImageSource="running.png"
+        filterImageSource="duration.png"
         filterName="Duration"
       />
 

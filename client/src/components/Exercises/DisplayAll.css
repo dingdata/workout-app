@@ -11,11 +11,12 @@
 }
 .filter-title {
   background-color: #f3cf04;
+  flex: 0 0 120px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font: Verdana, Geneva, Tahoma, sans-serif;
 }
 .filter-content {
-  align-self: flex-end;
+  align-self: center;
 }
 
 .filter-buttons {
