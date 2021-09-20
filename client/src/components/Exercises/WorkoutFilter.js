@@ -25,6 +25,7 @@ const WorkoutFilter = ({
           {filterType.map((type) => (
             <PrefCheckbox
               type={type.type}
+              display={type.display}
               checked={type.check}
               handleClick={clickHandler}
             />

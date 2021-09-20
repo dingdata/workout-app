@@ -78,7 +78,7 @@ const DisplayAll = () => {
         filterType={userPref.duration}
         clickHandler={durationClickHandler}
         filterImageSource="duration.png"
-        filterName="Duration"
+        filterName="Max Duration"
       />
 
       <hr class="solid" />
