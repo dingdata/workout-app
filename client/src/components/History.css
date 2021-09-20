@@ -1,0 +1,26 @@
+.list-exercise {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: space-around;
+}
+
+.list-img {
+  padding: 5px;
+  vertical-align: middle;
+  width: 20%;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.list-header {
+  vertical-align: middle;
+  margin-top: 10px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.list-text {
+  vertical-align: middle;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 12px;
+}
