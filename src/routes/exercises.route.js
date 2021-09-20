@@ -23,13 +23,16 @@ router.get("/random", async (req, res, next) => {
   }
 });
 
-router.post("/filterByExerciseType", async (req, res, next) => {
+router.post("/filterByPreferences", async (req, res, next) => {
   try {
     console.log(`Request Body ${req}`);
     const exercises = await db.Exercise.findAll({
       where: {
         exerciseType: {
           [db.Sequelize.Op.in]: req.body.exerciseType,
+        },
+        duration: {
+          [db.Sequelize.Op.lte]: req.body.duration,
         },
       },
       raw: true,

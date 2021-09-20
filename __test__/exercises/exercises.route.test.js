@@ -20,15 +20,15 @@ describe("Exercises", () => {
       title: "Core and Legs Band Workout",
     };
     const exercise2 = {
-      duration: 10,
+      duration: 20,
       intensity: "Moderate",
       exerciseType: "Yoga",
       source: "youtube",
       tag: "iV8JGYFnOqk",
-      title: "Side Abs and Muffin Top",
+      title: "Morning Yoga Stretch",
     };
     const exercise3 = {
-      duration: 10,
+      duration: 30,
       intensity: "High",
       exerciseType: "Cardio",
       source: "youtube",
@@ -66,13 +66,14 @@ describe("Exercises", () => {
     });
   });
 
-  describe("POST /filterByExerciseType", () => {
+  describe("POST /filterByPreferences", () => {
     it("should return 1 exerciseType Yoga", async () => {
       const exerciseBody = {
         exerciseType: ["Yoga", "Cardio"],
+        duration: 100,
       };
       const { body: exercise } = await request(app)
-        .post("/exercises/filterByExerciseType")
+        .post("/exercises/filterByPreferences")
         .send(exerciseBody)
         .expect(200);
 
@@ -81,6 +82,39 @@ describe("Exercises", () => {
       expect(exercise).not.toBeNull();
       expect(exercise[0].exerciseType).toEqual("Yoga");
       expect(exercise[1].exerciseType).toEqual("Cardio");
+    });
+
+    it("should return exercises with duration of 20 mins", async () => {
+      const exerciseBody = {
+        exerciseType: ["Yoga", "Cardio", "Abs"],
+        duration: 20,
+      };
+      const { body: exercise } = await request(app)
+        .post("/exercises/filterByPreferences")
+        .send(exerciseBody)
+        .expect(200);
+
+      console.log(exercise);
+
+      expect(exercise).not.toBeNull();
+      expect(exercise.length).toEqual(2);
+    });
+
+    it("should return exercises with duration of 20 mins and exercise type Abs", async () => {
+      const exerciseBody = {
+        exerciseType: ["Abs"],
+        duration: 20,
+      };
+      const { body: exercise } = await request(app)
+        .post("/exercises/filterByPreferences")
+        .send(exerciseBody)
+        .expect(200);
+
+      console.log(exercise);
+
+      expect(exercise).not.toBeNull();
+      expect(exercise[0].exerciseType).toEqual("Abs");
+      expect(exercise[0].duration).toBeLessThanOrEqual(10);
     });
   });
 });
