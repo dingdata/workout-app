@@ -19,8 +19,10 @@ const DisplayAll = () => {
 
     let selectedDuration = userPref.duration
       .filter((type) => type.check === true)
-      .map((type) => type.type);
-
+      .map((type) => type.type)[0];
+    if (selectedDuration === "All Durations") {
+      selectedDuration = 999;
+    }
     let resp = await axios.post(url, {
       exerciseType: selectedFilter,
       duration: selectedDuration,

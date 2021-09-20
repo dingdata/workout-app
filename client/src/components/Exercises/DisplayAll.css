@@ -6,7 +6,8 @@
 .pref-filter-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flext-start;
+  justify-content: flex-start;
+  align-content: center;
 }
 .filter-title {
   background-color: #f3cf04;

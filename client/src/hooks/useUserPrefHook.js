@@ -40,7 +40,7 @@ export const useUserPrefHook = () => {
         check: false,
       },
       {
-        type: 999,
+        type: "All Durations",
         check: true,
       },
     ];

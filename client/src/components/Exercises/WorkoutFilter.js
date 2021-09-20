@@ -46,7 +46,6 @@ const WorkoutFilter = ({
               </div>
             </div>
           )}
-          {!checkAll && <div>Hello there</div>}
         </div>
       </div>
     </div>
