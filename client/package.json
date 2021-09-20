@@ -13,6 +13,7 @@
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
     "capstone-exercise-randomiser": "file:..",
+    "chartjs-plugin-datalabels": "^2.0.0",
     "jest": "^27.1.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
