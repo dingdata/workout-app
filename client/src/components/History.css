@@ -10,27 +10,37 @@
 
 .list-exercise {
   display: flex;
-  flex-wrap: wrap-reverse;
-  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.list-img {
+.history-container {
+  display: flex;
   padding: 5px;
-  vertical-align: middle;
-  width: 20%;
+  align-content: center;
+  width: 600px;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.list-header {
-  vertical-align: middle;
+.list-img {
+  max-width: 200px;
+}
+
+.list-details {
+  display: flex;
+  flex-flow: column wrap;
+}
+.list-title {
+  flex: 1 0 auto;
   margin-top: 10px;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   font-size: 13px;
-  padding: 5px;
+  font-weight: bold;
 }
 
-.list-text {
-  vertical-align: middle;
+.list-date {
+  flex: 1 0 auto;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   font-size: 12px;
+  padding: 5px;
 }

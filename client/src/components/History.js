@@ -31,16 +31,21 @@ const History = () => {
       <div className=" workout-container list-exercise">
         {completedExercises &&
           completedExercises.map((exercise) => (
-            <div className="list-img">
-              <img
-                src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
-                alt="exercise preview thumbnail"
-              ></img>
-              <div className="list-header">{exercise.Exercise.title}</div>
-
-              <div className="list-text">
-                {formatDate(new Date(exercise.createdAt))}
+            <div>
+              <div className="history-container">
+                <img
+                  className="list-img"
+                  src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
+                  alt="exercise preview thumbnail"
+                />
+                <div className="list-details">
+                  <div className="list-title">{exercise.Exercise.title}</div>
+                  <div className="list-date">
+                    {formatDate(new Date(exercise.createdAt))}
+                  </div>
+                </div>
               </div>
+              <div className="break"></div>
             </div>
           ))}
       </div>
