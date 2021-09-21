@@ -46,4 +46,32 @@ router.post("/filterByPreferences", async (req, res, next) => {
   }
 });
 
+router.get("/exerciseByUser", async (req, res, next) => {
+  try {
+    const attributes = [
+      [
+        db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
+        "trunc",
+      ],
+      [db.sequelize.fn("COUNT", db.sequelize.col("createdAt")), "count"],
+    ];
+
+    const group = [
+      db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
+    ];
+    const order = [
+      [
+        db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
+        "DESC",
+      ],
+    ];
+    const query = { attributes, group, order, limit: "5" };
+
+    const exercises = await db.UserExercise.findAndCountAll(query);
+    res.json(exercises.rows);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
