@@ -46,10 +46,10 @@ router.post("/filterByPreferences", async (req, res, next) => {
   }
 });
 
-router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
+router.get("/userExerciseCountByWeek", async (req, res, next) => {
   try {
     // console.log("request is ", req);
-    let userId = req.user.userId;
+    let userId = 1;
     console.log("iser id is ", userId);
 
     const where = { UserId: userId };
