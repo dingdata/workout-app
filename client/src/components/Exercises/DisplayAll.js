@@ -66,28 +66,30 @@ const DisplayAll = () => {
     setUserPref({ ...userPref, exerciseType: [...copyState] });
   };
   return (
-    <div className="workout-container">
-      <WorkoutFilter
-        filterType={userPref.exerciseType}
-        clickHandler={exerciseTypeClickHandler}
-        checkAll={checkAll}
-        filterImageSource="running.png"
-        filterName="Exercise Type"
-      />
-      <WorkoutFilter
-        filterType={userPref.duration}
-        clickHandler={durationClickHandler}
-        filterImageSource="duration.png"
-        filterName="Max Duration"
-      />
-
-      <hr class="solid" />
-      <div className="workouts">
-        {!isLoaded && <div>Loading...</div>}
-        {isLoaded &&
-          exerciseList.map((exercise) => (
-            <ExerciseItem exercise={exercise}></ExerciseItem>
-          ))}
+    <div id="display-all-container" className="workout-container">
+      <div id="display-all-sidebar">
+        <WorkoutFilter
+          filterType={userPref.exerciseType}
+          clickHandler={exerciseTypeClickHandler}
+          checkAll={checkAll}
+          filterImageSource="running.png"
+          filterName="Exercise Type"
+        />
+        <WorkoutFilter
+          filterType={userPref.duration}
+          clickHandler={durationClickHandler}
+          filterImageSource="duration.png"
+          filterName="Max Duration"
+        />
+      </div>
+      <div id="display-all-content">
+        <div className="workouts">
+          {!isLoaded && <div>Loading...</div>}
+          {isLoaded &&
+            exerciseList.map((exercise) => (
+              <ExerciseItem exercise={exercise}></ExerciseItem>
+            ))}
+        </div>{" "}
       </div>
     </div>
   );

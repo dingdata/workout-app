@@ -1,4 +1,26 @@
-.display-all-container {
+#display-all-container {
+  display: flex;
+  flex-direction: column;
+}
+#display-all-sidebar {
+  flex: 0 0 auto;
+}
+#display-all-content {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+@media (min-width: 49rem) {
+  #display-all-container {
+    flex-direction: row;
+    height: 100vh;
+  }
+  #display-all-sidebar {
+    width: 18rem;
+  }
+}
+
+.filter-container {
   display: flex;
   background-color: white;
 }

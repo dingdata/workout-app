@@ -9,7 +9,7 @@ const WorkoutFilter = ({
   filterImageSource,
 }) => {
   return (
-    <div className="display-all-container">
+    <div className="filter-container">
       <div className="filter-title label-exerciseType">
         <div>
           <img
