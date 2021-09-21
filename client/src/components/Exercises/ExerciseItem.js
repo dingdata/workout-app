@@ -3,13 +3,9 @@ import { Link } from "react-router-dom";
 import "./ExerciseItem.scss";
 
 const ExerciseItem = ({ exercise }) => {
-  const exerciseTag = exercise.tag;
-  const exerciseId = exercise.id;
   const exerciseLink = {
     pathname: "/workoutItem",
-    state: { tag: exerciseTag, exerciseId },
-    // tag: exercise.tag,
-    //  exerciseId: exercise.id,
+    state: { tag: exercise.tag, exerciseId: exercise.id },
   };
   return (
     <div className="workouts__item">
@@ -32,12 +28,13 @@ const ExerciseItem = ({ exercise }) => {
           </div>
           <div className="label duration">{exercise.duration} mins</div>
         </div>
-        {/* TODO: display below ONLY if equipment is required */}
-        <img
-          className="dumbbell"
-          src={process.env.PUBLIC_URL + "/images/dumbbell.png"}
-          alt="equipment required icon"
-        ></img>
+        {exercise.needEquipment && (
+          <img
+            className="dumbbell"
+            src={process.env.PUBLIC_URL + "/images/dumbbell.png"}
+            alt="equipment required icon"
+          ></img>
+        )}
       </div>
     </div>
   );

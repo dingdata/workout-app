@@ -16,24 +16,23 @@
     height: 100vh;
   }
   #display-all-sidebar {
-    width: 18rem;
+    width: 15rem;
   }
 }
 
 .filter-container {
   display: flex;
   background-color: white;
+  flex-direction: column;
 }
 
 .pref-filter-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-content: center;
 }
 .filter-title {
   background-color: #f3cf04;
-  flex: 0 0 120px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -43,10 +42,6 @@
 
 .filter-buttons {
   display: flex;
-}
-
-.filter-all-button {
-  flex-grow: 1;
 }
 
 /* Solid border */

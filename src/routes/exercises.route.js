@@ -25,7 +25,6 @@ router.get("/random", async (req, res, next) => {
 
 router.post("/filterByPreferences", async (req, res, next) => {
   try {
-    console.log(`Request Body ${req}`);
     const exercises = await db.Exercise.findAll({
       where: {
         exerciseType: {
@@ -41,6 +40,34 @@ router.post("/filterByPreferences", async (req, res, next) => {
       raw: true,
     });
     res.json(exercises);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/userExerciseCountByWeek", async (req, res, next) => {
+  try {
+    const attributes = [
+      [
+        db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
+        "trunc",
+      ],
+      [db.sequelize.fn("COUNT", db.sequelize.col("createdAt")), "count"],
+    ];
+
+    const group = [
+      db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
+    ];
+    const order = [
+      [
+        db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
+        "DESC",
+      ],
+    ];
+    const query = { attributes, group, order, limit: "5" };
+
+    const exercises = await db.UserExercise.findAndCountAll(query);
+    res.json(exercises.rows);
   } catch (err) {
     next(err);
   }

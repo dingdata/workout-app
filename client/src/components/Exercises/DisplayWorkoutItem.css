@@ -1,5 +1,5 @@
 .workout_bg {
-  background-image: url(workout_bg.gif);
+  background-image: url(../../imports/workout_bg.gif);
   background-size: cover;
   height: 100vh;
 }
