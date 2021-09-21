@@ -34,6 +34,9 @@ router.post("/filterByPreferences", async (req, res, next) => {
         duration: {
           [db.Sequelize.Op.lte]: req.body.duration,
         },
+        needEquipment: {
+          [db.Sequelize.Op.is]: req.body.needEquipment,
+        },
       },
       raw: true,
     });

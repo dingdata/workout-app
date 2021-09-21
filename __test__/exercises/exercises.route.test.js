@@ -18,7 +18,7 @@ describe("Exercises", () => {
       source: "youtube",
       tag: "ZtnWJNkOy5w",
       title: "Core and Legs Band Workout",
-      needEquipment: true,
+      needEquipment: false,
     };
     const exercise2 = {
       duration: 20,
@@ -38,9 +38,19 @@ describe("Exercises", () => {
       title: "Side Abs and Muffin Top",
       needEquipment: false,
     };
+    const exercise4 = {
+      duration: 40,
+      intensity: "High",
+      exerciseType: "Barre",
+      source: "youtube",
+      tag: "3320EhbImLY",
+      title: "Flat Belly Barre",
+      needEquipment: true,
+    };
     await db.Exercise.create(exercise1);
     await db.Exercise.create(exercise2);
     await db.Exercise.create(exercise3);
+    await db.Exercise.create(exercise4);
   });
 
   afterAll(async () => {
@@ -65,7 +75,7 @@ describe("Exercises", () => {
         .get("/exercises")
         .expect(200);
 
-      expect(exercises.length).toBe(3);
+      expect(exercises.length).toBe(4);
     });
   });
 
@@ -74,6 +84,7 @@ describe("Exercises", () => {
       const exerciseBody = {
         exerciseType: ["Yoga", "Cardio"],
         duration: 100,
+        needEquipment: false,
       };
       const { body: exercise } = await request(app)
         .post("/exercises/filterByPreferences")
@@ -91,6 +102,7 @@ describe("Exercises", () => {
       const exerciseBody = {
         exerciseType: ["Yoga", "Cardio", "Abs"],
         duration: 20,
+        needEquipment: false,
       };
       const { body: exercise } = await request(app)
         .post("/exercises/filterByPreferences")
@@ -107,6 +119,7 @@ describe("Exercises", () => {
       const exerciseBody = {
         exerciseType: ["Abs"],
         duration: 20,
+        needEquipment: false,
       };
       const { body: exercise } = await request(app)
         .post("/exercises/filterByPreferences")
@@ -118,6 +131,31 @@ describe("Exercises", () => {
       expect(exercise).not.toBeNull();
       expect(exercise[0].exerciseType).toEqual("Abs");
       expect(exercise[0].duration).toBeLessThanOrEqual(10);
+    });
+
+    it("should return exercise with needEquipment of value true", async () => {
+      const exerciseBody = {
+        exerciseType: ["Yoga", "Cardio", "Abs", "Barre"],
+        duration: 999,
+        needEquipment: true,
+      };
+
+      const expectedExercise = {
+        duration: 40,
+        intensity: "High",
+        exerciseType: "Barre",
+        source: "youtube",
+        tag: "3320EhbImLY",
+        title: "Flat Belly Barre",
+        needEquipment: true,
+      };
+
+      const { body: exercise } = await request(app)
+        .post("/exercises/filterByPreferences")
+        .send(exerciseBody)
+        .expect(200);
+
+      expect(exercise[0]).toMatchObject(expectedExercise);
     });
   });
 });

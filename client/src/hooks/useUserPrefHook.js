@@ -49,7 +49,19 @@ export const useUserPrefHook = () => {
       },
     ];
 
-    setUserPref({ exerciseType, duration });
+    const needEquipment = [
+      {
+        type: false,
+        display: "Without Equipment",
+        check: true,
+      },
+      {
+        type: true,
+        display: "With Equipment",
+        check: false,
+      },
+    ];
+    setUserPref({ exerciseType, duration, needEquipment });
   };
 
   return {
