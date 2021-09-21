@@ -201,11 +201,11 @@ describe("Exercises", () => {
     //   expect(exercise[0]).toMatchObject(expectedExercise);
     // });
 
-    describe.only("get /exercises/exerciseByUser", () => {
+    describe.only("get /exercises/userExerciseCountByWeek", () => {
       it("should return count of exercises completed by the user", async () => {
         const token = createJWTToken(1); //
         const response = await request(app)
-          .get("/exercises/exerciseByUser")
+          .get("/exercises/userExerciseCountByWeek")
           .set("Cookie", `token=${token}`);
 
         expect(response.body.length).toBe(3);
