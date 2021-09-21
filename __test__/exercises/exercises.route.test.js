@@ -2,6 +2,11 @@ const request = require("supertest");
 const express = require("express");
 const app = express();
 const db = require("../../db/models/index");
+const createJWTToken = require("../../config/jwt");
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
+
 app.use(express.json());
 
 const exercisesRouter = require("../../src/routes/exercises.route");
@@ -51,6 +56,44 @@ describe("Exercises", () => {
     await db.Exercise.create(exercise2);
     await db.Exercise.create(exercise3);
     await db.Exercise.create(exercise4);
+
+    const newUser = await db.User.create({
+      firstName: "ah kow",
+      lastName: "tan",
+      emailAddress: "baba@test.com2",
+      password: "12345678",
+    });
+
+    const newUserExercise1 = {
+      UserId: newUser.id,
+      ExerciseId: 1,
+      createdAt: "08/14/2021",
+      updatedAt: "08/14/2021",
+    };
+
+    const newUserExercise2 = {
+      UserId: newUser.id,
+      ExerciseId: 2,
+      createdAt: "08/12/2021",
+      updatedAt: "08/12/2021",
+    };
+
+    const newUserExercise3 = {
+      UserId: newUser.id,
+      ExerciseId: 3,
+      createdAt: "08/19/2021",
+      updatedAt: "08/19/2021",
+    };
+    const newUserExercise4 = {
+      UserId: newUser.id,
+      ExerciseId: 4,
+      createdAt: "08/27/2021",
+      updatedAt: "08/27/2021",
+    };
+    await db.UserExercise.create(newUserExercise1);
+    await db.UserExercise.create(newUserExercise2);
+    await db.UserExercise.create(newUserExercise3);
+    await db.UserExercise.create(newUserExercise4);
   });
 
   afterAll(async () => {
@@ -157,5 +200,18 @@ describe("Exercises", () => {
 
     //   expect(exercise[0]).toMatchObject(expectedExercise);
     // });
+
+    describe.only("get /exercises/exerciseByUser", () => {
+      it("should return count of exercises completed by the user", async () => {
+        const token = createJWTToken(1); //
+        const response = await request(app)
+          .get("/exercises/exerciseByUser")
+          .set("Cookie", `token=${token}`);
+
+        expect(response.body.length).toBe(3);
+
+        expect(response.status).toBe(200);
+      });
+    });
   });
 });

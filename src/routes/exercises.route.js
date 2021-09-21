@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../../db/models/index");
+const { auth } = require("../middlewares/auth");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -45,8 +46,14 @@ router.post("/filterByPreferences", async (req, res, next) => {
   }
 });
 
-router.get("/userExerciseCountByWeek", async (req, res, next) => {
+router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
   try {
+    // console.log("request is ", req);
+    let userId = req.user.userId;
+    console.log("iser id is ", userId);
+
+    const where = { UserId: userId };
+
     const attributes = [
       [
         db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
@@ -64,7 +71,7 @@ router.get("/userExerciseCountByWeek", async (req, res, next) => {
         "DESC",
       ],
     ];
-    const query = { attributes, group, order, limit: "5" };
+    const query = { where, attributes, group, order, limit: "5" };
 
     const exercises = await db.UserExercise.findAndCountAll(query);
     res.json(exercises.rows);
