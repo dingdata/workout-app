@@ -25,7 +25,6 @@ router.get("/random", async (req, res, next) => {
 
 router.post("/filterByPreferences", async (req, res, next) => {
   try {
-    console.log(`Request Body ${req}`);
     const exercises = await db.Exercise.findAll({
       where: {
         exerciseType: {
