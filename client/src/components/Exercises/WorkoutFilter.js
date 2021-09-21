@@ -10,15 +10,15 @@ const WorkoutFilter = ({
 }) => {
   return (
     <div className="filter-container">
-      <div className="filter-title label-exerciseType">
+      <div className="filter-title">
         <div>
           <img
-            className="exercise-img"
+            className="filter-icon"
             src={`./images/${filterImageSource}`}
             alt="exercisetype"
           />
+          {filterName}
         </div>
-        <div>{filterName}:</div>
       </div>
       <div className="filter-content">
         <div className="pref-filter-container">

@@ -130,14 +130,3 @@ input {
   max-width: 527px;
   padding: 0 10%;
 }
-
-.label-exerciseType {
-  color: #595959;
-  border-radius: 5px;
-  padding: 1px 10px;
-  margin: 5px;
-  font-weight: bolder;
-  background-color: #f3cf04;
-  border: solid 1px #f3cf04;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
