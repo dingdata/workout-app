@@ -33,7 +33,7 @@ describe("Users", () => {
       source: "youtube",
       tag: "iV8JGYFnOqk",
       title: "Side Abs and Muffin Top",
-      needEquipment: true,
+      needEquipment: false,
     };
     const exercise3 = {
       duration: 10,
