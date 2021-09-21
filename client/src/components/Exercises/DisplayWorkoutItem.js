@@ -15,7 +15,7 @@ const DisplayWorkoutItem = (props) => {
   };
 
   const goWorkoutHistory = {
-    pathname: "/History",
+    pathname: "/myProgress",
   };
   const completedClickHandler = async () => {
     let exerciseId = props.location.state.exerciseId;
@@ -57,7 +57,7 @@ const DisplayWorkoutItem = (props) => {
           <div>
             <br />
             <Link to={goWorkoutHistory} className="home__slogan">
-              Go to progress workout page
+              View My Progress
             </Link>
           </div>
         )}

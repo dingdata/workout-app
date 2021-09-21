@@ -1,4 +1,4 @@
-.history_bg {
+.progress-bg {
   background-image: rgb(249, 212, 212);
   background-image: linear-gradient(
     90deg,
@@ -8,6 +8,15 @@
   );
 }
 
+.progress-header {
+  background-color: white;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 22px;
+  color: #595959;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 .list-exercise {
   display: flex;
   align-items: center;
@@ -15,12 +24,14 @@
   justify-content: center;
 }
 
-.history-container {
+.progress-container {
+  background-color: white;
   display: flex;
   padding: 5px;
   align-content: center;
   width: 500px;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 .list-img {

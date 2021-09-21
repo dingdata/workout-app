@@ -8,7 +8,7 @@ import Login from "./components/UserLogin/login";
 import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
-import History from "./components/History";
+import MyProgress from "./components/MyProgress";
 import Home from "./components/Home/Home";
 import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/Exercises/DisplayRandom";
@@ -61,7 +61,7 @@ function App() {
               )}
 
               {currentUser && (
-                <Nav.Link as={Link} to="/History" eventKey="link-3">
+                <Nav.Link as={Link} to="/myProgress" eventKey="link-3">
                   My Progress
                 </Nav.Link>
               )}
@@ -109,9 +109,9 @@ function App() {
             <Route exact path="/Home" component={() => <Home />} />
             <Route exact path="/" component={() => <Home />} />
 
-            <Route exact path="/History" component={() => <History />} />
             {currentUser && (
               <div>
+                <Route exact path="/myProgress" component={MyProgress} />
                 <Route exact path="/LoggedInMain" component={LoggedInUser} />
                 <Route
                   exact
