@@ -17,6 +17,7 @@ const ExerciseItem = ({ exercise }) => {
         <Link to={exerciseLink}>
           <img
             src={`https://i4.ytimg.com/vi/${exercise.tag}/mqdefault.jpg`}
+            alt="exercise preview thumbnail"
           ></img>
         </Link>
       </div>
@@ -31,6 +32,12 @@ const ExerciseItem = ({ exercise }) => {
           </div>
           <div className="label duration">{exercise.duration} mins</div>
         </div>
+        {/* TODO: display below ONLY if equipment is required */}
+        <img
+          className="dumbbell"
+          src={process.env.PUBLIC_URL + "/images/dumbbell.png"}
+          alt="equipment required icon"
+        ></img>
       </div>
     </div>
   );
