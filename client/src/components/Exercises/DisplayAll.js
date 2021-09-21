@@ -24,9 +24,7 @@ const DisplayAll = () => {
       selectedDuration = 999;
     }
 
-    let selectedNeedEquipment = userPref.needEquipment
-      .filter((type) => type.check === true)
-      .map((type) => type.type)[0];
+    let selectedNeedEquipment = userPref.needEquipment[0].check;
 
     let resp = await axios.post(url, {
       exerciseType: selectedFilter,
@@ -65,13 +63,10 @@ const DisplayAll = () => {
     setUserPref({ ...userPref, duration: [...copyOriginalState] });
   };
 
-  const needEquipmentClickHandler = (type) => {
-    let targetEquipmentIndex = userPref.needEquipment.findIndex(
-      (equipment) => equipment.type === type
-    );
+  const needEquipmentClickHandler = (type, check) => {
     let copyOriginalState = [...userPref.needEquipment];
-    copyOriginalState.map((equipment) => (equipment.check = false));
-    copyOriginalState[targetEquipmentIndex].check = true;
+    copyOriginalState[0].check = check;
+    copyOriginalState[0].type = check;
     setUserPref({ ...userPref, needEquipment: [...copyOriginalState] });
   };
 
