@@ -53,11 +53,6 @@ export const useUserPrefHook = () => {
       {
         type: false,
         display: "Without Equipment",
-        check: true,
-      },
-      {
-        type: true,
-        display: "With Equipment",
         check: false,
       },
     ];
