@@ -46,7 +46,7 @@ router.post("/filterByPreferences", async (req, res, next) => {
   }
 });
 
-router.get("/exerciseByUser", async (req, res, next) => {
+router.get("/userExerciseCountByWeek", async (req, res, next) => {
   try {
     const attributes = [
       [
