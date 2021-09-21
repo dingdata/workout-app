@@ -19,12 +19,13 @@
   display: flex;
   padding: 5px;
   align-content: center;
-  width: 600px;
+  width: 500px;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .list-img {
   max-width: 200px;
+  padding-right: 5px;
 }
 
 .list-details {
@@ -32,15 +33,16 @@
   flex-flow: column wrap;
 }
 .list-title {
-  flex: 1 0 auto;
+  text-align: left;
   margin-top: 10px;
+  margin-left: 5px;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   font-size: 13px;
   font-weight: bold;
 }
 
 .list-date {
-  flex: 1 0 auto;
+  text-align: left;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   font-size: 12px;
   padding: 5px;
