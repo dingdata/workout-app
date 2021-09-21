@@ -16,7 +16,7 @@ const createJWTToken = (userId) => {
   exp.setDate(today.getDate() + 60); // adding days
 
   const payload = { userId };
-  const token = jwt.sign(payload, secret, { expiresIn: "8d" });
+  const token = jwt.sign(payload, secret, { expiresIn: "7d" });
 
   return token;
 };

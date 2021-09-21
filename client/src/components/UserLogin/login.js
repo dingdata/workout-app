@@ -39,7 +39,6 @@ const Login = () => {
       setCurrentUser({ firstName: res.data.firstName });
     } catch (err) {
       setErrorMessage(err.response.data);
-      // TODO: you can make use of this error message to display on the UI
     }
   };
 
@@ -57,7 +56,6 @@ const Login = () => {
             placeholder="Password"
             name="password"
             type={passwordShown ? "text" : "password"}
-            //type="password"
             {...register("password")}
           />
           <i onClick={togglePasswordVisiblity}>{eye}</i>

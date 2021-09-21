@@ -21,11 +21,10 @@ const DisplayWorkoutItem = (props) => {
     let exerciseId = props.location.state.exerciseId;
     const res = await axios.post(api.usersExercise + `/${exerciseId}`, {});
     setCompleted((completed) => !completed);
-    // history.push(path);
   };
 
   return (
-    <div className="workout_bg workout-container ">
+    <div className="workout_bg workout-container">
       <YoutubeIframe tag={props.location.state.tag} />
 
       <div>
@@ -39,7 +38,7 @@ const DisplayWorkoutItem = (props) => {
 
           {!completed && (
             <button
-              className="button__secondary button__link "
+              className="button__secondary button__link"
               onClick={completedClickHandler}
             >
               Completed
@@ -48,7 +47,6 @@ const DisplayWorkoutItem = (props) => {
 
           {completed && (
             <div>
-              {" "}
               <button className="button__secondary button__link disabled">
                 Completed
               </button>
@@ -57,10 +55,9 @@ const DisplayWorkoutItem = (props) => {
         </div>
         {completed && (
           <div>
-            {" "}
             <br />
             <Link to={goWorkoutHistory} className="home__slogan">
-              Go to progress workout page{" "}
+              Go to progress workout page
             </Link>
           </div>
         )}

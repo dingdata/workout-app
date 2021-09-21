@@ -88,7 +88,6 @@ router.get("/me", auth, async (req, res, next) => {
     const user = await db.User.findOne({
       where: { id },
     });
-    console.log(user);
 
     res.status(200).json(pick(user, ["firstName"]));
   } else {
@@ -98,22 +97,15 @@ router.get("/me", auth, async (req, res, next) => {
 
 router.post("/exercises/:exerciseId", auth, async (req, res, next) => {
   try {
-    // const newUser = await db.User.create(req.body);
     let exerciseId = req.params.exerciseId;
-    console.log("exercises", exerciseId);
-
     let userId = req.user.userId;
-    console.log("userId", userId);
 
     const userExercise = { UserId: userId, ExerciseId: exerciseId };
-    console.log(userExercise);
-    const createdRecord = await db.UserExercise.create(userExercise);
 
-    console.log("created Record", createdRecord);
+    await db.UserExercise.create(userExercise);
 
     res.json({ result: true });
   } catch (err) {
-    console.log(err);
     next(err);
   }
 });
@@ -133,7 +125,6 @@ router.get("/exercises", auth, async (req, res, next) => {
     });
     res.json(completedExercises);
   } catch (err) {
-    console.log(err);
     next(err);
   }
 });
@@ -152,7 +143,6 @@ router.post("/isUniqueEmail", async (req, res, next) => {
       res.json({ result: true });
     }
   } catch (err) {
-    console.log(err);
     next(err);
   }
 });

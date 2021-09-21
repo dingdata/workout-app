@@ -8,7 +8,7 @@ export const useCurrentUserHook = () => {
 
   useEffect(() => {
     retrieveLoggedUserInfo();
-    // const tempUser = { username: "Sabrina" };
+    // const tempUser = { firstName: "Sabrina" };
     // setCurrentUser(tempUser);
   }, []);
 

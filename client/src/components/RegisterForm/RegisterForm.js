@@ -7,7 +7,6 @@ import * as Yup from "yup";
 import axios from "axios";
 import { UserContext } from "../../context/user";
 import { useContext } from "react";
-//import "normalize.css";
 
 import { useHistory } from "react-router-dom";
 
@@ -25,7 +24,6 @@ export default function RegisterForm() {
         const { data } = await axios.post(api.users + "/isUniqueEmail", {
           emailAddress: emailAddress,
         });
-        //  console.log(data.result);
         return data.result;
       }),
     password: Yup.string()
@@ -42,7 +40,6 @@ export default function RegisterForm() {
     formState: { errors },
   } = useForm(formOptions);
   const onSubmit = async (data) => {
-    //console.log(data);
     const res = await axios.post(api.users, {
       firstName: data.firstName,
       lastName: data.lastName,
