@@ -205,9 +205,9 @@ describe("Exercises", () => {
     });
   });
 
-  describe("get /exercises/userExerciseCountByWeek", () => {
+  describe("GET /exercises/userExerciseCountByWeek", () => {
     it("should return count of exercises completed by the user", async () => {
-      const token = createJWTToken(1); //
+      const token = createJWTToken(1);
       const response = await request(app)
         .get("/exercises/userExerciseCountByWeek")
         .set("Cookie", `token=${token}`);

@@ -1,85 +1,113 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Bar, Chart } from "react-chartjs-2";
 import "chartjs-plugin-datalabels";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import axios from "axios";
+import api from "./../../constants/api";
 
-Chart.register(ChartDataLabels);
+const ChartsWeekly = () => {
+  console.log("In chart weekly");
 
-let delayed;
-const data = {
-  labels: ["Week1", "Week2", "Week3", "Week4", "Current week"],
-  //labels: ["6/9", "13/9", "20/9", "27/9", "4/10"],
-  datasets: [
-    {
-      label: "# of Votes",
-      data: [3, 2, 3, 4, 2],
-      backgroundColor: ["Blue"],
-      borderColor: ["Blue"],
-      borderWidth: 1,
+  Chart.register(ChartDataLabels);
+  let delayed;
+  let weekArray = [];
+  let exerciseCountArray = [];
+
+  const [completedExerciseList, setCompletedExerciseList] = useState([]);
+
+  const getCompletedExerciseList = async () => {
+    try {
+      const res = await axios.get(api.exercisesCountByWeek);
+      const exerciseList = res.data;
+
+      setCompletedExerciseList(exerciseList);
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getCompletedExerciseList();
+  }, []);
+
+  const formatDate = (date) => {
+    return `${date.getDate()}/${date.getMonth() + 1}`;
+  };
+
+  if (completedExerciseList) {
+    weekArray = completedExerciseList.map((week) =>
+      formatDate(new Date(week.weekStart))
+    );
+    exerciseCountArray = completedExerciseList.map(
+      (exerciseCount) => exerciseCount.count
+    );
+
+    console.log(weekArray);
+    console.log(exerciseCountArray);
+  }
+
+  const data = {
+    labels: weekArray,
+    datasets: [
+      {
+        label: "My past 5 week progress",
+        data: exerciseCountArray,
+        backgroundColor: ["rgba(243, 207, 4, 1)"],
+        datalabels: {
+          align: "center",
+          anchor: "center",
+        },
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    animation: {
+      onComplete: () => {
+        delayed = true;
+      },
+      delay: (context) => {
+        let delay = 0;
+        if (context.type === "data" && context.mode === "default" && !delayed) {
+          delay = context.dataIndex * 300 + context.datasetIndex * 100;
+        }
+        return delay;
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+
+      y: {
+        stacked: true,
+        grid: {
+          display: false,
+        },
+      },
+    },
+    plugins: {
       datalabels: {
-        align: "center",
-        anchor: "center",
+        color: "black",
+        display: true,
+        font: {
+          weight: "bold",
+        },
       },
     },
-  ],
-};
+  };
 
-const options = {
-  responsive: true,
-  animation: {
-    onComplete: () => {
-      delayed = true;
-    },
-    delay: (context) => {
-      let delay = 0;
-      if (context.type === "data" && context.mode === "default" && !delayed) {
-        delay = context.dataIndex * 300 + context.datasetIndex * 100;
-      }
-      return delay;
-    },
-  },
-  scales: {
-    x: {
-      Min: 0,
-      Max: 5,
-      grid: {
-        display: false,
-      },
-    },
-
-    y: {
-      stacked: true,
-      grid: {
-        display: false,
-      },
-    },
-  },
-  plugins: {
-    datalabels: {
-      color: "red",
-      display: true,
-      font: {
-        weight: "bolder",
-      },
-    },
-  },
-};
-
-const VerticalBar = () => (
-  <>
-    <div className="header">
-      <h1 className="title">Vertical Bar Chart</h1>
-      <div className="links">
-        <a
-          className="btn btn-gh"
-          href="https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/VerticalBar.js"
-        >
-          Github Source
-        </a>
+  return (
+    <div>
+      <div>
+        <h1 className="home__slogan history_bg">My Weekly Progress</h1>
       </div>
+      <Bar data={data} options={options} />
     </div>
-    <Bar data={data} options={options} />
-  </>
-);
+  );
+};
 
-export default VerticalBar;
+export default ChartsWeekly;

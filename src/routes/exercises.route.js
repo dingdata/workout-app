@@ -65,7 +65,6 @@ router.post("/filterByPreferences", async (req, res, next) => {
 
 router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
   try {
-    // console.log("request is ", req);
     let userId = req.user.userId;
     console.log("iser id is ", userId);
 
@@ -74,7 +73,7 @@ router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
     const attributes = [
       [
         db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
-        "trunc",
+        "weekStart",
       ],
       [db.sequelize.fn("COUNT", db.sequelize.col("createdAt")), "count"],
     ];
