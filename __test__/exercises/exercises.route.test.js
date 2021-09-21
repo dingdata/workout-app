@@ -201,7 +201,7 @@ describe("Exercises", () => {
     //   expect(exercise[0]).toMatchObject(expectedExercise);
     // });
 
-    describe.only("get /exercises/userExerciseCountByWeek", () => {
+    describe("get /exercises/userExerciseCountByWeek", () => {
       it("should return count of exercises completed by the user", async () => {
         const token = createJWTToken(1); //
         const response = await request(app)
