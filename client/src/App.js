@@ -61,6 +61,12 @@ function App() {
               )}
 
               {currentUser && (
+                <Nav.Link as={Link} to="/History" eventKey="link-3">
+                  My Progress
+                </Nav.Link>
+              )}
+
+              {currentUser && (
                 <div className="nav-link-right-aligned">
                   <Navbar.Text>Welcome, {currentUser.firstName} !</Navbar.Text>
                   <Link
