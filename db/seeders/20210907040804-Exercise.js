@@ -8,6 +8,7 @@ const exercises = [
     source: "youtube",
     tag: "4pKly2JojMw",
     title: "Yoga Basic Stretch",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -15,7 +16,8 @@ const exercises = [
     exerciseType: "Kids",
     source: "youtube",
     tag: "N5gX--B1jIc",
-    title: "Burn Fats in 10 Min",
+    title: "Burn Fats Workout",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -24,6 +26,7 @@ const exercises = [
     source: "youtube",
     tag: "A0dkwlrC6ok",
     title: "Kids Morning Workout",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -32,6 +35,7 @@ const exercises = [
     source: "youtube",
     tag: "eNuZN3GSm8U",
     title: "Baby Sharks Workout",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -39,7 +43,8 @@ const exercises = [
     exerciseType: "Kids",
     source: "youtube",
     tag: "tYyNM9pmOlA",
-    title: "Fun Cardio Workout",
+    title: "Fun Cardio",
+    needEquipment: false,
   },
   {
     duration: 14,
@@ -48,6 +53,7 @@ const exercises = [
     source: "youtube",
     tag: "Wsy2L9VvX90",
     title: "Mindfulness",
+    needEquipment: false,
   },
   {
     duration: 9,
@@ -55,7 +61,8 @@ const exercises = [
     exerciseType: "Abs",
     source: "youtube",
     tag: "3p8EBPVZ2Iw",
-    title: "6 Pack Abs",
+    title: "Six Pack Abs Workout",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -63,7 +70,8 @@ const exercises = [
     exerciseType: "Abs",
     source: "youtube",
     tag: "QsG25Rr09JY",
-    title: "Lower Abs & Intense Belly Fat Burn",
+    title: "Lower Abs and Intense Belly Fat Burn",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -72,6 +80,7 @@ const exercises = [
     source: "youtube",
     tag: "ZtnWJNkOy5w",
     title: "Core and Legs Band Workout",
+    needEquipment: true,
   },
   {
     duration: 10,
@@ -79,7 +88,8 @@ const exercises = [
     exerciseType: "Abs",
     source: "youtube",
     tag: "1f8yoFFdkcY",
-    title: "Beginner Abs Workout - Quiet trainer :)",
+    title: "Beginner Abs Workout",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -87,7 +97,8 @@ const exercises = [
     exerciseType: "Abs",
     source: "youtube",
     tag: "iV8JGYFnOqk",
-    title: "Side Abs and Muffin Top",
+    title: "Side Abs and Muffin Top Workout",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -95,7 +106,8 @@ const exercises = [
     exerciseType: "Barre",
     source: "youtube",
     tag: "3320EhbImLY",
-    title: "Flat-Belly Barre Workout",
+    title: "Flat-Belly Barre",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -103,7 +115,8 @@ const exercises = [
     exerciseType: "Barre",
     source: "youtube",
     tag: "sAapLQCASOE",
-    title: "Barre Sculpting Workout",
+    title: "Barre Sculpting",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -111,7 +124,8 @@ const exercises = [
     exerciseType: "Barre",
     source: "youtube",
     tag: "Hb2-7HWoT9c",
-    title: "Barre Low Impact",
+    title: "Low Impact Barre",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -119,7 +133,8 @@ const exercises = [
     exerciseType: "Cardio Dance",
     source: "youtube",
     tag: "8DZktowZo_k",
-    title: "Cardio Latin Dance Workout",
+    title: "Cardio Latin Dance",
+    needEquipment: false,
   },
   {
     duration: 15,
@@ -127,7 +142,8 @@ const exercises = [
     exerciseType: "Cardio Dance",
     source: "youtube",
     tag: "ILUZz0nGEBI",
-    title: "80s edition Dance Workout",
+    title: "80s Edition Dance",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -135,7 +151,8 @@ const exercises = [
     exerciseType: "HIIT",
     source: "youtube",
     tag: "W4eKVKwf3rQ",
-    title: "Full Body Fat Burn HIIT (No Jumping)",
+    title: "Full Body Fat Burn HIIT",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -143,7 +160,8 @@ const exercises = [
     exerciseType: "HIIT",
     source: "youtube",
     tag: "wGZYbAZrDxw",
-    title: "Others",
+    title: "High Intensity Interval Training ",
+    needEquipment: false,
   },
   {
     duration: 20,
@@ -152,6 +170,7 @@ const exercises = [
     source: "youtube",
     tag: "wXOEE2EgAEM",
     title: "Knockout Ab Workout",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -160,6 +179,7 @@ const exercises = [
     source: "youtube",
     tag: "lk5G1WEcntA",
     title: "Below-the-Belt Boxing and Kickboxing",
+    needEquipment: false,
   },
   {
     duration: 45,
@@ -168,6 +188,7 @@ const exercises = [
     source: "youtube",
     tag: "lujcE3FGL_U",
     title: "Epic Cardio Boxing",
+    needEquipment: false,
   },
   {
     duration: 5,
@@ -175,7 +196,8 @@ const exercises = [
     exerciseType: "KpopX Fitness",
     source: "youtube",
     tag: "BIMGR1j-LOY",
-    title: "Dance workout to Mr Chu Apink",
+    title: "Dance Workout to Mr Chu Apink",
+    needEquipment: false,
   },
   {
     duration: 5,
@@ -183,7 +205,8 @@ const exercises = [
     exerciseType: "KpopX Fitness",
     source: "youtube",
     tag: "mkfZNY76uEI",
-    title: "Dance workout to BTS Fire",
+    title: "Dance Workout to BTS Fire",
+    needEquipment: false,
   },
   {
     duration: 7,
@@ -191,7 +214,8 @@ const exercises = [
     exerciseType: "KpopX Fitness",
     source: "youtube",
     tag: "t2Q0Iw_yraE",
-    title: "Dance workout to Wonder Girls Nobody",
+    title: "Dance Workout to Wonder Girls Nobody",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -199,7 +223,8 @@ const exercises = [
     exerciseType: "KpopX Fitness",
     source: "youtube",
     tag: "DfqlRzHWuD0",
-    title: "Dance workout for family",
+    title: "Family Dance Workout",
+    needEquipment: false,
   },
   {
     duration: 15,
@@ -207,7 +232,8 @@ const exercises = [
     exerciseType: "KpopX Fitness",
     source: "youtube",
     tag: "2gZ-TMkrKBE",
-    title: "Dance workout for family",
+    title: "Family Dance Workout",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -215,7 +241,8 @@ const exercises = [
     exerciseType: "Lower Body",
     source: "youtube",
     tag: "NTsQjy_s1Fo",
-    title: "Butt and Thigh Burnout with Weights",
+    title: "Butt and Thigh Burnout With Weights",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -223,7 +250,8 @@ const exercises = [
     exerciseType: "Pilates",
     source: "youtube",
     tag: "zsaGmHsIGy8",
-    title: "Pilates for Lean Legs & Toned Core",
+    title: "Pilates for Lean Legs and Toned Core",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -231,23 +259,26 @@ const exercises = [
     exerciseType: "Stretch",
     source: "youtube",
     tag: "f6RGHvp2oCA",
-    title: "Stretch in bed in moring or before sleep",
+    title: "Stretch In Bed",
+    needEquipment: false,
   },
   {
     duration: 10,
     intensity: "Low",
     exerciseType: "Upper Body",
     source: "youtube",
-    tag: "jXm0y-csiuE",
-    title: "Stretch for Shoulders, Neck & Collarbone Area",
+    tag: "jXm0y-csiuEAndt=1s",
+    title: "Stretch for Shoulders, Neck and Collarbone Area",
+    needEquipment: false,
   },
   {
     duration: 10,
     intensity: "Low",
     exerciseType: "Upper Body",
     source: "youtube",
-    tag: "uNILu4KSHQM",
+    tag: "uNILu4KSHQMAndt=2s",
     title: "Sitting Arm and Shoulder Workout",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -255,7 +286,8 @@ const exercises = [
     exerciseType: "Yoga",
     source: "youtube",
     tag: "X3-gKPNyrTA",
-    title: "Neck, Shoulders, Upper Back",
+    title: "Neck, Shoulders and Upper Back",
+    needEquipment: false,
   },
   {
     duration: 20,
@@ -264,6 +296,7 @@ const exercises = [
     source: "youtube",
     tag: "J-05m7bboK0",
     title: "Lower Back",
+    needEquipment: false,
   },
   {
     duration: 20,
@@ -272,6 +305,7 @@ const exercises = [
     source: "youtube",
     tag: "LqXZ628YNj4",
     title: "Yoga Morning Flow",
+    needEquipment: false,
   },
   {
     duration: 50,
@@ -280,6 +314,7 @@ const exercises = [
     source: "youtube",
     tag: "bQR0Rfd8Gik",
     title: "Yoga Basic and Stretches",
+    needEquipment: false,
   },
   {
     duration: 20,
@@ -288,6 +323,7 @@ const exercises = [
     source: "youtube",
     tag: "y6RQQhupPpY",
     title: "Yin Yoga",
+    needEquipment: false,
   },
   {
     duration: 4,
@@ -295,7 +331,8 @@ const exercises = [
     exerciseType: "Zumba",
     source: "youtube",
     tag: "0gfGlyoyVcM",
-    title: "Dance workout to Despacito",
+    title: "Dance Workout to Despacito",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -303,7 +340,8 @@ const exercises = [
     exerciseType: "Zumba Gold",
     source: "youtube",
     tag: "yjOmp6HleM8",
-    title: "Zumba for seniors",
+    title: "Zumba for Seniors",
+    needEquipment: false,
   },
   {
     duration: 50,
@@ -311,7 +349,8 @@ const exercises = [
     exerciseType: "Zumba Gold",
     source: "youtube",
     tag: "OkJK77bkpeg",
-    title: "Zumba for seniors",
+    title: "Zumba for Seniors",
+    needEquipment: false,
   },
   {
     duration: 30,
@@ -320,6 +359,7 @@ const exercises = [
     source: "youtube",
     tag: "K56Z12XNQ5c",
     title: "Pilates for beginner",
+    needEquipment: false,
   },
   {
     duration: 20,
@@ -328,6 +368,7 @@ const exercises = [
     source: "youtube",
     tag: "dRBp7o2sKcc",
     title: "Tabata for beginner",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -335,7 +376,8 @@ const exercises = [
     exerciseType: "Mindfulness",
     source: "youtube",
     tag: "O-6f5wQXSu8",
-    title: "Meditation For Anxiety",
+    title: "Meditation for Anxiety",
+    needEquipment: false,
   },
   {
     duration: 5,
@@ -344,6 +386,7 @@ const exercises = [
     source: "youtube",
     tag: "inpok4MKVLM",
     title: "Meditation You Can Do Anywhere",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -351,7 +394,8 @@ const exercises = [
     exerciseType: "Yoga",
     source: "youtube",
     tag: "UEEsdXn8oG8",
-    title: "Wake Up Yoga - 11 Minute Morning Yoga Practice - Yoga With Adriene",
+    title: "Wake Up Yoga",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -359,7 +403,8 @@ const exercises = [
     exerciseType: "Yoga",
     source: "youtube",
     tag: "dcqW72d5JjI",
-    title: "Yoga For Weight Loss - Hips and Core Vinyasa - Yoga With Adriene",
+    title: "Yoga for Weight Loss",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -367,7 +412,8 @@ const exercises = [
     exerciseType: "Yoga",
     source: "youtube",
     tag: "T41mYCmtWls",
-    title: "10 min Morning Yoga Stretch for Beginners - Energy Boost Yoga",
+    title: "Morning Yoga Stretch for Beginners",
+    needEquipment: false,
   },
   {
     duration: 10,
@@ -375,7 +421,8 @@ const exercises = [
     exerciseType: "HIIT",
     source: "youtube",
     tag: "zr08J6wB53Y",
-    title: "10 MIN HIGH INTENSITY WORKOUT",
+    title: "High Intensity Interval Training ",
+    needEquipment: true,
   },
   {
     duration: 10,
@@ -383,7 +430,8 @@ const exercises = [
     exerciseType: "HIIT",
     source: "youtube",
     tag: "EfJ4aB_enVE",
-    title: "15 MIN SIXPACK WORKOUT",
+    title: "SixPack Workout",
+    needEquipment: true,
   },
   {
     duration: 30,
@@ -391,10 +439,10 @@ const exercises = [
     exerciseType: "HIIT",
     source: "youtube",
     tag: "DOtr16U8V2M",
-    title: "30 Minute Fat Burning & Strengthening Workout ",
+    title: "Fat Burning and Strengthening Workout ",
+    needEquipment: true,
   },
 ];
-
 const exercisesWithTimestamp = exercises.map((exercise) => ({
   ...exercise,
   createdAt: new Date(),
