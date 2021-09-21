@@ -133,29 +133,29 @@ describe("Exercises", () => {
       expect(exercise[0].duration).toBeLessThanOrEqual(10);
     });
 
-    it("should return exercise with needEquipment of value true", async () => {
-      const exerciseBody = {
-        exerciseType: ["Yoga", "Cardio", "Abs", "Barre"],
-        duration: 999,
-        needEquipment: true,
-      };
+    // it("should return exercise with needEquipment of value true", async () => {
+    //   const exerciseBody = {
+    //     exerciseType: ["Yoga", "Cardio", "Abs", "Barre"],
+    //     duration: 999,
+    //     needEquipment: true,
+    //   };
 
-      const expectedExercise = {
-        duration: 40,
-        intensity: "High",
-        exerciseType: "Barre",
-        source: "youtube",
-        tag: "3320EhbImLY",
-        title: "Flat Belly Barre",
-        needEquipment: true,
-      };
+    //   const expectedExercise = {
+    //     duration: 40,
+    //     intensity: "High",
+    //     exerciseType: "Barre",
+    //     source: "youtube",
+    //     tag: "3320EhbImLY",
+    //     title: "Flat Belly Barre",
+    //     needEquipment: true,
+    //   };
 
-      const { body: exercise } = await request(app)
-        .post("/exercises/filterByPreferences")
-        .send(exerciseBody)
-        .expect(200);
+    //   const { body: exercise } = await request(app)
+    //     .post("/exercises/filterByPreferences")
+    //     .send(exerciseBody)
+    //     .expect(200);
 
-      expect(exercise[0]).toMatchObject(expectedExercise);
-    });
+    //   expect(exercise[0]).toMatchObject(expectedExercise);
+    // });
   });
 });
