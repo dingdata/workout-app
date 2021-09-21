@@ -24,6 +24,7 @@ describe("Users", () => {
       source: "youtube",
       tag: "ZtnWJNkOy5w",
       title: "Core and Legs Band Workout",
+      needEquipment: true,
     };
     const exercise2 = {
       duration: 10,
@@ -32,6 +33,7 @@ describe("Users", () => {
       source: "youtube",
       tag: "iV8JGYFnOqk",
       title: "Side Abs and Muffin Top",
+      needEquipment: true,
     };
     const exercise3 = {
       duration: 10,
@@ -40,6 +42,7 @@ describe("Users", () => {
       source: "youtube",
       tag: "iV8JGYFnOqk",
       title: "Side Abs and Muffin Top",
+      needEquipment: false,
     };
     await db.Exercise.create(exercise1);
     await db.Exercise.create(exercise2);
