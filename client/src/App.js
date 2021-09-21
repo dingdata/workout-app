@@ -19,7 +19,6 @@ import { useCurrentUserHook } from "./hooks/useCurrentUserHook";
 import { useUserPrefHook } from "./hooks/useUserPrefHook";
 import axios from "axios";
 import api from "../src/constants/api";
-import ChartsWeekly from "./components/Exercises/ChartsWeekly";
 
 function App() {
   //currentUserHook for updating/retrieving login user
@@ -108,7 +107,7 @@ function App() {
             {/* <Route exact path="/Home" component={Home} /> */}
 
             <Route exact path="/Home" component={() => <Home />} />
-            <Route exact path="/" component={() => <ChartsWeekly />} />
+            <Route exact path="/" component={() => <Home />} />
 
             <Route exact path="/History" component={() => <History />} />
             {currentUser && (

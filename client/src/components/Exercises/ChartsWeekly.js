@@ -4,21 +4,55 @@ import "chartjs-plugin-datalabels";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import axios from "axios";
 import api from "./../../constants/api";
+
 const ChartsWeekly = () => {
   console.log("In chart weekly");
 
   Chart.register(ChartDataLabels);
   let delayed;
+  let weekArray = [];
+  let exerciseCountArray = [];
+
+  const [completedExerciseList, setCompletedExerciseList] = useState([]);
+
+  const getCompletedExerciseList = async () => {
+    try {
+      const res = await axios.get(api.exercisesCountByWeek);
+      const exerciseList = res.data;
+
+      setCompletedExerciseList(exerciseList);
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getCompletedExerciseList();
+  }, []);
+
+  const formatDate = (date) => {
+    return `${date.getDate()}/${date.getMonth() + 1}`;
+  };
+
+  if (completedExerciseList) {
+    weekArray = completedExerciseList.map((week) =>
+      formatDate(new Date(week.weekStart))
+    );
+    exerciseCountArray = completedExerciseList.map(
+      (exerciseCount) => exerciseCount.count
+    );
+
+    console.log(weekArray);
+    console.log(exerciseCountArray);
+  }
+
   const data = {
-    labels: ["Week1", "Week2", "Week3", "Week4", "Current week"],
-    //labels: ["6/9", "13/9", "20/9", "27/9", "4/10"],
+    labels: weekArray,
     datasets: [
       {
-        label: "# of Votes",
-        data: [3, 2, 3, 4, 2],
-        backgroundColor: ["Blue"],
-        borderColor: ["Blue"],
-        borderWidth: 1,
+        label: "My past 5 week progress",
+        data: exerciseCountArray,
+        backgroundColor: ["rgba(243, 207, 4, 1)"],
         datalabels: {
           align: "center",
           anchor: "center",
@@ -43,8 +77,6 @@ const ChartsWeekly = () => {
     },
     scales: {
       x: {
-        Min: 0,
-        Max: 5,
         grid: {
           display: false,
         },
@@ -59,43 +91,19 @@ const ChartsWeekly = () => {
     },
     plugins: {
       datalabels: {
-        color: "red",
+        color: "black",
         display: true,
         font: {
-          weight: "bolder",
+          weight: "bold",
         },
       },
     },
   };
 
-  const [completedExercises, setCompletedExercises] = useState([]);
-
-  const getCompletedExerciseList = async () => {
-    try {
-      const res = await axios.get(api.exercisesCountByWeek);
-      console.log(res.data);
-      // setCompletedExercises(res.data);
-    } catch (err) {
-      // setErrorMessage(err.res.data);
-      // TODO: you can make use of this error message to display on the UI
-    }
-  };
-  useEffect(() => {
-    getCompletedExerciseList();
-  }, []);
-
   return (
     <div>
       <div className="header">
-        <h1 className="title">Weekly Chart</h1>
-        <div className="links">
-          <a
-            className="btn btn-gh"
-            href="https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/VerticalBar.js"
-          >
-            Github Source
-          </a>
-        </div>
+        <h1 className="home__slogan history_bg">My Weekly Progress</h1>
       </div>
       <Bar data={data} options={options} />
     </div>
