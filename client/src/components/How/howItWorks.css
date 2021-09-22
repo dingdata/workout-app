@@ -1,0 +1,25 @@
+.how-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  width: "25rem";
+  border: none;
+}
+
+.title {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 22px;
+}
+
+.text {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 22px;
+}
+
+.img {
+  width: 200px;
+}
