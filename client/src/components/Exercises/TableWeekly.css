@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.label-column-icon {
+  max-width: 25px;
+}
+
 .label-column {
   display: flex;
   flex-direction: column;
