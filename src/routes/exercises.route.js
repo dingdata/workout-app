@@ -63,9 +63,9 @@ router.post("/filterByPreferences", async (req, res, next) => {
   }
 });
 
-router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
+router.get("/userExerciseCountByWeek", async (req, res, next) => {
   try {
-    let userId = req.user.userId;
+    let userId = 1; //req.user.userId;
     console.log("iser id is ", userId);
 
     const where = { UserId: userId };
@@ -90,7 +90,48 @@ router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
     const query = { where, attributes, group, order, limit: "5" };
 
     const exercises = await db.UserExercise.findAndCountAll(query);
-    res.json(exercises.rows);
+
+    console.log(exercises.rows);
+
+    //---- Start of Testing Get Mondays-----------
+
+    const formatDateToMonday = (date) => {
+      return `${date.getDate()}/${date.getMonth() + 1}`;
+    };
+    let mondayArray = [];
+    let resultArray = [];
+
+    for (i = 0; i < 5; i++) {
+      let currentDate = new Date();
+      let firstday = new Date(
+        currentDate.setDate(
+          currentDate.getDate() - currentDate.getDay() + 1 - i * 7
+        )
+      ).toUTCString();
+
+      mondayArray.push(formatDateToMonday(new Date(firstday))); // not for production
+    }
+
+    mondayArray.map((monday) => {
+      let targetRow = exercises.rows.filter(
+        (row) => formatDateToMonday(row.dataValues.weekStart) == monday
+      );
+      console.log(`TargetRow ${targetRow}`);
+      console.log(targetRow);
+      if (targetRow.length > 0) {
+        resultArray.push({
+          weekStart: monday,
+          count: targetRow[0].dataValues.count,
+        });
+      } else {
+        resultArray.push({
+          weekStart: monday,
+          count: 0,
+        });
+      }
+    });
+
+    res.json(resultArray);
   } catch (err) {
     next(err);
   }

@@ -30,14 +30,8 @@ const ChartsWeekly = () => {
     getCompletedExerciseList();
   }, []);
 
-  const formatDate = (date) => {
-    return `${date.getDate()}/${date.getMonth() + 1}`;
-  };
-
   if (completedExerciseList) {
-    weekArray = completedExerciseList.map((week) =>
-      formatDate(new Date(week.weekStart))
-    );
+    weekArray = completedExerciseList.map((week) => week.weekStart);
     exerciseCountArray = completedExerciseList.map(
       (exerciseCount) => exerciseCount.count
     );
