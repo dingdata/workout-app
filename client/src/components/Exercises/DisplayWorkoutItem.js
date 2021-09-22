@@ -54,11 +54,8 @@ const DisplayWorkoutItem = (props) => {
           )}
         </div>
         {completed && (
-          <div>
-            <br />
-            <Link to={goWorkoutHistory} className="home__slogan">
-              View My Progress
-            </Link>
+          <div className="home__slogan">
+            Sore? Tired? Out of breath? Good… it’s working !
           </div>
         )}
       </div>
