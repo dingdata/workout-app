@@ -160,7 +160,7 @@ router.get(
           resultArray.push({
             weekStart: monday,
             count: 0,
-            duration: 0,
+            totalDuration: 0,
           });
         }
       });
