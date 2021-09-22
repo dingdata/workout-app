@@ -19,6 +19,7 @@ import { useCurrentUserHook } from "./hooks/useCurrentUserHook";
 import { useUserPrefHook } from "./hooks/useUserPrefHook";
 import axios from "axios";
 import api from "../src/constants/api";
+import howItWorks from "./components/howItWorks";
 
 function App() {
   //currentUserHook for updating/retrieving login user
@@ -52,7 +53,7 @@ function App() {
                 className="nav-link-text"
                 eventKey="link-1"
               >
-                How it works
+                How It Works
               </Nav.Link>
               {currentUser && (
                 <Nav.Link as={Link} to="/allWorkouts" eventKey="link-2">
@@ -104,9 +105,8 @@ function App() {
           </Navbar>
 
           <Switch>
-            {/* <Route exact path="/Home" component={Home} /> */}
-
             <Route exact path="/Home" component={() => <Home />} />
+            <Route exact path="/howItWorks" component={howItWorks} />
             <Route exact path="/" component={() => <Home />} />
 
             {currentUser && (
