@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./MyProgress.css";
+import "./MyProgress.scss";
 import axios from "axios";
 import { api } from "../constants/api";
 import ChartsWeekly from "./Exercises/ChartsWeekly";
@@ -28,7 +28,7 @@ const MyProgress = () => {
     return `${date.toDateString()}, ${date.toLocaleTimeString()}`;
   };
   return (
-    <div className="progress-bg">
+    <div className="progress-container">
       <div className="progress-header">My Weekly Progress</div>
       <div className="progress-table-container">
         <TableWeekly />
@@ -41,7 +41,7 @@ const MyProgress = () => {
         {completedExercises &&
           completedExercises.map((exercise) => (
             <div>
-              <div className="progress-container">
+              <div className="completed-exercise">
                 <img
                   className="list-img"
                   src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
