@@ -10,7 +10,6 @@ import DisplayAll from "./components/Exercises/DisplayAll";
 
 import MyProgress from "./components/MyProgress";
 import Home from "./components/Home/Home";
-import LoggedInUser from "./components/LoggedInUser";
 import DisplayRandom from "./components/Exercises/DisplayRandom";
 import DisplayWorkoutItem from "./components/Exercises/DisplayWorkoutItem";
 
@@ -55,30 +54,30 @@ function App() {
               >
                 How It Works
               </Nav.Link>
-              {currentUser && (
-                <Nav.Link as={Link} to="/allWorkouts" eventKey="link-2">
-                  All Workouts
-                </Nav.Link>
-              )}
 
               {currentUser && (
-                <Nav.Link as={Link} to="/myProgress" eventKey="link-3">
-                  My Progress
-                </Nav.Link>
+                <>
+                  <Nav.Link as={Link} to="/allWorkouts" eventKey="link-2">
+                    All Workouts
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/myProgress" eventKey="link-3">
+                    My Progress
+                  </Nav.Link>
+                  <div className="nav-link-right-aligned">
+                    <Navbar.Text>
+                      Welcome, {currentUser.firstName} !
+                    </Navbar.Text>
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      onClick={logOut}
+                      to="/home"
+                    >
+                      <div className="label title">logout</div>
+                    </Link>
+                  </div>
+                </>
               )}
 
-              {currentUser && (
-                <div className="nav-link-right-aligned">
-                  <Navbar.Text>Welcome, {currentUser.firstName} !</Navbar.Text>
-                  <Link
-                    style={{ textDecoration: "none" }}
-                    onClick={logOut}
-                    to="/home"
-                  >
-                    <div className="label title">logout</div>
-                  </Link>
-                </div>
-              )}
               {!currentUser && (
                 <div className="nav-link-right-aligned">
                   <Link
@@ -110,9 +109,8 @@ function App() {
             <Route exact path="/" component={() => <Home />} />
 
             {currentUser && (
-              <div>
+              <>
                 <Route exact path="/myProgress" component={MyProgress} />
-                <Route exact path="/LoggedInMain" component={LoggedInUser} />
                 <Route
                   exact
                   path="/allWorkouts"
@@ -123,14 +121,15 @@ function App() {
                   path="/workoutItem"
                   component={DisplayWorkoutItem}
                 />
-              </div>
+              </>
             )}
+
             {!currentUser && (
-              <div>
+              <>
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/random" component={DisplayRandom} />
-              </div>
+              </>
             )}
           </Switch>
         </BrowserRouter>
