@@ -28,7 +28,7 @@ const MyProgress = () => {
   };
   return (
     <div>
-      <div>
+      <div className="chart-container">
         <ChartsWeekly />
       </div>
       <div className="workout-container list-exercise progress-bg">
