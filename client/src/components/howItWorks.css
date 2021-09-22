@@ -1,0 +1,11 @@
+.how-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  width: "25rem";
+  border: none;
+}
