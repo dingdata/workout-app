@@ -1,6 +1,6 @@
 const api = {
   exercises: `${process.env.REACT_APP_API_URL}/api/exercises`,
-  exercisesCountByWeek: `${process.env.REACT_APP_API_URL}/api/exercises/userExerciseCountByWeek/5`,
+  exercisesCountByWeek: `${process.env.REACT_APP_API_URL}/api/exercises/userExerciseCountByWeek`,
   users: `${process.env.REACT_APP_API_URL}/api/users`,
   userLogin: `${process.env.REACT_APP_API_URL}/api/users/login`,
   usersLogout: `${process.env.REACT_APP_API_URL}/api/users/logout`,
@@ -8,4 +8,9 @@ const api = {
   usersExercise: `${process.env.REACT_APP_API_URL}/api/users/exercises`,
 };
 
-export default api;
+const apiConfig = {
+  exerciseChartCount: "/5",
+  exerciseTableCount: "/2",
+};
+
+module.exports = { api, apiConfig };

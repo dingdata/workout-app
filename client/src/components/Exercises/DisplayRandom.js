@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import api from "../../constants/api";
+import { api } from "../../constants/api";
 import YoutubeIframe from "./YoutubeIframe";
 import { useHistory } from "react-router-dom";
 import "./DisplayWorkoutItem.css";

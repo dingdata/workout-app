@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./History.css";
 import axios from "axios";
-import api from "../constants/api";
+import { api } from "../constants/api";
 import ChartsWeekly from "./Exercises/ChartsWeekly";
 
 const History = () => {

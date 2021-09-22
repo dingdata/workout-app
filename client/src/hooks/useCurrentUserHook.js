@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import api from "../constants/api";
+import { api } from "../constants/api";
 
 export const useCurrentUserHook = () => {
   const [currentUser, setCurrentUser] = useState();

@@ -6,7 +6,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import api from "../../constants/api";
+import { api } from "../../constants/api";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../context/user";
 import { useContext, useState } from "react";

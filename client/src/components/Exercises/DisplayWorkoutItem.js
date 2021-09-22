@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import YoutubeIframe from "./YoutubeIframe";
 import { useHistory } from "react-router-dom";
-import api from "../../constants/api";
+import { api } from "../../constants/api";
 import axios from "axios";
 import "./DisplayWorkoutItem.css";
 

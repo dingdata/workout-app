@@ -18,7 +18,7 @@ import { UserContext } from "./context/user";
 import { useCurrentUserHook } from "./hooks/useCurrentUserHook";
 import { useUserPrefHook } from "./hooks/useUserPrefHook";
 import axios from "axios";
-import api from "../src/constants/api";
+import { api } from "../src/constants/api";
 import howItWorks from "./components/How/howItWorks";
 
 function App() {

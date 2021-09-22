@@ -1,5 +1,5 @@
 import React from "react";
-import api from "../../constants/api";
+import { api } from "../../constants/api";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./RegisterForm.scss";

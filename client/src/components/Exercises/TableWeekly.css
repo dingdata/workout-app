@@ -10,6 +10,7 @@
 }
 
 .label-column-cell {
+  height: 50px;
   width: 150px;
   border-style: solid;
   border-width: 2px;
@@ -17,6 +18,7 @@
 }
 
 .content-column-cell {
+  height: 50px;
   width: 75px;
   border-style: solid;
   border-width: 2px;

@@ -3,7 +3,7 @@ import { Bar, Chart } from "react-chartjs-2";
 import "chartjs-plugin-datalabels";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import axios from "axios";
-import api from "./../../constants/api";
+import { api, apiConfig } from "./../../constants/api";
 
 const ChartsWeekly = () => {
   console.log("In chart weekly");
@@ -17,7 +17,9 @@ const ChartsWeekly = () => {
 
   const getCompletedExerciseList = async () => {
     try {
-      const res = await axios.get(api.exercisesCountByWeek);
+      const res = await axios.get(
+        api.exercisesCountByWeek + apiConfig.exerciseChartCount
+      );
       const exerciseList = res.data;
 
       setCompletedExerciseList(exerciseList);

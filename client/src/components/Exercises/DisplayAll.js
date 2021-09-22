@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
-import api from "../../constants/api";
+import { api } from "../../constants/api";
 import "./DisplayAll.css";
 import ExerciseItem from "./ExerciseItem";
 import WorkoutFilter from "./WorkoutFilter";
