@@ -4,6 +4,7 @@ import "./MyProgress.css";
 import axios from "axios";
 import api from "../constants/api";
 import ChartsWeekly from "./Exercises/ChartsWeekly";
+import TableWeekly from "./Exercises/TableWeekly";
 
 const MyProgress = () => {
   const [completedExercises, setCompletedExercises] = useState([]);
@@ -29,6 +30,9 @@ const MyProgress = () => {
   return (
     <div className="progress-bg">
       <div className="progress-header">My Weekly Progress</div>
+      <div className="progress-table-container">
+        <TableWeekly />
+      </div>
       <div className="chart-container">
         <ChartsWeekly />
       </div>
