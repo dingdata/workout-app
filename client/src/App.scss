@@ -8,14 +8,12 @@
   padding-top: 0 !important;
   align-items: flex-end !important;
   padding-bottom: 0 !important;
-}
 
-.nav-link:hover {
-  cursor: pointer;
-}
-
-.nav-link-text {
-  padding-bottom: 1em !important;
+  .nav-link {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .nav-link-right-aligned {
@@ -29,21 +27,11 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 960px) {
-  .navbar .navbar-nav .nav-link {
-    padding: 1em 0.7em;
-  }
-  .navbar {
-    padding: 0;
-  }
-  .navbar .navbar-brand {
-    padding: 0 0.7em;
-  }
-}
-
 .navbar .navbar-nav .nav-link {
   position: relative;
+  padding: 1em 0.7em;
 }
+
 .navbar .navbar-nav .nav-link::after {
   position: absolute;
   bottom: 0;

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { Nav, Navbar, Image, NavItem } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
