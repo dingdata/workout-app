@@ -102,9 +102,6 @@ const ChartsWeekly = () => {
 
   return (
     <div>
-      <div>
-        <h1 className="home__slogan history_bg">My Weekly Progress</h1>
-      </div>
       <Bar data={data} options={options} />
     </div>
   );
