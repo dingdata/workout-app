@@ -19,7 +19,7 @@ import { useCurrentUserHook } from "./hooks/useCurrentUserHook";
 import { useUserPrefHook } from "./hooks/useUserPrefHook";
 import axios from "axios";
 import api from "../src/constants/api";
-import howItWorks from "./components/howItWorks";
+import howItWorks from "./components/How/howItWorks";
 
 function App() {
   //currentUserHook for updating/retrieving login user

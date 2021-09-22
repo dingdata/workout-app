@@ -63,78 +63,113 @@ router.post("/filterByPreferences", async (req, res, next) => {
   }
 });
 
-router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
-  try {
-    let userId = req.user.userId;
-    console.log("iser id is ", userId);
+router.get(
+  "/userExerciseCountByWeek/:noOfWeek",
+  auth,
+  async (req, res, next) => {
+    try {
+      let userId = req.user.userId;
+      let noOfWeek = parseInt(req.params.noOfWeek);
+      const where = { UserId: userId };
 
-    const where = { UserId: userId };
+      const attributes = [
+        [
+          db.sequelize.fn(
+            "date_trunc",
+            "WEEK",
+            db.sequelize.col("UserExercise.createdAt")
+          ),
+          "weekStart",
+        ],
+        [
+          db.sequelize.fn("COUNT", db.sequelize.col("UserExercise.createdAt")),
+          "count",
+        ],
+        [
+          db.sequelize.fn(
+            "sum",
 
-    const attributes = [
-      [
-        db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
-        "weekStart",
-      ],
-      [db.sequelize.fn("COUNT", db.sequelize.col("createdAt")), "count"],
-    ];
+            db.sequelize.col("Exercise.duration")
+          ),
+          "duration",
+        ],
+      ];
 
-    const group = [
-      db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
-    ];
-    const order = [
-      [
-        db.sequelize.fn("date_trunc", "WEEK", db.sequelize.col("createdAt")),
-        "DESC",
-      ],
-    ];
-    const query = { where, attributes, group, order, limit: "5" };
+      const include = [
+        { model: db.User, attributes: [] },
+        { model: db.Exercise, attributes: [] },
+      ];
+      const group = [
+        db.sequelize.fn(
+          "date_trunc",
+          "WEEK",
+          db.sequelize.col("UserExercise.createdAt")
+        ),
+      ];
+      const order = [
+        [
+          db.sequelize.fn(
+            "date_trunc",
+            "WEEK",
+            db.sequelize.col("UserExercise.createdAt")
+          ),
+          "DESC",
+        ],
+      ];
+      const query = {
+        where,
+        attributes,
+        include,
+        group,
+        order,
+        limit: noOfWeek,
+      };
 
-    const exercises = await db.UserExercise.findAndCountAll(query);
+      const exercises = await db.UserExercise.findAndCountAll(query);
 
-    console.log(exercises.rows);
+      const formatDateToMonday = (date) => {
+        return `${date.getDate()}/${date.getMonth() + 1}`;
+      };
+      let mondayArray = [];
+      let resultArray = [];
 
-    //---- Start of Testing Get Mondays-----------
+      for (i = 0; i < noOfWeek; i++) {
+        let currentDate = new Date();
+        let firstday = new Date(
+          currentDate.setDate(
+            currentDate.getDate() - currentDate.getDay() + 1 - i * 7
+          )
+        ).toUTCString();
 
-    const formatDateToMonday = (date) => {
-      return `${date.getDate()}/${date.getMonth() + 1}`;
-    };
-    let mondayArray = [];
-    let resultArray = [];
-
-    for (i = 0; i < 5; i++) {
-      let currentDate = new Date();
-      let firstday = new Date(
-        currentDate.setDate(
-          currentDate.getDate() - currentDate.getDay() + 1 - i * 7
-        )
-      ).toUTCString();
-
-      mondayArray.push(formatDateToMonday(new Date(firstday))); // not for production
-    }
-
-    mondayArray.map((monday) => {
-      let targetRow = exercises.rows.filter(
-        (row) => formatDateToMonday(row.dataValues.weekStart) == monday
-      );
-      console.log(`TargetRow ${targetRow}`);
-      console.log(targetRow);
-      if (targetRow.length > 0) {
-        resultArray.push({
-          weekStart: monday,
-          count: targetRow[0].dataValues.count,
-        });
-      } else {
-        resultArray.push({
-          weekStart: monday,
-          count: 0,
-        });
+        mondayArray.push(formatDateToMonday(new Date(firstday)));
       }
-    });
 
-    res.json(resultArray);
-  } catch (err) {
-    next(err);
+      mondayArray.map((monday) => {
+        let targetRow = exercises.rows.filter(
+          (row) => formatDateToMonday(row.dataValues.weekStart) == monday
+        );
+
+        if (targetRow.length > 0) {
+          console.log(targetRow[0].dataValues);
+          resultArray.push({
+            weekStart: monday,
+            count: targetRow[0].dataValues.count,
+            totalDuration: targetRow[0].dataValues.duration,
+          });
+        } else {
+          resultArray.push({
+            weekStart: monday,
+            count: 0,
+            duration: 0,
+          });
+        }
+      });
+
+      res.json(resultArray);
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
 
 module.exports = router;

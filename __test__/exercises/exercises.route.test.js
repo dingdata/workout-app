@@ -209,7 +209,7 @@ describe("Exercises", () => {
     it("should return count of exercises completed by the user", async () => {
       const token = createJWTToken(1);
       const response = await request(app)
-        .get("/exercises/userExerciseCountByWeek")
+        .get("/exercises/userExerciseCountByWeek/5")
         .set("Cookie", `token=${token}`);
 
       expect(response.body.length).toBe(5);

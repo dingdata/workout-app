@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import api from "../../constants/api";
 import axios from "axios";
 import "./DisplayWorkoutItem.css";
-import { Link } from "react-router-dom";
 
 const DisplayWorkoutItem = (props) => {
   const history = useHistory();
@@ -14,9 +13,6 @@ const DisplayWorkoutItem = (props) => {
     history.push(path);
   };
 
-  const goWorkoutHistory = {
-    pathname: "/myProgress",
-  };
   const completedClickHandler = async () => {
     let exerciseId = props.location.state.exerciseId;
     const res = await axios.post(api.usersExercise + `/${exerciseId}`, {});
