@@ -37,7 +37,7 @@ function App() {
         value={{ currentUser, setCurrentUser, userPref, setUserPref }}
       >
         <BrowserRouter>
-          <Navbar bg="light" variant="light">
+          <Navbar bg="light" variant="light" sticky="top">
             <Nav.Link as={Link} to="/Home">
               <Image
                 src={process.env.PUBLIC_URL + "/images/logo.png"}
