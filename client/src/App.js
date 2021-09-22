@@ -63,7 +63,7 @@ function App() {
                       Welcome, {currentUser.firstName} !
                     </NavItem>
                     <IndexLinkContainer to="/home">
-                      <div className="label title" onClick={logOut}>
+                      <div className="label title_label" onClick={logOut}>
                         logout
                       </div>
                     </IndexLinkContainer>

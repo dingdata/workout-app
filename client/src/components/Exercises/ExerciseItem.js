@@ -23,10 +23,10 @@ const ExerciseItem = ({ exercise }) => {
         </div>
         <div className="break"></div>
         <div className="workout__details">
-          <div className="label title">
+          <div className="label title_label">
             <div>{exercise.exerciseType}</div>
           </div>
-          <div className="label duration">{exercise.duration} mins</div>
+          <div className="label duration_label">{exercise.duration} mins</div>
         </div>
         {exercise.needEquipment && (
           <img
