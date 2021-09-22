@@ -6,10 +6,14 @@ import { Card } from "react-bootstrap";
 const howItWorks = () => {
   return (
     <div>
-      <div className="home__slogan">Using Get.Fit is easy</div>
+      <div className="workout-container how-slogan">Using Get.Fit is easy</div>
       <div className="how-container">
         <Card>
-          <Card.Img variant="top" src="./images/startnow.png" alt="h_start" />
+          <Card.Img
+            variant="top howcard-img"
+            src="./images/how_startnow.png"
+            alt="h_start"
+          />
           <Card.Body>
             <Card.Title>Non Member</Card.Title>
             <Card.Text>
@@ -21,8 +25,8 @@ const howItWorks = () => {
 
         <Card>
           <Card.Img
-            variant="top"
-            src="./images/howitworks_start.png"
+            variant="top howcard-img"
+            src="./images/how_filter.png"
             alt="h_filter"
           />
           <Card.Body>
@@ -37,8 +41,8 @@ const howItWorks = () => {
 
         <Card>
           <Card.Img
-            variant="top"
-            src="./images/howitworks_start.png"
+            variant="top howcard-img"
+            src="./images/how_chart.png"
             alt="h_tracker"
           />
           <Card.Body>
@@ -49,6 +53,16 @@ const howItWorks = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+      </div>
+      <div className="how-slogan">
+        Member's Portal Preview
+        <div>
+          <img
+            className="screenshot-img"
+            src="./images/member_pg.png"
+            alt="h_member"
+          />
+        </div>
       </div>
     </div>
   );

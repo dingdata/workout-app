@@ -1,5 +1,13 @@
+.how-slogan {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 25px;
+  color: #595959;
+  margin-top: 20px;
+}
+
 .how-container {
   padding-top: 20px;
+  padding-left: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10,16 +18,12 @@
   border: none;
 }
 
-.title {
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  font-size: 22px;
+.howcard-img {
+  width: 250px;
+  max-height: 250px;
+  margin: auto;
 }
 
-.text {
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  font-size: 22px;
-}
-
-.img {
-  width: 200px;
+.screenshot-img {
+  max-width: 500px;
 }
