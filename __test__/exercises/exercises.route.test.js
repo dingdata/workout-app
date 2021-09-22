@@ -212,7 +212,7 @@ describe("Exercises", () => {
         .get("/exercises/userExerciseCountByWeek")
         .set("Cookie", `token=${token}`);
 
-      expect(response.body.length).toBe(3);
+      expect(response.body.length).toBe(5);
 
       expect(response.status).toBe(200);
     });

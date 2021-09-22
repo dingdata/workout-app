@@ -63,9 +63,9 @@ router.post("/filterByPreferences", async (req, res, next) => {
   }
 });
 
-router.get("/userExerciseCountByWeek", async (req, res, next) => {
+router.get("/userExerciseCountByWeek", auth, async (req, res, next) => {
   try {
-    let userId = 1; //req.user.userId;
+    let userId = req.user.userId;
     console.log("iser id is ", userId);
 
     const where = { UserId: userId };
