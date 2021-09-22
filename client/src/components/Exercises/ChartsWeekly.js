@@ -42,14 +42,15 @@ const ChartsWeekly = () => {
 
   const data = {
     labels: weekArray,
+
     datasets: [
       {
         label: "My past 5 week progress",
         data: exerciseCountArray,
         backgroundColor: ["rgba(243, 207, 4, 1)"],
         datalabels: {
-          align: "center",
-          anchor: "center",
+          align: "end",
+          anchor: "end",
         },
       },
     ],
@@ -77,18 +78,29 @@ const ChartsWeekly = () => {
       },
 
       y: {
-        stacked: true,
         grid: {
           display: false,
         },
+        ticks: {
+          stepSize: 10,
+        },
+        display: false,
       },
     },
     plugins: {
+      legend: {
+        display: false,
+      },
       datalabels: {
         color: "black",
         display: true,
         font: {
           weight: "bold",
+        },
+        offset: 1,
+        padding: 0,
+        formatter: function (value) {
+          return value === 0 ? "Keep it up" : value;
         },
       },
     },
