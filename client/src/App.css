@@ -10,8 +10,8 @@
   padding-bottom: 0 !important;
 }
 
-.nav-link {
-  padding-bottom: 0 !important;
+.nav-link:hover {
+  cursor: pointer;
 }
 
 .nav-link-text {

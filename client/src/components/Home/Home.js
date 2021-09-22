@@ -58,7 +58,6 @@ const Home = () => {
         and anytime!
       </div>
       <div>
-        <p></p>
         <button
           className="button__secondary button__link"
           onClick={routeChange}

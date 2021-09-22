@@ -1,9 +1,10 @@
 import "./App.css";
-import { Nav, Navbar, Image } from "react-bootstrap";
+import { Nav, Navbar, Image, NavItem } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { IndexLinkContainer } from "react-router-bootstrap";
 import Login from "./components/UserLogin/login";
 import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
@@ -45,35 +46,27 @@ function App() {
               />
             </Nav.Link>
             <Nav>
-              <Nav.Link
-                as={Link}
-                to="/howItWorks"
-                data-testid="ti_nav_howitworks"
-                className="nav-link-text"
-                eventKey="link-1"
-              >
-                How It Works
-              </Nav.Link>
+              <IndexLinkContainer to="/howItWorks">
+                <NavItem className="nav-link">How It Works</NavItem>
+              </IndexLinkContainer>
 
               {currentUser && (
                 <>
-                  <Nav.Link as={Link} to="/allWorkouts" eventKey="link-2">
-                    All Workouts
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/myProgress" eventKey="link-3">
-                    My Progress
-                  </Nav.Link>
+                  <IndexLinkContainer to="/allWorkouts">
+                    <NavItem className="nav-link">All Workouts</NavItem>
+                  </IndexLinkContainer>
+                  <IndexLinkContainer to="/myProgress">
+                    <NavItem className="nav-link">My Progress</NavItem>
+                  </IndexLinkContainer>
                   <div className="nav-link-right-aligned">
-                    <Navbar.Text>
+                    <NavItem className="nav-link">
                       Welcome, {currentUser.firstName} !
-                    </Navbar.Text>
-                    <Link
-                      style={{ textDecoration: "none" }}
-                      onClick={logOut}
-                      to="/home"
-                    >
-                      <div className="label title">logout</div>
-                    </Link>
+                    </NavItem>
+                    <IndexLinkContainer to="/home">
+                      <div className="label title" onClick={logOut}>
+                        logout
+                      </div>
+                    </IndexLinkContainer>
                   </div>
                 </>
               )}
