@@ -1,18 +1,15 @@
 .progress-container {
-  background-image: rgb(249, 212, 212);
-  background-image: linear-gradient(
-    90deg,
-    rgba(249, 212, 212, 1) 0%,
-    rgba(246, 178, 109, 1) 29%,
-    rgba(247, 247, 117, 1) 100%
-  );
-
   .progress-header {
-    background-color: white;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 22px;
     color: #595959;
-    margin-bottom: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(249, 212, 212, 1) 0%,
+      rgba(246, 178, 109, 1) 29%,
+      rgba(247, 247, 117, 1) 100%
+    );
+    margin: 20px 0;
     width: 100%;
   }
 
