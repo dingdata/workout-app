@@ -1,5 +1,13 @@
 import "./App.scss";
-import { Nav, Navbar, Image, NavItem } from "react-bootstrap";
+import {
+  Nav,
+  Navbar,
+  Image,
+  NavItem,
+  Containe,
+  NavDropdownr,
+  NavDropdown,
+} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -38,62 +46,68 @@ function App() {
         value={{ currentUser, setCurrentUser, userPref, setUserPref }}
       >
         <BrowserRouter>
-          <Navbar bg="light" variant="light" sticky="top">
+          <Navbar
+            bg="light"
+            expand="lg"
+            variant="light"
+            sticky="top"
+            collapseOnSelect
+          >
             <Nav.Link as={Link} to="/Home">
               <Image
                 src={process.env.PUBLIC_URL + "/images/logo.png"}
                 width="50px"
               />
             </Nav.Link>
-            <Nav>
-              <IndexLinkContainer to="/howItWorks">
-                <NavItem className="nav-link">How It Works</NavItem>
-              </IndexLinkContainer>
 
-              {currentUser && (
-                <>
-                  <IndexLinkContainer to="/allWorkouts">
-                    <NavItem className="nav-link">All Workouts</NavItem>
-                  </IndexLinkContainer>
-                  <IndexLinkContainer to="/myProgress">
-                    <NavItem className="nav-link">My Progress</NavItem>
-                  </IndexLinkContainer>
-                  <div className="nav-link-right-aligned">
-                    <NavItem className="nav-link">
-                      Welcome, {currentUser.firstName} !
-                    </NavItem>
-                    <IndexLinkContainer to="/home">
-                      <div className="label title_label" onClick={logOut}>
-                        logout
-                      </div>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav>
+                <IndexLinkContainer to="/howItWorks">
+                  <NavItem className="nav-link">How It Works</NavItem>
+                </IndexLinkContainer>
+                {currentUser && (
+                  <>
+                    <IndexLinkContainer to="/allWorkouts">
+                      <NavItem className="nav-link">All Workouts</NavItem>
                     </IndexLinkContainer>
-                  </div>
-                </>
-              )}
-
-              {!currentUser && (
-                <div className="nav-link-right-aligned">
-                  <Link
-                    as={Link}
-                    to="/login"
-                    eventKey="link-3"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div className="button__primary button__link">Login</div>
-                  </Link>
-                  <Link
-                    as={Link}
-                    to="/signup"
-                    eventKey="link-4"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div className="button__secondary button__link">
-                      Sign Up
+                    <IndexLinkContainer to="/myProgress">
+                      <NavItem className="nav-link">My Progress</NavItem>
+                    </IndexLinkContainer>
+                    <div className="nav-link-right-aligned">
+                      <NavItem>Welcome, {currentUser.firstName} !</NavItem>
+                      <IndexLinkContainer to="/home">
+                        <div className="label title_label" onClick={logOut}>
+                          logout
+                        </div>
+                      </IndexLinkContainer>
                     </div>
-                  </Link>
-                </div>
-              )}
-            </Nav>
+                  </>
+                )}
+                {!currentUser && (
+                  <div className="nav-link-right-aligned">
+                    <Link
+                      as={Link}
+                      to="/login"
+                      eventKey="link-3"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <div className="button__primary button__link">Login</div>
+                    </Link>
+                    <Link
+                      as={Link}
+                      to="/signup"
+                      eventKey="link-4"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <div className="button__secondary button__link">
+                        Sign Up
+                      </div>
+                    </Link>
+                  </div>
+                )}{" "}
+              </Nav>
+            </Navbar.Collapse>
           </Navbar>
 
           <Switch>
