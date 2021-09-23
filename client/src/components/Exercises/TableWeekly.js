@@ -4,7 +4,10 @@ import axios from "axios";
 import { api, apiConfig } from "./../../constants/api";
 
 const TableWeekly = () => {
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState([
+    { count: "Loading...", totalDuration: "Loading..." },
+    { count: "Loading...", totalDuration: "Loading..." },
+  ]);
   const getTableData = async () => {
     try {
       const res = await axios.get(
@@ -24,7 +27,41 @@ const TableWeekly = () => {
 
   return (
     <div className="table-weekly-container">
-      <div className="label-column">
+      <table className="table-weekly">
+        <tr>
+          <th className="label-column-header">All Activities</th>
+          <th className="label-column-header">This Week</th>
+          <th className="label-column-header">Last Week</th>
+        </tr>
+        <tr>
+          <td className="label-column-header">
+            {" "}
+            <img
+              src="./images/duration.png"
+              alt=""
+              className="label-column-icon"
+            />{" "}
+            Total Duration (mins)
+          </td>
+          <td className="content-column-cell">{tableData[0].totalDuration}</td>
+          <td className="content-column-cell">{tableData[1].totalDuration}</td>
+        </tr>
+        <tr>
+          <td className="label-column-header">
+            {" "}
+            <img
+              src="./images/dumbbell.png"
+              alt=""
+              className="label-column-icon"
+            />
+            Total Workouts
+          </td>
+          <td className="content-column-cell">{tableData[0].count}</td>
+          <td className="content-column-cell">{tableData[1].count}</td>
+        </tr>
+      </table>
+
+      {/* <div className="label-column">
         <div className="label-column-header">All Activities</div>
         <div className="label-column-cell">
           <img
@@ -49,7 +86,7 @@ const TableWeekly = () => {
           <div className="content-column-cell">{row.totalDuration}</div>
           <div className="content-column-cell">{row.count}</div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
