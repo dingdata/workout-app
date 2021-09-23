@@ -33,12 +33,11 @@ const TableWeekly = () => {
         </tr>
         <tr>
           <td className="label-column-header">
-            {" "}
             <img
               src="./images/duration.png"
               alt=""
               className="label-column-icon"
-            />{" "}
+            />
             Total Duration (mins)
           </td>
           <td className="content-column-cell">{tableData[0].totalDuration}</td>
@@ -46,7 +45,6 @@ const TableWeekly = () => {
         </tr>
         <tr>
           <td className="label-column-header">
-            {" "}
             <img
               src="./images/dumbbell.png"
               alt=""
@@ -58,33 +56,6 @@ const TableWeekly = () => {
           <td className="content-column-cell">{tableData[1].count}</td>
         </tr>
       </table>
-
-      {/* <div className="label-column">
-        <div className="label-column-header">All Activities</div>
-        <div className="label-column-cell">
-          <img
-            src="./images/dumbbell.png"
-            alt=""
-            className="label-column-icon"
-          />{" "}
-          Total Duration (mins)
-        </div>
-        <div className="label-column-cell">
-          <img
-            src="./images/duration.png"
-            alt=""
-            className="label-column-icon"
-          />
-          Total Workouts
-        </div>
-      </div>
-      {tableData.map((row) => (
-        <div className="label-column">
-          <div className="content-column-header">{row.displayHeader}</div>
-          <div className="content-column-cell">{row.totalDuration}</div>
-          <div className="content-column-cell">{row.count}</div>
-        </div>
-      ))} */}
     </div>
   );
 };

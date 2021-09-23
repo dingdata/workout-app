@@ -15,7 +15,7 @@ const DisplayWorkoutItem = (props) => {
 
   const completedClickHandler = async () => {
     let exerciseId = props.location.state.exerciseId;
-    const res = await axios.post(api.usersExercise + `/${exerciseId}`, {});
+    await axios.post(api.usersExercise + `/${exerciseId}`, {});
     setCompleted((completed) => !completed);
   };
 

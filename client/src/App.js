@@ -1,13 +1,5 @@
 import "./App.scss";
-import {
-  Nav,
-  Navbar,
-  Image,
-  NavItem,
-  Containe,
-  NavDropdownr,
-  NavDropdown,
-} from "react-bootstrap";
+import { Nav, Navbar, Image, NavItem } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -110,7 +102,7 @@ function App() {
                       </div>
                     </Link>
                   </div>
-                )}{" "}
+                )}
               </Nav>
             </Navbar.Collapse>
           </Navbar>
