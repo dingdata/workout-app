@@ -22,12 +22,12 @@
 .pass-wrapper {
   position: relative;
   display: flex;
+  align-items: baseline;
 }
 
 i {
   position: relative;
   right: 40px;
-  top: 18px;
 }
 
 i:hover {
