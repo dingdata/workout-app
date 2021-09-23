@@ -3,6 +3,7 @@
   font-size: 25px;
   color: #595959;
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .how-container {
@@ -16,12 +17,21 @@
 .card {
   width: "25rem";
   border: none;
+  margin-top: 20;
+  margin-bottom: 20;
 }
 
 .howcard-img {
-  width: 250px;
-  max-height: 250px;
-  margin: auto;
+  margin: 0 auto;
+  width: 200px;
+  min-height: 200px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.howcard-text {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  text-align: center;
 }
 
 .screenshot-img {
