@@ -96,7 +96,7 @@ describe("Users", () => {
 
       //test if exist
       const result = await db.User.create(newUser);
-      console.log(result);
+
       const res = await request(app)
         .post("/users/isUniqueEmail")
         .send(newEmailAddress)
@@ -148,7 +148,7 @@ describe("Users", () => {
         password: "12345678",
       });
       const token = createJWTToken(newUser.id);
-      console.log("token" + token);
+
       const response = await request(app)
         .get("/users/me")
         .set("Cookie", `token=${token}`);
@@ -165,7 +165,6 @@ describe("Users", () => {
         password: "12345678",
       });
       const token = createJWTToken(newUser.id);
-      console.log("token" + token);
 
       const { body: result, header } = await request(app)
         .post("/users/exercises/1")
@@ -187,7 +186,7 @@ describe("Users", () => {
         password: "12345678",
       });
       const token = createJWTToken(newUser.id);
-      console.log("token" + token);
+
       const response = await request(app)
         .get("/users/exercises")
         .set("Cookie", `token=${token}`);

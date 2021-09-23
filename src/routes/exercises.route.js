@@ -26,7 +26,6 @@ router.get("/random", async (req, res, next) => {
 
 router.post("/filterByPreferences", async (req, res, next) => {
   try {
-    console.log(`Request Body ${req}`);
     if (req.body.needEquipment === false) {
       const exercises = await db.Exercise.findAll({
         where: {
@@ -150,7 +149,6 @@ router.get(
         );
 
         if (targetRow.length > 0) {
-          console.log(targetRow[0].dataValues);
           resultArray.push({
             weekStart: monday,
             count: targetRow[0].dataValues.count,

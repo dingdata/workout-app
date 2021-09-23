@@ -57,8 +57,6 @@ export default function RegisterForm() {
     } else {
       //error message
     }
-
-    console.log(res);
   };
 
   return (

@@ -17,9 +17,7 @@ const TableWeekly = () => {
       exerciseList[0].displayHeader = "This Week";
       exerciseList[1].displayHeader = "Last Week";
       setTableData(exerciseList);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
   useEffect(() => {
     getTableData();

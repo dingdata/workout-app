@@ -134,8 +134,6 @@ describe("Exercises", () => {
         .send(exerciseBody)
         .expect(200);
 
-      console.log(exercise);
-
       expect(exercise).not.toBeNull();
       expect(exercise[0].exerciseType).toEqual("Yoga");
       expect(exercise[1].exerciseType).toEqual("Cardio");
@@ -152,8 +150,6 @@ describe("Exercises", () => {
         .send(exerciseBody)
         .expect(200);
 
-      console.log(exercise);
-
       expect(exercise).not.toBeNull();
       expect(exercise.length).toEqual(2);
     });
@@ -168,8 +164,6 @@ describe("Exercises", () => {
         .post("/exercises/filterByPreferences")
         .send(exerciseBody)
         .expect(200);
-
-      console.log(exercise);
 
       expect(exercise).not.toBeNull();
       expect(exercise[0].exerciseType).toEqual("Abs");

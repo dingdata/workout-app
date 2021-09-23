@@ -12,7 +12,6 @@ const MyProgress = () => {
   const getCompletedList = async () => {
     try {
       const res = await axios.get(api.usersExercise);
-      console.log(res);
       setCompletedExercises(res.data);
     } catch (err) {
       // setErrorMessage(err.res.data);

@@ -6,8 +6,6 @@ import axios from "axios";
 import { api, apiConfig } from "./../../constants/api";
 
 const ChartsWeekly = () => {
-  console.log("In chart weekly");
-
   Chart.register(ChartDataLabels);
   let delayed;
   let weekArray = [];
@@ -23,10 +21,7 @@ const ChartsWeekly = () => {
       const exerciseList = res.data;
 
       setCompletedExerciseList(exerciseList);
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
   useEffect(() => {
     getCompletedExerciseList();
@@ -37,9 +32,6 @@ const ChartsWeekly = () => {
     exerciseCountArray = completedExerciseList.map(
       (exerciseCount) => exerciseCount.count
     );
-
-    console.log(weekArray);
-    console.log(exerciseCountArray);
   }
 
   const data = {
