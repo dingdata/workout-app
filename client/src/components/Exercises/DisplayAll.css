@@ -52,11 +52,6 @@
   display: flex;
 }
 
-/* Solid border */
-hr.solid {
-  border-top: 2px solid black;
-}
-
 .select-button {
   padding: 5px 10px;
   cursor: pointer;

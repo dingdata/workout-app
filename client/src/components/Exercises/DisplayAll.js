@@ -106,7 +106,7 @@ const DisplayAll = () => {
             exerciseList.map((exercise) => (
               <ExerciseItem exercise={exercise}></ExerciseItem>
             ))}
-        </div>{" "}
+        </div>
       </div>
     </div>
   );
