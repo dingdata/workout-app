@@ -28,9 +28,9 @@ const HowItWorks = () => {
       </div>
       <h2>Member's Portal Preview</h2>
       <img
-        className="screenshot-img"
-        src="./images/member_pg.png"
-        alt="h_member"
+        id="all-workouts-preview"
+        src="./images/all_workouts_preview.png"
+        alt="all workouts preview"
       />
     </div>
   );

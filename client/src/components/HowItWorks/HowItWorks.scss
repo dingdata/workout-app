@@ -40,8 +40,8 @@
     }
   }
 
-  img.screenshot-img {
-    max-width: 800px;
+  img#all-workouts-preview {
+    width: 90%;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
   }
 
@@ -51,7 +51,7 @@
       padding: 20px;
     }
 
-    .screenshot-img {
+    img#all-workouts-preview {
       width: 90%;
     }
   }
