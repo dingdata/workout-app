@@ -28,16 +28,16 @@ const MyProgress = () => {
     return `${date.toDateString()}, ${date.toLocaleTimeString()}`;
   };
   return (
-    <div className="progress-container">
-      <div className="progress-header">My Weekly Progress</div>
+    <div>
+      <div className="progress-header progress-bg">My Weekly Progress</div>
       <div className="progress-table-container">
         <TableWeekly />
       </div>
       <div className="chart-container">
         <ChartsWeekly />
       </div>
-      <div className="list-exercise progress-bg">
-        <div className="progress-header">Completed Workouts</div>
+      <div className="list-exercise">
+        <div className="progress-header progress-bg">Completed Workouts</div>
         {completedExercises &&
           completedExercises.map((exercise) => (
             <div>
