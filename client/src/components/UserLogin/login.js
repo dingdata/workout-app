@@ -45,29 +45,33 @@ const Login = () => {
   return (
     <div className="container">
       <div className="form__wrapper login centered">
-        <input
-          name="username"
-          type="text"
-          placeholder="Email Address"
-          {...register("emailAddress")}
-        />
-        <div className="pass-wrapper">
-          <input
-            placeholder="Password"
-            name="password"
-            type={passwordShown ? "text" : "password"}
-            {...register("password")}
-          />
-          <i onClick={togglePasswordVisiblity}>{eye}</i>
-        </div>
-        {errorMessage && <span class="error_login">{errorMessage}</span>}
-        <button
-          type="submit"
-          className="button__secondary button__link loginbtn"
-          onClick={handleSubmit(onSubmit)}
-        >
-          Login
-        </button>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="pass-wrapper">
+            <input
+              name="username"
+              type="text"
+              placeholder="Email Address"
+              {...register("emailAddress")}
+            />
+          </div>
+
+          <div className="pass-wrapper">
+            <input
+              placeholder="Password"
+              name="password"
+              type={passwordShown ? "text" : "password"}
+              {...register("password")}
+            />
+            <i onClick={togglePasswordVisiblity}>{eye}</i>
+          </div>
+          {errorMessage && <span class="error_login">{errorMessage}</span>}
+          <button
+            type="submit"
+            className="button__secondary button__link loginbtn"
+          >
+            Login
+          </button>
+        </form>
       </div>
     </div>
   );
