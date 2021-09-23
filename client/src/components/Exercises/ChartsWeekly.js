@@ -47,7 +47,7 @@ const ChartsWeekly = () => {
 
     datasets: [
       {
-        label: "My past 5 week progress",
+        label: "Number of workouts",
         data: exerciseCountArray,
         backgroundColor: ["rgba(243, 207, 4, 1)"],
         datalabels: {
@@ -102,7 +102,7 @@ const ChartsWeekly = () => {
         offset: 1,
         padding: 0,
         formatter: function (value) {
-          return value === 0 ? "Keep it up" : value;
+          return value === 0 ? "No workout" : value;
         },
       },
     },
