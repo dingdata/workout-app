@@ -3,12 +3,12 @@ import "./HowItWorks.scss";
 
 const GuideItem = ({ image, title, children }) => {
   return (
-    <div className="guide-item">
-      <div class="guide-image-container">
-        <img className="guide-image" src={image} alt={image} />
+    <div className="guide__item">
+      <div class="guide__image-container">
+        <img className="guide__image" src={image} alt={image} />
       </div>
-      <div className="guide-description">
-        <h5 className="description-title">{title}</h5>
+      <div className="guide__description">
+        <h5 className="guide__title">{title}</h5>
         {children}
       </div>
     </div>

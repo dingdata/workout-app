@@ -1,38 +1,31 @@
 .how-it-works {
-  .title {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 25px;
-    color: #595959;
-    padding: 30px;
-  }
-
   .guide__container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 
-    .guide-item {
+    .guide__item {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
-      .guide-image-container {
+      .guide__image-container {
         display: flex;
         align-items: center;
         height: 350px;
 
-        img.guide-image {
+        img.guide__image {
           max-width: 300px;
         }
       }
 
-      .guide-description {
+      .guide__description {
         text-align: left;
         max-width: 400px;
         padding: 0 20px;
 
-        .description-title {
+        .guide__title {
           font-size: 1.25rem;
           margin-top: 10px;
           text-align: center;
@@ -47,7 +40,7 @@
     }
   }
 
-  .screenshot-img {
+  img.screenshot-img {
     max-width: 800px;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
   }

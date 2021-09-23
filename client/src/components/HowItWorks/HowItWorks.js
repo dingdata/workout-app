@@ -6,7 +6,7 @@ import GuideItem from "./GuideItem";
 const HowItWorks = () => {
   return (
     <div className="how-it-works">
-      <div className="title">Using Get.Fit is easy</div>
+      <h2>Using Get.Fit is easy</h2>
       <div className="guide__container">
         <GuideItem
           image="./images/how_startnow.png"
@@ -26,7 +26,7 @@ const HowItWorks = () => {
           Build your own best workout routine
         </GuideItem>
       </div>
-      <div className="title">Member's Portal Preview</div>
+      <h2>Member's Portal Preview</h2>
       <img
         className="screenshot-img"
         src="./images/member_pg.png"
