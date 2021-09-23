@@ -75,7 +75,7 @@ function App() {
                           className="button__secondary button__link"
                           onClick={logOut}
                         >
-                          logout
+                          Logout
                         </div>
                       </IndexLinkContainer>
                     </div>
