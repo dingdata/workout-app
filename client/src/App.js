@@ -19,7 +19,7 @@ import { useCurrentUserHook } from "./hooks/useCurrentUserHook";
 import { useUserPrefHook } from "./hooks/useUserPrefHook";
 import axios from "axios";
 import { api } from "../src/constants/api";
-import howItWorks from "./components/How/howItWorks";
+import HowItWorks from "./components/HowItWorks/HowItWorks";
 
 function App() {
   //currentUserHook for updating/retrieving login user
@@ -98,7 +98,7 @@ function App() {
 
           <Switch>
             <Route exact path="/Home" component={() => <Home />} />
-            <Route exact path="/howItWorks" component={howItWorks} />
+            <Route exact path="/howItWorks" component={HowItWorks} />
             <Route exact path="/" component={() => <Home />} />
 
             {currentUser && (
