@@ -3,7 +3,7 @@ import { Bar, Chart } from "react-chartjs-2";
 import "chartjs-plugin-datalabels";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import axios from "axios";
-import { api, apiConfig } from "./../../constants/api";
+import { api, apiConfig } from "../../constants/api";
 
 const ChartsWeekly = () => {
   Chart.register(ChartDataLabels);

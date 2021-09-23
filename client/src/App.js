@@ -17,7 +17,7 @@ import UserLogin from "./components/UserLogin/UserLogin";
 import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
-import MyProgress from "./components/MyProgress";
+import MyProgress from "./components/MyProgress/MyProgress";
 import Home from "./components/Home/Home";
 import DisplayRandom from "./components/Exercises/DisplayRandom";
 import DisplayWorkoutItem from "./components/Exercises/DisplayWorkoutItem";

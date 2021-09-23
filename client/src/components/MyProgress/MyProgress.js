@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MyProgress.scss";
 import axios from "axios";
-import { api } from "../constants/api";
-import ChartsWeekly from "./Exercises/ChartsWeekly";
-import TableWeekly from "./Exercises/TableWeekly";
+import { api } from "../../constants/api";
+import ChartsWeekly from "./ChartsWeekly";
+import TableWeekly from "./TableWeekly";
 
 const MyProgress = () => {
   const [completedExercises, setCompletedExercises] = useState([]);
