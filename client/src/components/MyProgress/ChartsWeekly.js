@@ -39,7 +39,7 @@ const ChartsWeekly = () => {
 
     datasets: [
       {
-        label: "Number of workouts",
+        label: "Number of workout",
         data: exerciseCountArray,
         backgroundColor: ["rgba(243, 207, 4, 1)"],
         datalabels: {
@@ -51,6 +51,11 @@ const ChartsWeekly = () => {
   };
 
   const options = {
+    layout: {
+      padding: {
+        top: 20,
+      },
+    },
     responsive: true,
     animation: {
       onComplete: () => {
@@ -91,8 +96,9 @@ const ChartsWeekly = () => {
         font: {
           weight: "bold",
         },
-        offset: 1,
         padding: 0,
+        offset: 1,
+
         formatter: function (value) {
           return value === 0 ? "No workout" : value;
         },
