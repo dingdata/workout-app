@@ -69,7 +69,9 @@ function App() {
                 {currentUser && (
                   <>
                     <div className="nav-link-right-aligned">
-                      <NavItem>Welcome,{currentUser.firstName}!</NavItem>
+                      <NavItem id="navbar__welcome">
+                        Welcome, {currentUser.firstName}!
+                      </NavItem>
                       <IndexLinkContainer to="/home">
                         <div
                           className="button__secondary button__link"
