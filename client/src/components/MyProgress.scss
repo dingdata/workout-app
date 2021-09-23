@@ -1,7 +1,7 @@
 .progress-container {
   .progress-header {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 22px;
+    font-weight: 600;
     color: #595959;
     background: linear-gradient(
       90deg,
@@ -62,14 +62,12 @@
     text-align: left;
     margin-top: 10px;
     margin-left: 5px;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 13px;
     font-weight: bold;
   }
 
   .list-date {
     text-align: left;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 12px;
     padding: 5px;
   }
