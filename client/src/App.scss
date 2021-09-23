@@ -98,3 +98,9 @@ input {
   max-width: 527px;
   padding: 0 10%;
 }
+@media (max-width: 1024px) {
+  .workout-container {
+    padding: 30px;
+    background-color: white;
+  }
+}
