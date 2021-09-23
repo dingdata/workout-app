@@ -61,14 +61,14 @@ function App() {
                       <NavItem id="navbar__welcome">
                         Welcome, {currentUser.firstName}!
                       </NavItem>
-                      <IndexLinkContainer to="/home">
+                      <Link to="/home" style={{ textDecoration: "none" }}>
                         <div
                           className="button__secondary button__link"
                           onClick={logOut}
                         >
                           Logout
                         </div>
-                      </IndexLinkContainer>
+                      </Link>
                     </div>
                     <IndexLinkContainer to="/how-it-works">
                       <NavItem className="nav-link">How It Works</NavItem>
