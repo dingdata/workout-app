@@ -8,6 +8,10 @@ body {
   font-family: Roboto;
 }
 
+.navitem {
+  vertical-align: middle;
+}
+
 .navbar {
   padding-top: 0 !important;
   align-items: flex-end !important;
@@ -77,7 +81,7 @@ body {
   text-decoration-color: #eeaa5d !important;
   text-decoration-thickness: 3px !important;
   text-decoration: underline;
-  text-underline-offset: 17px;
+  text-underline-offset: 19px;
 }
 
 .workout-container {

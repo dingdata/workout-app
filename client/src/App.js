@@ -55,9 +55,6 @@ function App() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>
-                <IndexLinkContainer to="/how-it-works">
-                  <NavItem className="nav-link">How It Works</NavItem>
-                </IndexLinkContainer>
                 {currentUser && (
                   <>
                     <div className="nav-link-right-aligned">
@@ -73,6 +70,9 @@ function App() {
                         </div>
                       </IndexLinkContainer>
                     </div>
+                    <IndexLinkContainer to="/how-it-works">
+                      <NavItem className="nav-link">How It Works</NavItem>
+                    </IndexLinkContainer>
                     <IndexLinkContainer to="/all-workouts">
                       <NavItem className="nav-link">All Workouts</NavItem>
                     </IndexLinkContainer>
@@ -82,27 +82,56 @@ function App() {
                   </>
                 )}
                 {!currentUser && (
-                  <div className="nav-link-center-aligned">
-                    <Link
-                      as={Link}
-                      to="/login"
-                      eventKey="link-3"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <div className="button__primary button__link">Login</div>
-                    </Link>
-                    <Link
-                      as={Link}
-                      to="/signup"
-                      eventKey="link-4"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <div className="button__secondary button__link">
-                        Sign Up
-                      </div>
-                    </Link>
-                  </div>
+                  <>
+                    <IndexLinkContainer to="/how-it-works">
+                      <NavItem className="nav-link">How It Works</NavItem>
+                    </IndexLinkContainer>
+                    <div className="nav-link-center-aligned">
+                      <Link
+                        as={Link}
+                        to="/login"
+                        eventKey="link-3"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="button__primary button__link">
+                          Login
+                        </div>
+                      </Link>
+                      <Link
+                        as={Link}
+                        to="/signup"
+                        eventKey="link-4"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="button__secondary button__link">
+                          Sign Up
+                        </div>
+                      </Link>
+                    </div>
+                  </>
                 )}
+                {/* <div className="nav-link-center-aligned">
+                      <Link
+                        as={Link}
+                        to="/login"
+                        eventKey="link-3"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="button__primary button__link">
+                          Login
+                        </div>
+                      </Link>
+                      <Link
+                        as={Link}
+                        to="/signup"
+                        eventKey="link-4"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="button__secondary button__link">
+                          Sign Up
+                        </div>
+                      </Link>
+                    </div> */}{" "}
               </Nav>
             </Navbar.Collapse>
           </Navbar>
