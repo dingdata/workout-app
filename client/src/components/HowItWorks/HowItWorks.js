@@ -5,7 +5,7 @@ import GuideItem from "./GuideItem";
 
 const HowItWorks = () => {
   return (
-    <div className="how-it-works">
+    <div className="workout-container how-it-works">
       <h2>Using Get.Fit is easy</h2>
       <div className="guide__container">
         <GuideItem
