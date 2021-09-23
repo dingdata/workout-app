@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { IndexLinkContainer } from "react-router-bootstrap";
-import Login from "./components/UserLogin/login";
+import UserLogin from "./components/UserLogin/UserLogin";
 import Signup from "./components/signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
@@ -137,7 +137,7 @@ function App() {
             {!currentUser && (
               <>
                 <Route exact path="/signup" component={Signup} />
-                <Route exact path="/login" component={Login} />
+                <Route exact path="/login" component={UserLogin} />
                 <Route exact path="/random" component={DisplayRandom} />
               </>
             )}

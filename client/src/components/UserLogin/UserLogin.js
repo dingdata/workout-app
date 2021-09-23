@@ -1,5 +1,5 @@
 import React from "react";
-import "./login.css";
+import "./UserLogin.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,7 @@ import { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const eye = <FontAwesomeIcon icon={faEye} />;
-const Login = () => {
+const UserLogin = () => {
   let history = useHistory();
 
   const { setCurrentUser } = useContext(UserContext);
@@ -77,4 +77,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default UserLogin;
