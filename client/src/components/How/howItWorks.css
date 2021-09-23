@@ -12,21 +12,19 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .card {
-  width: "25rem";
   border: none;
-  margin-top: 20;
-  margin-bottom: 20;
 }
 
 .howcard-img {
-  margin: 0 auto;
-  width: 200px;
-  min-height: 200px;
-  height: 100%;
-  object-fit: cover;
+  max-height: 300px;
+}
+
+.howcard-img-start {
+  max-height: 300px;
 }
 
 .howcard-text {
@@ -35,5 +33,6 @@
 }
 
 .screenshot-img {
-  max-width: 500px;
+  max-width: 800px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
 }

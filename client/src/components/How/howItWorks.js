@@ -10,13 +10,13 @@ const howItWorks = () => {
       <div className="how-container">
         <Card>
           <Card.Img
-            variant="tophowcard-img"
+            variant="top howcard-img-start"
             src="./images/how_startnow.png"
             alt="h_start"
           />
           <Card.Body>
             <Card.Title>Non Member</Card.Title>
-            <Card.Text class>
+            <Card.Text>
               Try out the auto generated workout.{" "}
               <p>Sign Up with us to enjoy Member's Perks</p>{" "}
             </Card.Text>
