@@ -53,6 +53,10 @@ body {
     align-self: flex-end;
     position: initial;
   }
+
+  .navbar {
+    align-items: center !important;
+  }
 }
 .navbar .navbar-nav .nav-link:hover::after {
   width: 100%;
