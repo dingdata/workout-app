@@ -1,8 +1,9 @@
 import React from "react";
+import "./DisplayWorkoutItem.css";
 
 const YoutubeIframe = ({ tag }) => {
   return (
-    <div>
+    <div className="youtube-container">
       <iframe
         width="1024"
         height="500"
