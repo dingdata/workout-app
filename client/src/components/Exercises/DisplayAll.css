@@ -9,9 +9,7 @@
 
 #display-all-content {
   width: 80%;
-  overflow: auto;
   margin-left: 30px;
-  height: 100vh;
 }
 
 @media (max-width: 1024px) {
