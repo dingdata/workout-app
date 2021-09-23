@@ -13,6 +13,7 @@ const HowItWorks = () => {
           title="Try out the auto generated workout"
         >
           Sign up with us to enjoy Member's Perks
+          <br></br>
         </GuideItem>
 
         <GuideItem image="./images/how_filter.png" title="Member Perks">
