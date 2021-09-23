@@ -35,7 +35,7 @@ const Login = () => {
         password: data.password,
       });
 
-      history.push("/allWorkouts");
+      history.push("/all-workouts");
       setCurrentUser({ firstName: res.data.firstName });
     } catch (err) {
       setErrorMessage(err.response.data);

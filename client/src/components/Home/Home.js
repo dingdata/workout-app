@@ -14,7 +14,7 @@ const Home = () => {
     if (!currentUser) {
       path = `random`;
     } else {
-      path = `allWorkouts`;
+      path = `all-workouts`;
     }
     history.push(path);
   };

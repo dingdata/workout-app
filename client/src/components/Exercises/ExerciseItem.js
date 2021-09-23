@@ -4,7 +4,7 @@ import "./ExerciseItem.scss";
 
 const ExerciseItem = ({ exercise }) => {
   const exerciseLink = {
-    pathname: "/workoutItem",
+    pathname: "/workout-item",
     state: { tag: exercise.tag, exerciseId: exercise.id },
   };
   return (

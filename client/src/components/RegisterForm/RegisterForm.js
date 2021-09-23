@@ -51,7 +51,7 @@ export default function RegisterForm() {
     if (res.status === 201) {
       //create jwt token
 
-      history.push("/allWorkouts");
+      history.push("/all-workouts");
 
       //redirect to logged in screen
     } else {

@@ -9,7 +9,7 @@ const DisplayWorkoutItem = (props) => {
   const history = useHistory();
   const [completed, setCompleted] = useState(false);
   const backClickHandler = () => {
-    let path = `allWorkouts`;
+    let path = `all-workouts`;
     history.push(path);
   };
 

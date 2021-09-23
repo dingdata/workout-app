@@ -63,15 +63,15 @@ function App() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>
-                <IndexLinkContainer to="/howItWorks">
+                <IndexLinkContainer to="/how-it-works">
                   <NavItem className="nav-link">How It Works</NavItem>
                 </IndexLinkContainer>
                 {currentUser && (
                   <>
-                    <IndexLinkContainer to="/allWorkouts">
+                    <IndexLinkContainer to="/all-workouts">
                       <NavItem className="nav-link">All Workouts</NavItem>
                     </IndexLinkContainer>
-                    <IndexLinkContainer to="/myProgress">
+                    <IndexLinkContainer to="/my-progress">
                       <NavItem className="nav-link">My Progress</NavItem>
                     </IndexLinkContainer>
                     <div className="nav-link-right-aligned">
@@ -112,20 +112,20 @@ function App() {
 
           <Switch>
             <Route exact path="/Home" component={() => <Home />} />
-            <Route exact path="/howItWorks" component={HowItWorks} />
+            <Route exact path="/how-it-works" component={HowItWorks} />
             <Route exact path="/" component={() => <Home />} />
 
             {currentUser && (
               <>
-                <Route exact path="/myProgress" component={MyProgress} />
+                <Route exact path="/my-progress" component={MyProgress} />
                 <Route
                   exact
-                  path="/allWorkouts"
+                  path="/all-workouts"
                   component={() => <DisplayAll />}
                 />
                 <Route
                   exact
-                  path="/workoutItem"
+                  path="/workout-item"
                   component={DisplayWorkoutItem}
                 />
               </>
