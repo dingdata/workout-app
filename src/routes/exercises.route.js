@@ -133,11 +133,11 @@ router.get(
       let mondayArray = [];
       let resultArray = [];
 
-      for (i = 0; i < noOfWeek; i++) {
+      for (let i = 0; i < noOfWeek; i++) {
         let currentDate = new Date();
         let firstday = new Date(
           currentDate.setDate(
-            currentDate.getDate() - currentDate.getDay() + 1 - i * 7
+            currentDate.getDate() - currentDate.getDay() + 1 - i * 7 //getDay()+1 to get 'monday'. default will return 'sunday' date
           )
         ).toUTCString();
 
