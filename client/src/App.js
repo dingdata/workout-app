@@ -68,24 +68,27 @@ function App() {
                 </IndexLinkContainer>
                 {currentUser && (
                   <>
+                    <div className="nav-link-right-aligned">
+                      <NavItem>Welcome,{currentUser.firstName}!</NavItem>
+                      <IndexLinkContainer to="/home">
+                        <div
+                          className="button__secondary button__link"
+                          onClick={logOut}
+                        >
+                          logout
+                        </div>
+                      </IndexLinkContainer>
+                    </div>
                     <IndexLinkContainer to="/all-workouts">
                       <NavItem className="nav-link">All Workouts</NavItem>
                     </IndexLinkContainer>
                     <IndexLinkContainer to="/my-progress">
                       <NavItem className="nav-link">My Progress</NavItem>
                     </IndexLinkContainer>
-                    <div className="nav-link-right-aligned">
-                      <NavItem>Welcome, {currentUser.firstName} !</NavItem>
-                      <IndexLinkContainer to="/home">
-                        <div className="label title_label" onClick={logOut}>
-                          logout
-                        </div>
-                      </IndexLinkContainer>
-                    </div>
                   </>
                 )}
                 {!currentUser && (
-                  <div className="nav-link-right-aligned">
+                  <div className="nav-link-center-aligned">
                     <Link
                       as={Link}
                       to="/login"
