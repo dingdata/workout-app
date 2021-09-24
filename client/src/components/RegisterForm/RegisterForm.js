@@ -65,6 +65,7 @@ export default function RegisterForm() {
         <p className="signup-header">Sign up for a free account</p>
         <div className="form-group">
           <input
+            className="regInput"
             name="firstName"
             type="text"
             {...register("firstName")}
@@ -76,6 +77,7 @@ export default function RegisterForm() {
         </div>
         <div className="form-group">
           <input
+            className="regInput"
             name="lastName"
             type="text"
             {...register("lastName")}
@@ -87,6 +89,7 @@ export default function RegisterForm() {
         </div>
         <div className="form-group">
           <input
+            className="regInput"
             name="email"
             type="text"
             {...register("email")}
@@ -98,6 +101,7 @@ export default function RegisterForm() {
         </div>
         <div className="form-group">
           <input
+            className="regInput"
             placeholder="Create Password"
             name="password"
             type="password"
@@ -109,6 +113,7 @@ export default function RegisterForm() {
         </div>
         <div className="form-group">
           <input
+            className="regInput"
             placeholder="Confirm Password"
             name="confirmPassword"
             type="password"

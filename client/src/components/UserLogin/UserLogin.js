@@ -44,7 +44,7 @@ const UserLogin = () => {
 
   return (
     <div className="container">
-      <div className="form__wrapper login centered">
+      <div className="login centered">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="pass-wrapper">
             <input
@@ -67,7 +67,7 @@ const UserLogin = () => {
           {errorMessage && <span class="error_login">{errorMessage}</span>}
           <button
             type="submit"
-            className="button__secondary button__link loginbtn"
+            className="button__primary button__link loginbtn"
           >
             Login
           </button>

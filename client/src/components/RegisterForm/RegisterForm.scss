@@ -38,3 +38,12 @@ body {
     text-align: left;
   }
 }
+
+@media (max-width: 1024px) {
+  .container-register {
+    padding: 20px;
+  }
+  .register-form {
+    margin-bottom: 20px;
+  }
+}
