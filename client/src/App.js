@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { IndexLinkContainer } from "react-router-bootstrap";
 import UserLogin from "./components/UserLogin/UserLogin";
-import Signup from "./components/signup";
+import Signup from "./components/Signup";
 import DisplayAll from "./components/Exercises/DisplayAll";
 
 import MyProgress from "./components/MyProgress/MyProgress";
