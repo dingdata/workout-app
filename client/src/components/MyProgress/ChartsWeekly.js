@@ -99,9 +99,9 @@ const ChartsWeekly = () => {
         padding: 0,
         offset: 1,
 
-        formatter: function (value) {
-          return value === 0 ? "No workout" : value;
-        },
+        // formatter: function (value) {
+        //   return value === 0 ? "No workout" : value;
+        // },
       },
     },
   };
