@@ -46,22 +46,23 @@ const MyProgress = () => {
       <div className="list-exercise progress-bg">
         <div className="progress-header">Completed Workouts</div>
         {completedExercises &&
-          completedExercises.map((exercise) => (
+          completedExercises.map((userExercise) => (
             <div>
               <div className="completed-exercise">
-                <Link to={() => exerciseLink(exercise.Exercise)}>
-                  {" "}
+                <Link to={() => exerciseLink(userExercise.Exercise)}>
                   <img
                     className="list-img"
-                    src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
+                    src={`https://i4.ytimg.com/vi/${userExercise.Exercise.tag}/mqdefault.jpg`}
                     alt="exercise preview thumbnail"
                   />
                 </Link>
 
                 <div className="list-details">
-                  <div className="list-title">{exercise.Exercise.title}</div>
+                  <div className="list-title">
+                    {userExercise.Exercise.title}
+                  </div>
                   <div className="list-date">
-                    {formatDate(new Date(exercise.createdAt))}
+                    {formatDate(new Date(userExercise.createdAt))}
                   </div>
                 </div>
               </div>
