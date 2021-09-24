@@ -64,7 +64,9 @@ const UserLogin = () => {
             />
             <i onClick={togglePasswordVisiblity}>{eye}</i>
           </div>
-          {errorMessage && <span class="error_login">{errorMessage}</span>}
+          <div>
+            {errorMessage && <span class="error_login">{errorMessage}</span>}
+          </div>
           <button
             type="submit"
             className="button__primary button__link loginbtn"
