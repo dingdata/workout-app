@@ -5,6 +5,7 @@ import axios from "axios";
 import { api } from "../../constants/api";
 import ChartsWeekly from "./ChartsWeekly";
 import TableWeekly from "./TableWeekly";
+import { Link } from "react-router-dom";
 
 const MyProgress = () => {
   const [completedExercises, setCompletedExercises] = useState([]);
@@ -22,6 +23,13 @@ const MyProgress = () => {
   useEffect(() => {
     getCompletedList();
   }, []);
+
+  const exerciseLink = (exercise) => {
+    return {
+      pathname: "/workout-item",
+      state: { tag: exercise.tag, exerciseId: exercise.id },
+    };
+  };
 
   const formatDate = (date) => {
     return `${date.toDateString()}, ${date.toLocaleTimeString()}`;
@@ -41,11 +49,15 @@ const MyProgress = () => {
           completedExercises.map((exercise) => (
             <div>
               <div className="completed-exercise">
-                <img
-                  className="list-img"
-                  src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
-                  alt="exercise preview thumbnail"
-                />
+                <Link to={() => exerciseLink(exercise.Exercise)}>
+                  {" "}
+                  <img
+                    className="list-img"
+                    src={`https://i4.ytimg.com/vi/${exercise.Exercise.tag}/mqdefault.jpg`}
+                    alt="exercise preview thumbnail"
+                  />
+                </Link>
+
                 <div className="list-details">
                   <div className="list-title">{exercise.Exercise.title}</div>
                   <div className="list-date">

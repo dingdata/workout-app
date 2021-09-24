@@ -119,7 +119,7 @@ router.get("/exercises", auth, async (req, res, next) => {
       },
       include: [
         { model: db.User },
-        { model: db.Exercise, attributes: ["title", "tag", "createdAt"] },
+        { model: db.Exercise, attributes: ["title", "tag", "id", "createdAt"] },
       ],
       order: [["createdAt", "DESC"]],
     });
