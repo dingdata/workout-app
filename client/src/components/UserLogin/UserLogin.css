@@ -91,3 +91,14 @@ i:hover {
     right: -40%;
   }
 }
+
+@media (max-width: 320px) {
+  .container {
+    background-image: url(../../imports/login_bg_rotate.png);
+    max-width: 100%;
+  }
+  .centered {
+    top: 80%;
+    right: -55%;
+  }
+}
